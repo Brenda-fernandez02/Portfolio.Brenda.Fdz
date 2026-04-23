@@ -15,190 +15,89 @@
 :root{
   --cream:#F4F0E8;
   --cream2:#EDE8DC;
-  --cream3:#E5DFD0;
+  --white:#FDFBF7;
   --navy:#1C2B4A;
   --navy2:#253760;
   --navy3:#0F1E36;
   --slate:#4A5568;
-  --text:#1A1A1A;
   --muted:#7A7265;
   --border:#D8D2C4;
   --border2:#C8C2B4;
-  --white:#FDFBF7;
   --accent:#2D5FA8;
   --accent-light:#E8EEF8;
-  --gold:#8B6914;
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{
-  font-family:'DM Sans',sans-serif;
-  background:var(--cream);
-  color:var(--text);
-  font-size:16px;
-  line-height:1.7;
-  overflow-x:hidden;
-}
+body{font-family:'DM Sans',sans-serif;background:var(--cream);color:#1A1A1A;font-size:16px;line-height:1.7;overflow-x:hidden}
 
-/* ── CURSOR ── */
+/* CURSOR */
 *{cursor:none}
-.cursor{
-  width:10px;height:10px;border-radius:50%;
-  background:var(--navy);position:fixed;top:0;left:0;
-  pointer-events:none;z-index:9999;
-  transition:transform 0.08s ease;
-  mix-blend-mode:multiply;
-}
-.cursor-ring{
-  width:32px;height:32px;border-radius:50%;
-  border:1.5px solid var(--navy);position:fixed;top:0;left:0;
-  pointer-events:none;z-index:9998;
-  mix-blend-mode:multiply;
-}
+.cursor{width:10px;height:10px;border-radius:50%;background:var(--navy);position:fixed;top:0;left:0;pointer-events:none;z-index:9999;transition:transform 0.08s ease,background 0.15s;mix-blend-mode:multiply}
+.cursor-ring{width:32px;height:32px;border-radius:50%;border:1.5px solid var(--navy);position:fixed;top:0;left:0;pointer-events:none;z-index:9998;mix-blend-mode:multiply}
 
-/* ── NAV ── */
-nav{
-  position:fixed;top:0;left:0;right:0;z-index:100;
-  display:flex;align-items:center;justify-content:space-between;
-  padding:1.4rem 4rem;
-  background:rgba(244,240,232,0.93);
-  backdrop-filter:blur(20px);
-  border-bottom:1px solid var(--border);
-}
-.nav-logo{
-  font-family:'Cormorant Garamond',serif;
-  font-size:1.6rem;font-weight:600;color:var(--navy);
-  text-decoration:none;letter-spacing:0.02em;
-}
-.nav-logo span{
-  display:inline-block;width:6px;height:6px;
-  background:var(--accent);border-radius:50%;
-  margin-left:3px;margin-bottom:8px;vertical-align:middle;
-}
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1.4rem 4rem;background:rgba(244,240,232,0.93);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
+.nav-logo{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:600;color:var(--navy);text-decoration:none}
+.nav-logo span{display:inline-block;width:6px;height:6px;background:var(--accent);border-radius:50%;margin-left:3px;margin-bottom:8px;vertical-align:middle}
 .nav-links{display:flex;gap:2.5rem;list-style:none}
-.nav-links a{
-  font-size:0.8rem;letter-spacing:0.12em;text-transform:uppercase;
-  color:var(--muted);text-decoration:none;transition:color 0.2s;font-weight:400;
-}
+.nav-links a{font-size:0.8rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color 0.2s}
 .nav-links a:hover{color:var(--navy)}
-.nav-cta{
-  display:inline-flex;align-items:center;gap:0.5rem;
-  padding:0.55rem 1.4rem;background:var(--navy);color:var(--cream);
-  font-size:0.78rem;letter-spacing:0.1em;text-transform:uppercase;
-  text-decoration:none;border-radius:2px;transition:background 0.2s;font-weight:400;
-}
+.nav-cta{display:inline-flex;align-items:center;gap:0.5rem;padding:0.55rem 1.4rem;background:var(--navy);color:var(--cream);font-size:0.78rem;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;border-radius:2px;transition:background 0.2s}
 .nav-cta:hover{background:var(--accent)}
 
-/* ── HERO ── */
-.hero{
-  min-height:100vh;
-  display:grid;grid-template-columns:55% 45%;
-  position:relative;overflow:hidden;
-}
-.hero-left{
-  display:flex;flex-direction:column;justify-content:center;
-  padding:10rem 4rem 6rem;position:relative;z-index:2;
-}
-.hero-lines{position:absolute;top:0;right:0;bottom:0;left:0;pointer-events:none;overflow:hidden}
-.hero-line{position:absolute;background:var(--border);opacity:0.5}
+/* HERO */
+.hero{min-height:100vh;display:grid;grid-template-columns:52% 48%;position:relative;overflow:hidden}
+.hero-left{display:flex;flex-direction:column;justify-content:center;padding:9rem 4rem 5rem;position:relative;z-index:2}
+.hero-lines{position:absolute;inset:0;pointer-events:none}
+.hero-line{position:absolute;background:var(--border);opacity:0.4}
 .hero-line.v{width:1px;top:0;bottom:0}
 .hero-line.h{height:1px;left:0;right:0}
-.hero-eyebrow{display:flex;align-items:center;gap:1rem;margin-bottom:2rem;animation:fadeUp 0.8s ease both}
+.hero-eyebrow{display:flex;align-items:center;gap:1rem;margin-bottom:1.75rem;animation:fadeUp 0.8s ease both}
 .hero-eyebrow-line{width:32px;height:1px;background:var(--accent)}
 .hero-eyebrow-text{font-size:0.75rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent);font-weight:500}
-.hero h1{
-  font-family:'Cormorant Garamond',serif;
-  font-size:clamp(3.5rem,6vw,6rem);line-height:1.0;font-weight:300;
-  color:var(--navy);margin-bottom:2rem;animation:fadeUp 0.8s 0.15s ease both;
-}
+.hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(3.2rem,5.5vw,5.5rem);line-height:1.0;font-weight:300;color:var(--navy);margin-bottom:1.75rem;animation:fadeUp 0.8s 0.15s ease both}
 .hero h1 strong{font-weight:600;display:block}
-.hero h1 em{
-  font-style:italic;font-weight:300;color:var(--muted);
-  font-size:0.7em;display:block;margin-top:0.5rem;letter-spacing:0.02em;
-}
-.hero-desc{
-  font-size:1rem;color:var(--slate);max-width:420px;
-  margin-bottom:3rem;line-height:1.9;animation:fadeUp 0.8s 0.3s ease both;
-}
+.hero h1 em{font-style:italic;font-weight:300;color:var(--muted);font-size:0.68em;display:block;margin-top:0.4rem}
+.hero-desc{font-size:0.97rem;color:var(--slate);max-width:440px;margin-bottom:2.5rem;line-height:1.9;animation:fadeUp 0.8s 0.3s ease both}
 .hero-desc strong{color:var(--navy);font-weight:500}
-.hero-actions{
-  display:flex;gap:1.2rem;flex-wrap:wrap;
-  animation:fadeUp 0.8s 0.45s ease both;margin-bottom:4rem;
-}
-.btn-primary{
-  display:inline-flex;align-items:center;gap:0.6rem;
-  padding:1rem 2.2rem;background:var(--navy);color:var(--cream);
-  text-decoration:none;font-size:0.82rem;letter-spacing:0.1em;
-  text-transform:uppercase;border-radius:2px;
-  transition:background 0.2s,transform 0.2s;font-weight:400;
-}
+.hero-actions{display:flex;gap:1rem;flex-wrap:wrap;animation:fadeUp 0.8s 0.45s ease both;margin-bottom:3rem}
+.btn-primary{display:inline-flex;align-items:center;gap:0.6rem;padding:0.95rem 2rem;background:var(--navy);color:var(--cream);text-decoration:none;font-size:0.82rem;letter-spacing:0.1em;text-transform:uppercase;border-radius:2px;transition:background 0.2s,transform 0.2s}
 .btn-primary:hover{background:var(--accent);transform:translateY(-2px)}
-.btn-outline{
-  display:inline-flex;align-items:center;gap:0.6rem;
-  padding:1rem 2.2rem;border:1px solid var(--navy);color:var(--navy);
-  text-decoration:none;font-size:0.82rem;letter-spacing:0.1em;
-  text-transform:uppercase;border-radius:2px;transition:all 0.2s;font-weight:400;
-}
+.btn-outline{display:inline-flex;align-items:center;gap:0.6rem;padding:0.95rem 2rem;border:1px solid var(--navy);color:var(--navy);text-decoration:none;font-size:0.82rem;letter-spacing:0.1em;text-transform:uppercase;border-radius:2px;transition:all 0.2s}
 .btn-outline:hover{background:var(--navy);color:var(--cream)}
-.hero-stats{
-  display:flex;gap:3rem;animation:fadeUp 0.8s 0.6s ease both;
-  padding-top:2.5rem;border-top:1px solid var(--border);flex-wrap:wrap;
-}
-.stat .num{
-  font-family:'Cormorant Garamond',serif;font-size:2.8rem;
-  font-weight:600;color:var(--navy);line-height:1;display:block;
-}
-.stat .lbl{font-size:0.72rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--muted);margin-top:0.3rem;display:block}
+.hero-stats{display:flex;gap:2.5rem;animation:fadeUp 0.8s 0.6s ease both;padding-top:2rem;border-top:1px solid var(--border);flex-wrap:wrap}
+.stat .num{font-family:'Cormorant Garamond',serif;font-size:2.6rem;font-weight:600;color:var(--navy);line-height:1;display:block}
+.stat .lbl{font-size:0.7rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--muted);margin-top:0.25rem;display:block}
 
-/* Hero derecho */
-.hero-right{
-  background:var(--navy3);position:relative;overflow:hidden;
-  display:flex;flex-direction:column;justify-content:flex-end;padding:4rem;
-}
+/* HERO DERECHO — foto bien posicionada */
+.hero-right{background:var(--navy3);position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;padding:2.5rem}
 .hero-right-bg{position:absolute;inset:0;background:linear-gradient(160deg,var(--navy2) 0%,var(--navy3) 100%)}
-.hero-grid{
-  position:absolute;inset:0;opacity:0.06;
-  background-image:linear-gradient(var(--cream) 1px,transparent 1px),linear-gradient(90deg,var(--cream) 1px,transparent 1px);
-  background-size:48px 48px;
-}
-.hero-circle{position:absolute;border-radius:50%;border:1px solid rgba(255,255,255,0.06)}
-
-/* FOTO en hero */
+.hero-grid{position:absolute;inset:0;opacity:0.06;background-image:linear-gradient(var(--cream) 1px,transparent 1px),linear-gradient(90deg,var(--cream) 1px,transparent 1px);background-size:48px 48px}
+.hero-circle{position:absolute;border-radius:50%;border:1px solid rgba(255,255,255,0.05)}
+/* Foto ocupa la mayor parte del panel, bien visible desde arriba */
 .hero-photo-frame{
-  position:absolute;bottom:0;left:50%;transform:translateX(-50%);
-  width:290px;height:390px;overflow:hidden;
-  border-radius:160px 160px 0 0;
-  border:1px solid rgba(255,255,255,0.12);
+  position:absolute;
+  bottom:0;left:50%;transform:translateX(-50%);
+  width:75%;max-width:340px;
+  height:85%;
+  overflow:hidden;
+  border-radius:200px 200px 0 0;
+  border:1px solid rgba(255,255,255,0.14);
   z-index:2;
 }
-.hero-photo-frame img{
-  width:100%;height:100%;object-fit:cover;object-position:center top;
-}
-.hero-photo-placeholder{
-  width:100%;height:100%;background:var(--navy2);
-  display:flex;align-items:center;justify-content:center;
-  font-family:'Cormorant Garamond',serif;font-size:6rem;
-  color:rgba(244,240,232,0.15);font-weight:300;
-}
-.availability-chip{
-  position:absolute;top:2.5rem;right:2.5rem;z-index:5;
-  display:flex;align-items:center;gap:0.5rem;padding:0.5rem 1rem;
-  background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);
-  border-radius:20px;backdrop-filter:blur(8px);
-}
+.hero-photo-frame img{width:100%;height:100%;object-fit:cover;object-position:center 10%;display:block}
+.hero-photo-placeholder{width:100%;height:100%;background:var(--navy2);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:6rem;color:rgba(244,240,232,0.15)}
+.availability-chip{position:absolute;top:2rem;right:2rem;z-index:5;display:flex;align-items:center;gap:0.5rem;padding:0.45rem 0.9rem;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-radius:20px;backdrop-filter:blur(8px)}
 .availability-dot{width:7px;height:7px;border-radius:50%;background:#4ADE80;animation:blink 2s ease-in-out infinite}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:0.4}}
-.availability-text{font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(244,240,232,0.7)}
-.hero-card{
-  position:relative;z-index:3;background:rgba(244,240,232,0.06);
-  border:1px solid rgba(244,240,232,0.12);border-radius:4px;
-  padding:1.5rem 2rem;backdrop-filter:blur(8px);
-}
-.hero-card-label{font-size:0.7rem;text-transform:uppercase;letter-spacing:0.18em;color:rgba(244,240,232,0.35);margin-bottom:0.75rem}
-.hero-card-text{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:300;color:var(--cream);font-style:italic;line-height:1.4}
-.hero-card-author{margin-top:0.75rem;font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(244,240,232,0.35)}
+.availability-text{font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(244,240,232,0.7)}
+/* Tarjeta cita — en la base, encima de la foto con glassmorphism */
+.hero-card{position:relative;z-index:3;background:rgba(15,30,54,0.75);border:1px solid rgba(244,240,232,0.1);border-radius:4px;padding:1.25rem 1.75rem;backdrop-filter:blur(12px)}
+.hero-card-label{font-size:0.68rem;text-transform:uppercase;letter-spacing:0.18em;color:rgba(244,240,232,0.35);margin-bottom:0.6rem}
+.hero-card-text{font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-weight:300;color:var(--cream);font-style:italic;line-height:1.4}
+.hero-card-author{margin-top:0.6rem;font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(244,240,232,0.3)}
 
-/* ── SECCIONES ── */
+/* SECCIONES */
 section{padding:7rem 4rem}
 .section-header{margin-bottom:4rem}
 .section-eyebrow{display:flex;align-items:center;gap:1rem;margin-bottom:1rem}
@@ -207,303 +106,216 @@ section{padding:7rem 4rem}
 h2{font-family:'Cormorant Garamond',serif;font-size:clamp(2.2rem,4vw,3.5rem);font-weight:300;color:var(--navy);line-height:1.1}
 h2 strong{font-weight:600}
 
-/* ── SOBRE MÍ ── */
+/* SOBRE MÍ */
 #sobre-mi{background:var(--white)}
 .about-layout{display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:start}
 .about-text p{color:var(--slate);margin-bottom:1.4rem;font-size:1rem;line-height:1.9}
 .about-highlight{margin-top:2rem;padding:2rem;background:var(--navy);border-radius:3px}
-.about-highlight p{font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-style:italic;font-weight:300;color:var(--cream);margin:0;line-height:1.55}
-.about-highlight cite{display:block;margin-top:0.75rem;font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(244,240,232,0.4);font-style:normal}
+.about-highlight p{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-style:italic;font-weight:300;color:var(--cream);margin:0;line-height:1.55}
+.about-highlight cite{display:block;margin-top:0.75rem;font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(244,240,232,0.35);font-style:normal}
 .sidebar-block{border-top:1px solid var(--border);padding:1.5rem 0}
 .sidebar-block:last-child{border-bottom:1px solid var(--border)}
-.sidebar-label{font-size:0.72rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--muted);margin-bottom:0.75rem;font-weight:500}
+.sidebar-label{font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--muted);margin-bottom:0.75rem;font-weight:500}
 .sidebar-pills{display:flex;flex-wrap:wrap;gap:0.5rem}
-.s-pill{padding:0.35rem 0.9rem;border:1px solid var(--border2);border-radius:2px;font-size:0.83rem;color:var(--slate);background:var(--cream);letter-spacing:0.02em}
+.s-pill{padding:0.35rem 0.9rem;border:1px solid var(--border2);border-radius:2px;font-size:0.82rem;color:var(--slate);background:var(--cream)}
 .sidebar-value{font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:600;color:var(--navy)}
-.sidebar-value span{font-family:'DM Sans',sans-serif;font-size:0.85rem;color:var(--muted);font-weight:300;margin-left:0.4rem}
+.sidebar-value span{font-family:'DM Sans',sans-serif;font-size:0.85rem;color:var(--muted);font-weight:300;margin-left:0.3rem}
 
-/* ── HABILIDADES ── */
+/* HABILIDADES */
 #habilidades{background:var(--cream2)}
 .skills-intro{display:grid;grid-template-columns:1fr 2fr;gap:5rem;align-items:start}
 .skills-intro-text{position:sticky;top:8rem}
 .skills-intro-text p{color:var(--slate);font-size:0.95rem;line-height:1.85;margin-top:1.5rem}
 .skills-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);border:1px solid var(--border)}
 .skill-item{background:var(--white);padding:2.5rem;transition:background 0.25s;position:relative;overflow:hidden}
-.skill-item::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--accent);transform:scaleX(0);transition:transform 0.3s ease;transform-origin:left}
+.skill-item::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--accent);transform:scaleX(0);transition:transform 0.3s;transform-origin:left}
 .skill-item:hover{background:var(--accent-light)}
 .skill-item:hover::after{transform:scaleX(1)}
 .skill-num{font-family:'Cormorant Garamond',serif;font-size:3rem;font-weight:300;color:var(--border2);line-height:1;margin-bottom:1rem;transition:color 0.25s}
 .skill-item:hover .skill-num{color:var(--accent)}
-.skill-item h3{font-size:0.92rem;font-weight:500;color:var(--navy);margin-bottom:0.5rem;letter-spacing:0.02em}
+.skill-item h3{font-size:0.92rem;font-weight:500;color:var(--navy);margin-bottom:0.5rem}
 .skill-item p{font-size:0.85rem;color:var(--slate);line-height:1.7}
 .skill-badge-ia{display:inline-block;margin-top:0.75rem;font-size:0.65rem;padding:0.2rem 0.6rem;background:var(--accent-light);color:var(--accent);border-radius:2px;letter-spacing:0.1em;text-transform:uppercase;font-weight:500}
 
-/* ── HERRAMIENTAS — visual con iconos ── */
+/* HERRAMIENTAS */
 #herramientas{background:var(--navy3);padding:6rem 4rem}
 #herramientas .ey-text{color:rgba(244,240,232,0.45)}
 #herramientas .ey-line{background:rgba(244,240,232,0.25)}
-#herramientas h2{color:var(--cream);margin-bottom:3.5rem}
-.tools-categories{display:flex;gap:1rem;margin-bottom:3rem;flex-wrap:wrap}
-.tool-cat-btn{
-  padding:0.5rem 1.2rem;border:1px solid rgba(255,255,255,0.12);
-  background:transparent;color:rgba(244,240,232,0.5);
-  font-family:'DM Sans',sans-serif;font-size:0.75rem;
-  letter-spacing:0.1em;text-transform:uppercase;border-radius:2px;
-  cursor:pointer;transition:all 0.2s;
-}
-.tool-cat-btn.active,.tool-cat-btn:hover{background:rgba(255,255,255,0.08);color:rgba(244,240,232,0.9);border-color:rgba(255,255,255,0.25)}
-.tools-visual-grid{
-  display:grid;grid-template-columns:repeat(4,1fr);gap:1px;
-  background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.06);
-  border-radius:4px;overflow:hidden;
-}
-.tool-card{
-  background:rgba(15,30,54,0.8);padding:2rem 1.5rem;
-  display:flex;flex-direction:column;align-items:center;text-align:center;
-  transition:background 0.25s;position:relative;overflow:hidden;
-  opacity:0;animation:fadeIn 0.4s ease forwards;
-}
+#herramientas h2{color:var(--cream);margin-bottom:2.5rem}
+.tools-categories{display:flex;gap:0.75rem;margin-bottom:3rem;flex-wrap:wrap}
+.tool-cat-btn{padding:0.45rem 1.1rem;border:1px solid rgba(255,255,255,0.1);background:transparent;color:rgba(244,240,232,0.45);font-family:'DM Sans',sans-serif;font-size:0.73rem;letter-spacing:0.1em;text-transform:uppercase;border-radius:2px;cursor:pointer;transition:all 0.2s}
+.tool-cat-btn.active,.tool-cat-btn:hover{background:rgba(255,255,255,0.08);color:rgba(244,240,232,0.9);border-color:rgba(255,255,255,0.22)}
+.tools-visual-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.05);border-radius:4px;overflow:hidden}
+.tool-card{background:rgba(15,30,54,0.8);padding:1.75rem 1.25rem;display:flex;flex-direction:column;align-items:center;text-align:center;transition:background 0.25s;opacity:0;animation:fadeIn 0.4s ease forwards}
 .tool-card:hover{background:rgba(45,95,168,0.15)}
 @keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
-.tool-icon{
-  width:52px;height:52px;border-radius:12px;
-  display:flex;align-items:center;justify-content:center;
-  font-size:1.5rem;margin-bottom:1rem;
-  border:1px solid rgba(255,255,255,0.08);
-  background:rgba(255,255,255,0.04);
-  transition:transform 0.2s;
-}
+.tool-icon{width:48px;height:48px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.4rem;margin-bottom:0.85rem;border:1px solid rgba(255,255,255,0.08);background:rgba(255,255,255,0.04);transition:transform 0.2s}
 .tool-card:hover .tool-icon{transform:scale(1.1)}
-.tool-card-name{font-size:0.85rem;color:rgba(244,240,232,0.8);font-weight:400;margin-bottom:0.5rem}
-.tool-level-bar{width:100%;height:3px;background:rgba(255,255,255,0.08);border-radius:2px;overflow:hidden;margin-top:0.5rem}
+.tool-card-name{font-size:0.82rem;color:rgba(244,240,232,0.8);margin-bottom:0.5rem}
+.tool-level-bar{width:100%;height:2px;background:rgba(255,255,255,0.07);border-radius:2px;overflow:hidden;margin-top:0.4rem}
 .tool-level-fill{height:100%;background:var(--accent);border-radius:2px;transition:width 0.6s ease}
-.tool-level-label{font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(244,240,232,0.3);margin-top:0.4rem}
+.tool-level-label{font-size:0.62rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(244,240,232,0.28);margin-top:0.35rem}
 
-/* ── PROYECTOS — carrusel tipo Netflix ── */
+/* PROYECTOS — carrusel Netflix limpio */
 #proyectos{background:var(--cream);padding:7rem 0}
 .proyectos-header{padding:0 4rem;margin-bottom:3rem}
-.proyectos-header .section-eyebrow{margin-bottom:1rem}
-.netflix-row{position:relative;overflow:hidden}
-.netflix-track{
-  display:flex;gap:1.5rem;
-  padding:1rem 4rem 2rem;
-  overflow-x:auto;scroll-snap-type:x mandatory;
-  scroll-behavior:smooth;
-  -webkit-overflow-scrolling:touch;
-  scrollbar-width:none;
-}
+.netflix-row{position:relative}
+.netflix-track{display:flex;gap:1.25rem;padding:0.5rem 4rem 2.5rem;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;-webkit-overflow-scrolling:touch;scrollbar-width:none}
 .netflix-track::-webkit-scrollbar{display:none}
-.netflix-prev,.netflix-next{
-  position:absolute;top:50%;transform:translateY(-50%);
-  width:44px;height:44px;border-radius:50%;
-  background:var(--navy);color:var(--cream);
-  border:none;font-size:1.1rem;
-  display:flex;align-items:center;justify-content:center;
-  cursor:pointer;z-index:10;transition:background 0.2s,transform 0.2s;
-  box-shadow:0 4px 16px rgba(28,43,74,0.25);
-}
-.netflix-prev:hover,.netflix-next:hover{background:var(--accent);transform:translateY(-50%) scale(1.05)}
-.netflix-prev{left:1rem}
-.netflix-next{right:1rem}
+.netflix-prev,.netflix-next{position:absolute;top:40%;transform:translateY(-50%);width:42px;height:42px;border-radius:50%;background:var(--navy);color:var(--cream);border:none;font-size:1.1rem;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:10;transition:background 0.2s,opacity 0.2s;box-shadow:0 4px 16px rgba(28,43,74,0.2)}
+.netflix-prev:hover,.netflix-next:hover{background:var(--accent)}
+.netflix-prev{left:0.75rem}
+.netflix-next{right:0.75rem}
 
-.project-card{
-  flex:0 0 380px;scroll-snap-align:start;
-  background:var(--white);border:1px solid var(--border);
-  border-radius:4px;overflow:hidden;
-  transition:transform 0.3s,box-shadow 0.3s,border-color 0.3s;
-  position:relative;
-}
-.project-card:hover{
-  transform:translateY(-6px) scale(1.01);
-  box-shadow:0 20px 50px rgba(28,43,74,0.12);
-  border-color:var(--accent);
-}
-/* Tarjeta del vídeo/avatar — grande */
-.project-card.video-card{flex:0 0 480px}
+/* Tarjetas de proyecto */
+.project-card{flex:0 0 340px;scroll-snap-align:start;background:var(--white);border:1px solid var(--border);border-radius:4px;overflow:hidden;transition:transform 0.3s,box-shadow 0.3s,border-color 0.3s}
+.project-card:hover{transform:translateY(-5px);box-shadow:0 18px 45px rgba(28,43,74,0.1);border-color:var(--accent)}
+.project-card.video-card{flex:0 0 400px}
 
-.project-media{
-  width:100%;height:220px;background:var(--navy3);
-  overflow:hidden;position:relative;display:flex;align-items:center;justify-content:center;
-}
-.project-media video{width:100%;height:100%;object-fit:cover}
-.project-media-placeholder{
-  width:100%;height:100%;display:flex;align-items:center;justify-content:center;
-  background:linear-gradient(135deg,var(--navy2),var(--navy3));position:relative;
-}
-.pm-grid{position:absolute;inset:0;opacity:0.06;background-image:linear-gradient(var(--cream) 1px,transparent 1px),linear-gradient(90deg,var(--cream) 1px,transparent 1px);background-size:32px 32px}
-.pm-icon{font-size:2.5rem;position:relative;z-index:1;opacity:0.4}
-.play-btn{
-  position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
-  width:52px;height:52px;border-radius:50%;
-  background:rgba(255,255,255,0.15);border:2px solid rgba(255,255,255,0.4);
-  display:flex;align-items:center;justify-content:center;
-  font-size:1.2rem;color:white;cursor:pointer;z-index:5;
-  transition:background 0.2s,transform 0.2s;backdrop-filter:blur(4px);
-}
-.play-btn:hover{background:rgba(255,255,255,0.25);transform:translate(-50%,-50%) scale(1.1)}
-.project-body{padding:1.75rem}
-.project-type{
-  font-size:0.68rem;text-transform:uppercase;letter-spacing:0.15em;
-  color:var(--accent);font-weight:500;margin-bottom:0.75rem;
-}
-.project-card h3{
-  font-family:'Cormorant Garamond',serif;font-size:1.35rem;
-  font-weight:600;color:var(--navy);margin-bottom:0.6rem;line-height:1.25;
-}
-.project-card p{font-size:0.85rem;color:var(--slate);line-height:1.7;margin-bottom:1.25rem}
-.project-tags{display:flex;flex-wrap:wrap;gap:0.4rem}
-.tag{font-size:0.7rem;padding:0.22rem 0.65rem;border:1px solid var(--border);color:var(--muted);border-radius:2px}
-.project-link{
-  display:inline-flex;align-items:center;gap:0.4rem;margin-top:1rem;
-  font-size:0.78rem;letter-spacing:0.08em;text-transform:uppercase;
-  color:var(--accent);text-decoration:none;font-weight:500;
-  border-bottom:1px solid transparent;transition:border-color 0.2s;
-}
+/* Media — imagen o vídeo */
+.project-media{width:100%;height:200px;overflow:hidden;position:relative;background:var(--navy3)}
+.project-media img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.4s ease}
+.project-card:hover .project-media img{transform:scale(1.04)}
+.project-media video{width:100%;height:100%;object-fit:cover;object-position:center top;display:none}
+.project-media-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,transparent 50%,rgba(15,30,54,0.5) 100%)}
+.play-btn{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:48px;height:48px;border-radius:50%;background:rgba(255,255,255,0.15);border:2px solid rgba(255,255,255,0.5);display:flex;align-items:center;justify-content:center;font-size:1rem;color:white;cursor:pointer;z-index:5;transition:all 0.2s;backdrop-filter:blur(4px)}
+.play-btn:hover{background:rgba(255,255,255,0.3);transform:translate(-50%,-50%) scale(1.1)}
+.project-body{padding:1.5rem}
+.project-type{font-size:0.67rem;text-transform:uppercase;letter-spacing:0.15em;color:var(--accent);font-weight:500;margin-bottom:0.6rem}
+.project-card h3{font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-weight:600;color:var(--navy);margin-bottom:0.5rem;line-height:1.25}
+.project-card p{font-size:0.83rem;color:var(--slate);line-height:1.7;margin-bottom:1.1rem}
+.project-tags{display:flex;flex-wrap:wrap;gap:0.35rem}
+.tag{font-size:0.68rem;padding:0.2rem 0.6rem;border:1px solid var(--border);color:var(--muted);border-radius:2px}
+.project-link{display:inline-flex;align-items:center;gap:0.4rem;margin-top:0.9rem;font-size:0.76rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent);text-decoration:none;font-weight:500;border-bottom:1px solid transparent;transition:border-color 0.2s}
 .project-link:hover{border-color:var(--accent)}
 
-/* ── TRAYECTORIA ── */
+/* TRAYECTORIA */
 #trayectoria{background:var(--white)}
 .trajectory-layout{display:grid;grid-template-columns:1fr 1fr;gap:6rem}
-.traj-col-title{font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted);margin-bottom:2.5rem;display:flex;align-items:center;gap:1rem}
+.traj-col-title{font-size:0.68rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted);margin-bottom:2.5rem;display:flex;align-items:center;gap:1rem}
 .traj-col-title::after{content:'';flex:1;height:1px;background:var(--border)}
-.timeline-item{display:grid;grid-template-columns:90px 1fr;gap:1.5rem;margin-bottom:2.5rem;padding-bottom:2.5rem;border-bottom:1px solid var(--border)}
+.timeline-item{display:grid;grid-template-columns:85px 1fr;gap:1.25rem;margin-bottom:2.5rem;padding-bottom:2.5rem;border-bottom:1px solid var(--border)}
 .timeline-item:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
-.tl-date{font-family:'Cormorant Garamond',serif;font-size:0.85rem;color:var(--muted);font-weight:300;padding-top:0.15rem;line-height:1.4}
-.tl-content h3{font-size:1rem;font-weight:500;color:var(--navy);margin-bottom:0.2rem}
-.tl-company{font-size:0.82rem;color:var(--accent);font-weight:500;margin-bottom:0.6rem}
-.tl-content p{font-size:0.85rem;color:var(--slate);line-height:1.7}
-.tl-note{display:inline-block;margin-top:0.5rem;font-size:0.72rem;padding:0.2rem 0.6rem;background:var(--cream2);color:var(--muted);border-radius:2px;letter-spacing:0.05em}
-.edu-card{padding:1.75rem;border:1px solid var(--border);border-radius:3px;margin-bottom:1rem;background:var(--cream);transition:border-color 0.2s}
-.edu-card:hover{border-color:var(--accent)}
-.edu-period{font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-bottom:0.5rem}
-.edu-card h3{font-size:0.95rem;font-weight:500;color:var(--navy);margin-bottom:0.25rem}
-.edu-center{font-size:0.83rem;color:var(--accent);margin-bottom:0.5rem}
-.edu-card p{font-size:0.83rem;color:var(--slate);line-height:1.65}
-.edu-badge{display:inline-flex;align-items:center;gap:0.4rem;margin-top:0.75rem;font-size:0.72rem;padding:0.3rem 0.8rem;background:var(--accent-light);color:var(--accent);border-radius:2px;letter-spacing:0.05em;font-weight:500}
-.cert-row{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1.2rem 0;border-bottom:1px solid var(--border)}
-.cert-row:last-child{border-bottom:none}
-.cert-main h4{font-size:0.88rem;font-weight:500;color:var(--navy);margin-bottom:0.2rem}
-.cert-main .cert-meta{font-size:0.75rem;color:var(--muted)}
-.cert-btn{flex-shrink:0;font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent);text-decoration:none;font-weight:500;white-space:nowrap;padding:0.4rem 1rem;border:1px solid var(--accent);border-radius:2px;transition:all 0.2s}
-.cert-btn:hover{background:var(--accent);color:white}
+.tl-date{font-family:'Cormorant Garamond',serif;font-size:0.82rem;color:var(--muted);font-weight:300;padding-top:0.15rem;line-height:1.4}
+.tl-content h3{font-size:0.97rem;font-weight:500;color:var(--navy);margin-bottom:0.2rem}
+.tl-company{font-size:0.8rem;color:var(--accent);font-weight:500;margin-bottom:0.55rem}
+.tl-content p{font-size:0.84rem;color:var(--slate);line-height:1.7}
+.tl-note{display:inline-block;margin-top:0.5rem;font-size:0.7rem;padding:0.18rem 0.55rem;background:var(--cream2);color:var(--muted);border-radius:2px}
 
-/* ── CONTACTO — visual e interactivo ── */
+.edu-card{padding:1.5rem;border:1px solid var(--border);border-radius:3px;margin-bottom:1rem;background:var(--cream);transition:border-color 0.2s}
+.edu-card:hover{border-color:var(--accent)}
+.edu-period{font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-bottom:0.4rem}
+.edu-card h3{font-size:0.93rem;font-weight:500;color:var(--navy);margin-bottom:0.2rem}
+.edu-center{font-size:0.82rem;color:var(--accent);margin-bottom:0.5rem}
+.edu-card p{font-size:0.82rem;color:var(--slate);line-height:1.65}
+.edu-badge{display:inline-flex;align-items:center;gap:0.4rem;margin-top:0.7rem;font-size:0.7rem;padding:0.28rem 0.75rem;background:var(--accent-light);color:var(--accent);border-radius:2px;letter-spacing:0.04em;font-weight:500}
+
+/* CERTIFICADOS con imagen */
+.certs-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:0.5rem}
+.cert-card-visual{
+  border:1px solid var(--border);border-radius:4px;overflow:hidden;
+  background:var(--white);transition:border-color 0.2s,transform 0.2s;
+}
+.cert-card-visual:hover{border-color:var(--accent);transform:translateY(-2px)}
+.cert-badge-area{
+  height:120px;display:flex;align-items:center;justify-content:center;
+  background:var(--cream2);padding:1rem;
+}
+.cert-badge-area img{max-height:90px;max-width:90px;object-fit:contain}
+/* Badge Copilot — creado con CSS */
+.copilot-badge{
+  width:80px;height:80px;border-radius:12px;
+  background:linear-gradient(135deg,#0078d4,#005a9e);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:4px;
+}
+.copilot-badge-icon{font-size:1.8rem}
+.copilot-badge-text{font-size:0.55rem;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.8);font-weight:500}
+.cert-info-area{padding:1rem 1.1rem}
+.cert-info-area h4{font-size:0.86rem;font-weight:500;color:var(--navy);margin-bottom:0.25rem;line-height:1.35}
+.cert-info-area .cert-meta{font-size:0.73rem;color:var(--muted);margin-bottom:0.75rem}
+.cert-link-btn{display:inline-flex;align-items:center;gap:0.35rem;font-size:0.7rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent);text-decoration:none;font-weight:500;border-bottom:1px solid transparent;transition:border-color 0.2s}
+.cert-link-btn:hover{border-color:var(--accent)}
+.cert-coming{
+  border:1px dashed var(--border);border-radius:4px;
+  display:flex;align-items:center;justify-content:center;
+  min-height:80px;
+  font-size:0.8rem;color:var(--muted);letter-spacing:0.05em;
+  background:transparent;opacity:0.5;
+  grid-column:span 2;
+}
+
+/* CONTACTO */
 #contacto{background:var(--navy);padding:7rem 4rem;position:relative;overflow:hidden}
 .contact-bg-grid{position:absolute;inset:0;opacity:0.04;background-image:linear-gradient(var(--cream) 1px,transparent 1px),linear-gradient(90deg,var(--cream) 1px,transparent 1px);background-size:60px 60px;pointer-events:none}
-/* Círculos decorativos de fondo */
 .contact-circle{position:absolute;border-radius:50%;border:1px solid rgba(255,255,255,0.04);pointer-events:none}
-#contacto .ey-text{color:rgba(244,240,232,0.45)}
-#contacto .ey-line{background:rgba(244,240,232,0.2)}
+#contacto .ey-text{color:rgba(244,240,232,0.4)}
+#contacto .ey-line{background:rgba(244,240,232,0.18)}
 #contacto h2{color:var(--cream)}
-.contact-layout{display:grid;grid-template-columns:1fr 1.3fr;gap:5rem;margin-top:4rem;position:relative;z-index:1;align-items:start}
 
-/* Columna izquierda contacto */
-.contact-desc{font-size:1rem;color:rgba(244,240,232,0.6);line-height:1.9;margin-bottom:2.5rem}
+/* Layout contacto — dos columnas equilibradas */
+.contact-layout{display:grid;grid-template-columns:1fr 1.4fr;gap:5rem;margin-top:3.5rem;position:relative;z-index:1;align-items:start}
+.contact-desc{font-size:0.97rem;color:rgba(244,240,232,0.55);line-height:1.9;margin-bottom:2rem}
 
-/* Tarjetas de contacto grandes y visuales */
-.contact-cards{display:flex;flex-direction:column;gap:1rem}
-.contact-card{
-  display:flex;align-items:center;gap:1.5rem;
-  padding:1.5rem 2rem;
-  border:1px solid rgba(255,255,255,0.08);
-  border-radius:4px;background:rgba(255,255,255,0.03);
-  text-decoration:none;transition:all 0.25s;
-  position:relative;overflow:hidden;
-}
-.contact-card::before{
-  content:'';position:absolute;left:0;top:0;bottom:0;width:3px;
-  background:var(--accent);transform:scaleY(0);transition:transform 0.25s;
-  transform-origin:bottom;
-}
-.contact-card:hover{
-  background:rgba(255,255,255,0.07);
-  border-color:rgba(255,255,255,0.18);
-  transform:translateX(6px);
-}
+/* Tarjetas de contacto — solo 2 (LinkedIn + CV) */
+.contact-cards{display:flex;flex-direction:column;gap:0.85rem}
+.contact-card{display:flex;align-items:center;gap:1.25rem;padding:1.25rem 1.5rem;border:1px solid rgba(255,255,255,0.08);border-radius:4px;background:rgba(255,255,255,0.03);text-decoration:none;transition:all 0.25s;position:relative;overflow:hidden}
+.contact-card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--accent);transform:scaleY(0);transition:transform 0.25s;transform-origin:bottom}
+.contact-card:hover{background:rgba(255,255,255,0.07);border-color:rgba(255,255,255,0.15);transform:translateX(5px)}
 .contact-card:hover::before{transform:scaleY(1)}
-.cc-icon{
-  width:48px;height:48px;border-radius:12px;flex-shrink:0;
-  background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);
-  display:flex;align-items:center;justify-content:center;
-  font-size:1.1rem;transition:background 0.25s;
-}
+.cc-icon{width:44px;height:44px;border-radius:10px;flex-shrink:0;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.08);display:flex;align-items:center;justify-content:center;font-size:1rem;transition:background 0.25s}
 .contact-card:hover .cc-icon{background:rgba(45,95,168,0.3)}
 .cc-info{flex:1}
-.cc-label{font-size:0.68rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(244,240,232,0.3);margin-bottom:0.25rem}
-.cc-value{font-size:0.92rem;color:rgba(244,240,232,0.85);font-weight:300}
-.cc-arrow{font-size:1rem;color:rgba(244,240,232,0.2);transition:color 0.2s,transform 0.2s}
-.contact-card:hover .cc-arrow{color:var(--accent);transform:translateX(4px)}
+.cc-label{font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(244,240,232,0.28);margin-bottom:0.2rem}
+.cc-value{font-size:0.88rem;color:rgba(244,240,232,0.8);font-weight:300}
+.cc-arrow{font-size:0.9rem;color:rgba(244,240,232,0.18);transition:color 0.2s,transform 0.2s}
+.contact-card:hover .cc-arrow{color:var(--accent);transform:translateX(3px)}
 
-/* Formulario mejorado */
-.contact-form-wrap{
-  background:rgba(255,255,255,0.03);
-  border:1px solid rgba(255,255,255,0.08);
-  border-radius:6px;padding:2.5rem;
-}
-.form-title{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:300;color:var(--cream);margin-bottom:0.5rem;font-style:italic}
-.form-subtitle{font-size:0.8rem;color:rgba(244,240,232,0.35);margin-bottom:2rem;letter-spacing:0.05em}
-.contact-form{display:flex;flex-direction:column;gap:1.2rem}
+/* Formulario */
+.contact-form-wrap{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:6px;padding:2.25rem}
+.form-title{font-family:'Cormorant Garamond',serif;font-size:1.45rem;font-weight:300;color:var(--cream);margin-bottom:0.35rem;font-style:italic}
+.form-subtitle{font-size:0.77rem;color:rgba(244,240,232,0.3);margin-bottom:1.75rem;letter-spacing:0.04em}
+.contact-form{display:flex;flex-direction:column;gap:1rem}
 .form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
-.form-field{display:flex;flex-direction:column;gap:0.4rem}
-.form-field label{font-size:0.68rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(244,240,232,0.35);font-weight:400}
-.form-field input,.form-field textarea,.form-field select{
-  padding:0.9rem 1.1rem;
-  background:rgba(255,255,255,0.04);
-  border:1px solid rgba(255,255,255,0.08);
-  border-radius:2px;color:var(--cream);
-  font-family:'DM Sans',sans-serif;font-size:0.9rem;font-weight:300;
-  transition:border-color 0.2s,background 0.2s;resize:vertical;
-}
-.form-field input:focus,.form-field textarea:focus,.form-field select:focus{
-  outline:none;border-color:rgba(45,95,168,0.6);background:rgba(255,255,255,0.06);
-}
-.form-field input::placeholder,.form-field textarea::placeholder{color:rgba(244,240,232,0.2)}
+.form-field{display:flex;flex-direction:column;gap:0.35rem}
+.form-field label{font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(244,240,232,0.32)}
+.form-field input,.form-field textarea,.form-field select{padding:0.85rem 1rem;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:2px;color:var(--cream);font-family:'DM Sans',sans-serif;font-size:0.88rem;font-weight:300;transition:border-color 0.2s,background 0.2s;resize:vertical}
+.form-field input:focus,.form-field textarea:focus,.form-field select:focus{outline:none;border-color:rgba(45,95,168,0.6);background:rgba(255,255,255,0.06)}
+.form-field input::placeholder,.form-field textarea::placeholder{color:rgba(244,240,232,0.18)}
 .form-field select option{background:var(--navy3);color:var(--cream)}
-.form-submit{
-  padding:1rem;background:var(--accent);color:white;border:none;
-  border-radius:2px;font-size:0.8rem;letter-spacing:0.12em;
-  text-transform:uppercase;font-weight:500;
-  font-family:'DM Sans',sans-serif;cursor:pointer;
-  transition:background 0.2s,transform 0.2s;margin-top:0.25rem;
-}
+.form-submit{padding:0.95rem;background:var(--accent);color:white;border:none;border-radius:2px;font-size:0.78rem;letter-spacing:0.12em;text-transform:uppercase;font-weight:500;font-family:'DM Sans',sans-serif;cursor:pointer;transition:background 0.2s,transform 0.2s;margin-top:0.25rem}
 .form-submit:hover{background:#3a6fc4;transform:translateY(-1px)}
-.form-success{
-  display:none;padding:1rem;border:1px solid rgba(74,222,128,0.3);
-  border-radius:2px;color:rgba(74,222,128,0.9);font-size:0.85rem;
-  text-align:center;background:rgba(74,222,128,0.05);
-}
+.form-success{display:none;padding:0.9rem;border:1px solid rgba(74,222,128,0.3);border-radius:2px;color:rgba(74,222,128,0.85);font-size:0.83rem;text-align:center;background:rgba(74,222,128,0.05)}
 
-/* ── FOOTER ── */
-footer{
-  background:var(--navy3);border-top:1px solid rgba(255,255,255,0.05);
-  padding:2rem 4rem;display:flex;justify-content:space-between;align-items:center;
-}
-footer p{font-size:0.78rem;color:rgba(244,240,232,0.3)}
+/* FOOTER */
+footer{background:var(--navy3);border-top:1px solid rgba(255,255,255,0.05);padding:2rem 4rem;display:flex;justify-content:space-between;align-items:center}
+footer p{font-size:0.77rem;color:rgba(244,240,232,0.28)}
 .footer-links{display:flex;gap:2rem}
-.footer-links a{font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(244,240,232,0.3);text-decoration:none;transition:color 0.2s}
+.footer-links a{font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(244,240,232,0.28);text-decoration:none;transition:color 0.2s}
 .footer-links a:hover{color:rgba(244,240,232,0.7)}
 
-/* ── ANIMACIONES ── */
+/* ANIMACIONES */
 @keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
-.reveal{opacity:0;transform:translateY(32px);transition:opacity 0.7s ease,transform 0.7s ease}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity 0.65s ease,transform 0.65s ease}
 .reveal.visible{opacity:1;transform:none}
 
-/* ── RESPONSIVE ── */
+/* RESPONSIVE */
 @media(max-width:1024px){
-  nav{padding:1.2rem 2rem}
+  nav{padding:1.2rem 1.5rem}
   .nav-links{display:none}
   .hero{grid-template-columns:1fr}
   .hero-right{display:none}
-  .hero-left{padding:8rem 2rem 4rem}
-  section{padding:5rem 2rem}
+  .hero-left{padding:8rem 1.5rem 4rem}
+  section{padding:5rem 1.5rem}
   #proyectos{padding:5rem 0}
-  .proyectos-header{padding:0 2rem}
-  .netflix-track{padding:1rem 2rem 2rem}
-  .about-layout,.skills-intro,.trajectory-layout,.contact-layout{grid-template-columns:1fr;gap:3rem}
+  .proyectos-header{padding:0 1.5rem}
+  .netflix-track{padding:0.5rem 1.5rem 2rem}
+  .about-layout,.skills-intro,.trajectory-layout,.contact-layout{grid-template-columns:1fr;gap:2.5rem}
   .tools-visual-grid{grid-template-columns:repeat(2,1fr)}
   .form-row{grid-template-columns:1fr}
-  .contact-form-wrap{padding:1.5rem}
-  footer{flex-direction:column;gap:1rem;padding:1.5rem 2rem;text-align:center}
+  .certs-grid{grid-template-columns:1fr}
+  .cert-coming{grid-column:span 1}
+  footer{flex-direction:column;gap:1rem;padding:1.5rem;text-align:center}
   .skills-grid{grid-template-columns:1fr}
   .skills-intro{grid-template-columns:1fr}
 }
@@ -524,7 +336,7 @@ footer p{font-size:0.78rem;color:rgba(244,240,232,0.3)}
     <li><a href="#trayectoria">Trayectoria</a></li>
     <li><a href="#contacto">Contacto</a></li>
   </ul>
-  <a href="Brenda_Fernandez_Administrativa.pdf" class="nav-cta" target="_blank">↓ Descargar CV</a>
+  <a href="Brenda_Fernandez_Administrativa..pdf" class="nav-cta" target="_blank">↓ Descargar CV</a>
 </nav>
 
 <!-- HERO -->
@@ -547,14 +359,14 @@ footer p{font-size:0.78rem;color:rgba(244,240,232,0.3)}
     </h1>
     <p class="hero-desc">
       Especialista en administración y finanzas con experiencia en banca, hipotecas y gestión empresarial.
-      <strong>Combino una base sólida en gestión con herramientas de IA</strong> para optimizar procesos y aportar valor real desde el primer día.
+      <strong>Combino una base sólida en gestión con IA</strong> para optimizar procesos y aportar valor real desde el primer día.
     </p>
     <div class="hero-actions">
       <a href="#proyectos" class="btn-primary">Ver proyectos →</a>
-      <a href="Brenda_Fernandez_Administrativa.pdf" class="btn-outline" target="_blank">↓ Descargar CV</a>
+      <a href="Brenda_Fernandez_Administrativa..pdf" class="btn-outline" target="_blank">↓ Descargar CV</a>
     </div>
     <div class="hero-stats">
-      <div class="stat"><span class="num">4+</span><span class="lbl">Años de exp.</span></div>
+      <div class="stat"><span class="num">1+</span><span class="lbl">Años de exp.</span></div>
       <div class="stat"><span class="num">4</span><span class="lbl">Idiomas</span></div>
       <div class="stat"><span class="num">10+</span><span class="lbl">Herramientas IA</span></div>
       <div class="stat"><span class="num">B2</span><span class="lbl">Inglés</span></div>
@@ -563,8 +375,8 @@ footer p{font-size:0.78rem;color:rgba(244,240,232,0.3)}
   <div class="hero-right">
     <div class="hero-right-bg"></div>
     <div class="hero-grid"></div>
-    <div class="hero-circle" style="width:500px;height:500px;top:-100px;right:-100px"></div>
-    <div class="hero-circle" style="width:300px;height:300px;top:50px;right:50px"></div>
+    <div class="hero-circle" style="width:500px;height:500px;top:-150px;right:-150px"></div>
+    <div class="hero-circle" style="width:250px;height:250px;top:80px;right:80px"></div>
     <div class="hero-photo-frame">
       <img src="foto.jpg" alt="Brenda Fernández" onerror="this.outerHTML='<div class=hero-photo-placeholder>B</div>'"/>
     </div>
@@ -607,7 +419,7 @@ footer p{font-size:0.78rem;color:rgba(244,240,232,0.3)}
         </div>
       </div>
       <div class="sidebar-block">
-        <div class="sidebar-label">Especialidades core</div>
+        <div class="sidebar-label">Especialidades</div>
         <div class="sidebar-pills">
           <span class="s-pill">Administración</span>
           <span class="s-pill">Finanzas</span>
@@ -619,14 +431,14 @@ footer p{font-size:0.78rem;color:rgba(244,240,232,0.3)}
         </div>
       </div>
       <div class="sidebar-block" style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem">
-        <div><div class="sidebar-value">1+ <span>años</span></div><div class="sidebar-label" style="margin-top:0.25rem">Experiencia</div></div>
-        <div><div class="sidebar-value">10+</div><div class="sidebar-label" style="margin-top:0.25rem">Herramientas IA</div></div>
+        <div><div class="sidebar-value">1+ <span>años</span></div><div class="sidebar-label" style="margin-top:0.2rem">Experiencia</div></div>
+        <div><div class="sidebar-value">10+</div><div class="sidebar-label" style="margin-top:0.2rem">Herramientas IA</div></div>
       </div>
       <div class="sidebar-block">
         <div class="sidebar-label">Disponibilidad</div>
-        <div style="display:flex;align-items:center;gap:0.6rem;margin-top:0.25rem">
+        <div style="display:flex;align-items:center;gap:0.6rem;margin-top:0.2rem">
           <div style="width:8px;height:8px;border-radius:50%;background:#4ADE80;animation:blink 2s ease-in-out infinite"></div>
-          <span style="font-size:0.88rem;color:var(--slate)">Incorporación inmediata</span>
+          <span style="font-size:0.87rem;color:var(--slate)">Incorporación inmediata</span>
         </div>
       </div>
     </div>
@@ -645,41 +457,41 @@ footer p{font-size:0.78rem;color:rgba(244,240,232,0.3)}
       <div class="skill-item">
         <div class="skill-num">01</div>
         <h3>Administración y Finanzas</h3>
-        <p>Gestión contable, control presupuestario, elaboración de balances y reporting financiero. Excel avanzado con tablas dinámicas y automatizaciones.</p>
+        <p>Gestión contable, control presupuestario, elaboración de balances y reporting financiero. Excel avanzado con tablas dinámicas.</p>
       </div>
       <div class="skill-item">
         <div class="skill-num">02</div>
         <h3>Gestión Documental</h3>
-        <p>Validación y registro de expedientes hipotecarios, digitalización, auditoría y protección de datos bajo protocolos corporativos estrictos.</p>
+        <p>Validación y registro de expedientes hipotecarios, digitalización, auditoría y protección de datos bajo protocolos corporativos.</p>
       </div>
       <div class="skill-item">
         <div class="skill-num">03</div>
         <h3>Prompt Engineering</h3>
-        <p>Diseño de prompts avanzados para ChatGPT, Claude y Gemini, orientados a obtener resultados concretos y aplicables al entorno empresarial.</p>
+        <p>Diseño de prompts avanzados para LLMs, orientados a obtener resultados concretos y aplicables al entorno empresarial.</p>
         <span class="skill-badge-ia">+ IA</span>
       </div>
       <div class="skill-item">
         <div class="skill-num">04</div>
         <h3>Automatización de Procesos</h3>
-        <p>Creación de flujos de trabajo automatizados con Make y Zapier para optimizar tareas administrativas, notificaciones y gestión de datos.</p>
+        <p>Flujos de trabajo automatizados con Make para optimizar tareas administrativas, notificaciones y gestión de datos.</p>
         <span class="skill-badge-ia">+ IA</span>
       </div>
       <div class="skill-item">
         <div class="skill-num">05</div>
         <h3>Atención al Cliente</h3>
-        <p>Experiencia en entornos bancarios y de captación. Comunicación asertiva, gestión de incidencias y CRM en equipos de alto volumen.</p>
+        <p>Experiencia en entornos bancarios y de captación. Comunicación asertiva, gestión de incidencias y CRM.</p>
       </div>
       <div class="skill-item">
         <div class="skill-num">06</div>
         <h3>IA Generativa Aplicada</h3>
-        <p>Generación de avatares, contenido visual y textual con IA. Integración de herramientas generativas en flujos de trabajo reales y medibles.</p>
+        <p>Generación de avatares, contenido visual y textual con IA. Integración de herramientas generativas en flujos de trabajo reales.</p>
         <span class="skill-badge-ia">+ IA</span>
       </div>
     </div>
   </div>
 </section>
 
-<!-- HERRAMIENTAS — visual con iconos y filtros -->
+<!-- HERRAMIENTAS -->
 <section id="herramientas" class="reveal">
   <div class="section-eyebrow"><div class="ey-line" style="background:rgba(244,240,232,0.25)"></div><span class="ey-text" style="color:rgba(244,240,232,0.45)">Herramientas</span></div>
   <h2 style="color:var(--cream);margin-bottom:2.5rem">Con lo que <strong>trabajo</strong></h2>
@@ -690,81 +502,18 @@ footer p{font-size:0.78rem;color:rgba(244,240,232,0.3)}
     <button class="tool-cat-btn" data-cat="ofi">Ofimática</button>
   </div>
   <div class="tools-visual-grid" id="toolsGrid">
-    <!-- IA -->
-    <div class="tool-card" data-cat="ia" style="animation-delay:0.05s">
-      <div class="tool-icon">🤖</div>
-      <div class="tool-card-name">ChatGPT</div>
-      <div class="tool-level-bar"><div class="tool-level-fill" style="width:95%"></div></div>
-      <div class="tool-level-label">Experto</div>
-    </div>
-    <div class="tool-card" data-cat="ia" style="animation-delay:0.1s">
-      <div class="tool-icon">🧠</div>
-      <div class="tool-card-name">Claude</div>
-      <div class="tool-level-bar"><div class="tool-level-fill" style="width:92%"></div></div>
-      <div class="tool-level-label">Experto</div>
-    </div>
-    <div class="tool-card" data-cat="ia" style="animation-delay:0.15s">
-      <div class="tool-icon">✨</div>
-      <div class="tool-card-name">Gemini</div>
-      <div class="tool-level-bar"><div class="tool-level-fill" style="width:85%"></div></div>
-      <div class="tool-level-label">Avanzado</div>
-    </div>
-    <div class="tool-card" data-cat="ia" style="animation-delay:0.2s">
-      <div class="tool-icon">💼</div>
-      <div class="tool-card-name">Copilot</div>
-      <div class="tool-level-bar"><div class="tool-level-fill" style="width:88%"></div></div>
-      <div class="tool-level-label">Avanzado</div>
-    </div>
-    <div class="tool-card" data-cat="ia" style="animation-delay:0.25s">
-      <div class="tool-icon">🎨</div>
-      <div class="tool-card-name">Midjourney</div>
-      <div class="tool-level-bar"><div class="tool-level-fill" style="width:68%"></div></div>
-      <div class="tool-level-label">Intermedio</div>
-    </div>
-    <div class="tool-card" data-cat="ia" style="animation-delay:0.3s">
-      <div class="tool-icon">🔍</div>
-      <div class="tool-card-name">Perplexity</div>
-      <div class="tool-level-bar"><div class="tool-level-fill" style="width:72%"></div></div>
-      <div class="tool-level-label">Intermedio</div>
-    </div>
-    <!-- AUTOMATIZACIÓN -->
-    <div class="tool-card" data-cat="auto" style="animation-delay:0.1s">
-      <div class="tool-icon">⚙️</div>
-      <div class="tool-card-name">Make</div>
-      <div class="tool-level-bar"><div class="tool-level-fill" style="width:70%"></div></div>
-      <div class="tool-level-label">Intermedio · cert.</div>
-    </div>
-    <div class="tool-card" data-cat="auto" style="animation-delay:0.15s">
-      <div class="tool-icon">⚡</div>
-      <div class="tool-card-name">Zapier</div>
-      <div class="tool-level-bar"><div class="tool-level-fill" style="width:65%"></div></div>
-      <div class="tool-level-label">Intermedio</div>
-    </div>
-    <div class="tool-card" data-cat="auto" style="animation-delay:0.2s">
-      <div class="tool-icon">📋</div>
-      <div class="tool-card-name">Notion</div>
-      <div class="tool-level-bar"><div class="tool-level-fill" style="width:85%"></div></div>
-      <div class="tool-level-label">Avanzado</div>
-    </div>
-    <!-- OFIMÁTICA -->
-    <div class="tool-card" data-cat="ofi" style="animation-delay:0.1s">
-      <div class="tool-icon">📊</div>
-      <div class="tool-card-name">Excel Avanzado</div>
-      <div class="tool-level-bar"><div class="tool-level-fill" style="width:90%"></div></div>
-      <div class="tool-level-label">Avanzado</div>
-    </div>
-    <div class="tool-card" data-cat="ofi" style="animation-delay:0.15s">
-      <div class="tool-icon">📁</div>
-      <div class="tool-card-name">Google Workspace</div>
-      <div class="tool-level-bar"><div class="tool-level-fill" style="width:88%"></div></div>
-      <div class="tool-level-label">Avanzado</div>
-    </div>
-    <div class="tool-card" data-cat="ofi" style="animation-delay:0.2s">
-      <div class="tool-icon">🎭</div>
-      <div class="tool-card-name">Canva IA</div>
-      <div class="tool-level-bar"><div class="tool-level-fill" style="width:85%"></div></div>
-      <div class="tool-level-label">Avanzado</div>
-    </div>
+    <div class="tool-card" data-cat="ia" style="animation-delay:0.05s"><div class="tool-icon">🤖</div><div class="tool-card-name">ChatGPT</div><div class="tool-level-bar"><div class="tool-level-fill" style="width:98%"></div></div><div class="tool-level-label">Experto</div></div>
+    <div class="tool-card" data-cat="ia" style="animation-delay:0.1s"><div class="tool-icon">🧠</div><div class="tool-card-name">Claude</div><div class="tool-level-bar"><div class="tool-level-fill" style="width:98%"></div></div><div class="tool-level-label">Experto</div></div>
+    <div class="tool-card" data-cat="ia" style="animation-delay:0.15s"><div class="tool-icon">✨</div><div class="tool-card-name">Gemini</div><div class="tool-level-bar"><div class="tool-level-fill" style="width:95%"></div></div><div class="tool-level-label">Experto</div></div>
+    <div class="tool-card" data-cat="ia" style="animation-delay:0.2s"><div class="tool-icon">🔍</div><div class="tool-card-name">Perplexity</div><div class="tool-level-bar"><div class="tool-level-fill" style="width:95%"></div></div><div class="tool-level-label">Experto</div></div>
+    <div class="tool-card" data-cat="ia" style="animation-delay:0.25s"><div class="tool-icon">💼</div><div class="tool-card-name">Copilot</div><div class="tool-level-bar"><div class="tool-level-fill" style="width:90%"></div></div><div class="tool-level-label">Avanzado</div></div>
+    <div class="tool-card" data-cat="ia" style="animation-delay:0.3s"><div class="tool-icon">⚡</div><div class="tool-card-name">Grok</div><div class="tool-level-bar"><div class="tool-level-fill" style="width:88%"></div></div><div class="tool-level-label">Avanzado</div></div>
+    <div class="tool-card" data-cat="ia" style="animation-delay:0.35s"><div class="tool-icon">🎨</div><div class="tool-card-name">Midjourney</div><div class="tool-level-bar"><div class="tool-level-fill" style="width:70%"></div></div><div class="tool-level-label">Intermedio</div></div>
+    <div class="tool-card" data-cat="auto" style="animation-delay:0.1s"><div class="tool-icon">⚙️</div><div class="tool-card-name">Make</div><div class="tool-level-bar"><div class="tool-level-fill" style="width:100%"></div></div><div class="tool-level-label">Foundation ✓</div></div>
+    <div class="tool-card" data-cat="auto" style="animation-delay:0.15s"><div class="tool-icon">📋</div><div class="tool-card-name">Notion</div><div class="tool-level-bar"><div class="tool-level-fill" style="width:88%"></div></div><div class="tool-level-label">Avanzado</div></div>
+    <div class="tool-card" data-cat="ofi" style="animation-delay:0.1s"><div class="tool-icon">📊</div><div class="tool-card-name">Excel Avanzado</div><div class="tool-level-bar"><div class="tool-level-fill" style="width:92%"></div></div><div class="tool-level-label">Avanzado</div></div>
+    <div class="tool-card" data-cat="ofi" style="animation-delay:0.15s"><div class="tool-icon">📁</div><div class="tool-card-name">Google Workspace</div><div class="tool-level-bar"><div class="tool-level-fill" style="width:90%"></div></div><div class="tool-level-label">Avanzado</div></div>
+    <div class="tool-card" data-cat="ofi" style="animation-delay:0.2s"><div class="tool-icon">🎭</div><div class="tool-card-name">Canva IA</div><div class="tool-level-bar"><div class="tool-level-fill" style="width:88%"></div></div><div class="tool-level-label">Avanzado</div></div>
   </div>
 </section>
 
@@ -778,117 +527,93 @@ footer p{font-size:0.78rem;color:rgba(244,240,232,0.3)}
     <button class="netflix-prev" id="prevBtn">‹</button>
     <div class="netflix-track" id="netflixTrack">
 
-      <!-- Tarjeta 1: Avatar vídeo -->
+      <!-- Avatar IA — vídeo -->
       <div class="project-card video-card">
-        <div class="project-media">
-          <video id="avatarVideo" loop playsinline preload="metadata" style="display:none">
+        <div class="project-media" id="avatarMedia">
+          <video id="avatarVideo" loop playsinline preload="metadata">
             <source src="avatar.mp4" type="video/mp4">
           </video>
-          <div class="project-media-placeholder" id="avatarPlaceholder">
-            <div class="pm-grid"></div>
-            <div class="pm-icon">🎬</div>
-          </div>
+          <img id="avatarThumb" src="foto.jpg" alt="Avatar IA" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top" onerror="this.style.display='none'"/>
+          <div class="project-media-overlay"></div>
           <button class="play-btn" id="playBtn" onclick="toggleVideo()">▶</button>
         </div>
         <div class="project-body">
           <div class="project-type">IA Generativa</div>
           <h3>Avatar IA Personal</h3>
-          <p>Avatar realista generado con IA a partir de mi voz e imagen propia. Muestra el potencial de los modelos generativos aplicados a la comunicación y la marca personal digital.</p>
-          <div class="project-tags">
-            <span class="tag">IA Generativa</span><span class="tag">Avatar IA</span><span class="tag">Síntesis de voz</span>
-          </div>
+          <p>Avatar realista generado con IA a partir de mi voz e imagen. Muestra el potencial de los modelos generativos aplicados a la comunicación y la marca personal digital.</p>
+          <div class="project-tags"><span class="tag">IA Generativa</span><span class="tag">Avatar IA</span><span class="tag">Síntesis de voz</span></div>
         </div>
       </div>
 
-      <!-- Tarjeta 2: TFG -->
+      <!-- TFG -->
       <div class="project-card">
         <div class="project-media">
-          <div class="project-media-placeholder">
-            <div class="pm-grid"></div>
-            <div class="pm-icon">📄</div>
-          </div>
+          <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600&q=80" alt="Plan empresarial" onerror="this.style.display='none'"/>
+          <div class="project-media-overlay"></div>
         </div>
         <div class="project-body">
           <div class="project-type">TFG · Administración de Empresas</div>
           <h3>Enigma Room, S.L. — Plan Empresarial</h3>
           <p>Plan empresarial completo de 113 páginas: marketing, análisis de mercado, constitución legal, plan de inversión, tesorería y análisis de rentabilidad.</p>
-          <div class="project-tags">
-            <span class="tag">Plan empresarial</span><span class="tag">Marketing</span><span class="tag">Finanzas</span><span class="tag">Contabilidad</span>
-          </div>
+          <div class="project-tags"><span class="tag">Plan empresarial</span><span class="tag">Marketing</span><span class="tag">Finanzas</span><span class="tag">Contabilidad</span></div>
           <a href="TFG_BRENDA.pdf" class="project-link" target="_blank">↓ Descargar TFG</a>
         </div>
       </div>
 
-      <!-- Tarjeta 3: Excel -->
+      <!-- Excel -->
       <div class="project-card">
         <div class="project-media">
-          <div class="project-media-placeholder">
-            <div class="pm-grid"></div>
-            <div class="pm-icon">📊</div>
-          </div>
+          <img src="https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=600&q=80" alt="Excel contabilidad" onerror="this.style.display='none'"/>
+          <div class="project-media-overlay"></div>
         </div>
         <div class="project-body">
           <div class="project-type">Excel · Finanzas</div>
           <h3>Modelo de Contabilidad — Enigma Room</h3>
           <p>Hoja de cálculo avanzada con gestión contable, tablas dinámicas y fórmulas complejas para el control financiero de una empresa real.</p>
-          <div class="project-tags">
-            <span class="tag">Excel Avanzado</span><span class="tag">Tablas dinámicas</span><span class="tag">Contabilidad</span>
-          </div>
+          <div class="project-tags"><span class="tag">Excel Avanzado</span><span class="tag">Tablas dinámicas</span><span class="tag">Contabilidad</span></div>
           <a href="Contabilidad.xlsx" class="project-link" target="_blank">↓ Descargar Excel</a>
         </div>
       </div>
 
-      <!-- Tarjeta 4: Prompts -->
+      <!-- Prompts -->
       <div class="project-card">
         <div class="project-media">
-          <div class="project-media-placeholder">
-            <div class="pm-grid"></div>
-            <div class="pm-icon">💬</div>
-          </div>
+          <img src="https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=600&q=80" alt="Prompt engineering" onerror="this.style.display='none'"/>
+          <div class="project-media-overlay"></div>
         </div>
         <div class="project-body">
           <div class="project-type">Prompting · Automatización</div>
           <h3>Sistema de Prompts para Atención al Cliente</h3>
-          <p>Diseño de prompts para automatizar respuestas de soporte con coherencia de marca y tono empático. Reduce el tiempo de respuesta hasta un 70%.</p>
-          <div class="project-tags">
-            <span class="tag">Claude</span><span class="tag">ChatGPT</span><span class="tag">Notion</span>
-          </div>
+          <p>Prompts para automatizar respuestas de soporte con coherencia de marca y tono empático. Reduce el tiempo de respuesta hasta un 70%.</p>
+          <div class="project-tags"><span class="tag">Claude</span><span class="tag">ChatGPT</span><span class="tag">Notion</span></div>
         </div>
       </div>
 
-      <!-- Tarjeta 5: Pipeline -->
+      <!-- Pipeline -->
       <div class="project-card">
         <div class="project-media">
-          <div class="project-media-placeholder">
-            <div class="pm-grid"></div>
-            <div class="pm-icon">🚀</div>
-          </div>
+          <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=600&q=80" alt="Contenido IA" onerror="this.style.display='none'"/>
+          <div class="project-media-overlay"></div>
         </div>
         <div class="project-body">
           <div class="project-type">Contenido · IA</div>
           <h3>Pipeline de Contenido con IA Generativa</h3>
-          <p>Flujo completo para generar, editar y publicar contenido en redes sociales con modelos de lenguaje e imagen. Desde el brief hasta la publicación.</p>
-          <div class="project-tags">
-            <span class="tag">ChatGPT</span><span class="tag">Midjourney</span><span class="tag">Make</span><span class="tag">Canva IA</span>
-          </div>
+          <p>Flujo completo para generar, editar y publicar contenido en redes sociales. Desde el brief hasta la publicación, automatizado con Make.</p>
+          <div class="project-tags"><span class="tag">ChatGPT</span><span class="tag">Midjourney</span><span class="tag">Make</span><span class="tag">Canva IA</span></div>
         </div>
       </div>
 
-      <!-- Tarjeta 6: Agente -->
+      <!-- Agente -->
       <div class="project-card">
         <div class="project-media">
-          <div class="project-media-placeholder">
-            <div class="pm-grid"></div>
-            <div class="pm-icon">🔎</div>
-          </div>
+          <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=600&q=80" alt="Agente IA" onerror="this.style.display='none'"/>
+          <div class="project-media-overlay"></div>
         </div>
         <div class="project-body">
           <div class="project-type">Automatización · Investigación</div>
           <h3>Agente de Investigación Automatizado</h3>
-          <p>Agente IA que busca, sintetiza y presenta información de múltiples fuentes en segundos. Ideal para análisis de mercado y due diligence administrativo.</p>
-          <div class="project-tags">
-            <span class="tag">Perplexity</span><span class="tag">Claude</span><span class="tag">Zapier</span><span class="tag">Google Docs</span>
-          </div>
+          <p>Agente IA que busca, sintetiza y presenta información de múltiples fuentes en segundos. Ideal para análisis de mercado y due diligence.</p>
+          <div class="project-tags"><span class="tag">Perplexity</span><span class="tag">Claude</span><span class="tag">Google Docs</span></div>
         </div>
       </div>
 
@@ -904,55 +629,45 @@ footer p{font-size:0.78rem;color:rgba(244,240,232,0.3)}
     <h2>Experiencia y <strong>formación</strong></h2>
   </div>
   <div class="trajectory-layout">
-
-    <!-- Experiencia -->
     <div>
       <div class="traj-col-title">Experiencia laboral</div>
-
       <div class="timeline-item">
-        <div class="tl-date">2025<br>2026</div>
+        <div class="tl-date">2025–2026</div>
         <div class="tl-content">
           <h3>Atención Rápida</h3>
           <div class="tl-company">CaixaBank</div>
           <p>Optimización del flujo de atención, gestión operativa de cajeros, atención al cliente en ventanilla y soporte administrativo en la operativa diaria de la sucursal.</p>
         </div>
       </div>
-
       <div class="timeline-item">
         <div class="tl-date">2026<br>Mar–Abr</div>
         <div class="tl-content">
           <h3>Auxiliar Administrativa</h3>
           <div class="tl-company">Gescove — Gestoría de Fincas</div>
-          <p>Gestión contable de comunidades de vecinos, coordinación de incidencias urgentes y participación en reuniones con propietarios. Entorno de alta carga de trabajo y responsabilidad directa sobre cuentas activas.</p>
+          <p>Gestión contable de comunidades de vecinos, coordinación de incidencias urgentes y participación en reuniones con propietarios. Alta responsabilidad directa sobre cuentas activas.</p>
           <span class="tl-note">Contabilidad · Comunidades · Incidencias</span>
         </div>
       </div>
-
       <div class="timeline-item">
         <div class="tl-date">2024</div>
         <div class="tl-content">
           <h3>Grabadora de Datos — Hipotecario</h3>
           <div class="tl-company">FK2</div>
-          <p>Gestión documental avanzada de expedientes hipotecarios, auditoría de datos técnicos y legales, coordinación interdepartamental y protección de datos sensibles bajo protocolos de seguridad estrictos.</p>
+          <p>Gestión documental avanzada de expedientes hipotecarios, auditoría de datos técnicos y legales, coordinación interdepartamental y protección de datos sensibles.</p>
         </div>
       </div>
-
       <div class="timeline-item">
         <div class="tl-date">2022<br>Mar–Jun</div>
         <div class="tl-content">
           <h3>Auxiliar Administrativa — Prácticas</h3>
           <div class="tl-company">Moreno y Fernández Asesores</div>
-          <p>Prácticas en asesoría: gestión documental, atención a clientes empresariales, apoyo en trámites administrativos y manejo de herramientas de gestión de despacho.</p>
+          <p>Gestión documental, atención a clientes empresariales y apoyo en trámites administrativos en asesoría.</p>
           <span class="tl-note">Prácticas de Grado Superior</span>
         </div>
       </div>
-
     </div>
-
-    <!-- Formación -->
     <div>
       <div class="traj-col-title">Formación</div>
-
       <div class="edu-card">
         <div class="edu-period">2026</div>
         <h3>Programa Superior en Inteligencia Artificial</h3>
@@ -960,7 +675,6 @@ footer p{font-size:0.78rem;color:rgba(244,240,232,0.3)}
         <p>IA aplicada, prompting, herramientas generativas y automatización con IA en entornos empresariales.</p>
         <div class="edu-badge">🎓 27 créditos universitarios · Universidad de Nebrija</div>
       </div>
-
       <div class="edu-card">
         <div class="edu-period">2020 — 2022</div>
         <h3>Grado Superior en Administración y Finanzas</h3>
@@ -968,27 +682,39 @@ footer p{font-size:0.78rem;color:rgba(244,240,232,0.3)}
         <p>Gestión empresarial, contabilidad, administración de recursos y finanzas corporativas.</p>
       </div>
 
+      <!-- CERTIFICADOS con visual -->
       <div style="margin-top:2rem">
         <div class="traj-col-title">Certificados</div>
-        <div class="cert-row">
-          <div class="cert-main">
-            <h4>Copilot: domina la IA en Microsoft 365</h4>
-            <div class="cert-meta">Microsoft · LinkedIn Learning · Abril 2026</div>
+        <div class="certs-grid">
+
+          <!-- Copilot -->
+          <div class="cert-card-visual">
+            <div class="cert-badge-area">
+              <div class="copilot-badge">
+                <div class="copilot-badge-icon">✦</div>
+                <div class="copilot-badge-text">Copilot</div>
+              </div>
+            </div>
+            <div class="cert-info-area">
+              <h4>Copilot: domina la IA en Microsoft 365</h4>
+              <div class="cert-meta">Microsoft · LinkedIn Learning · Abril 2026</div>
+              <a href="certificado_copilot.pdf" class="cert-link-btn" target="_blank">↓ Ver certificado</a>
+            </div>
           </div>
-          <a href="certificado_copilot.pdf" class="cert-btn" target="_blank">↓ Ver</a>
-        </div>
-        <div class="cert-row">
-          <div class="cert-main">
-            <h4>Make Foundation</h4>
-            <div class="cert-meta">Make Academy · Abril 2026</div>
+
+          <!-- Make -->
+          <div class="cert-card-visual">
+            <div class="cert-badge-area">
+              <img src="make-foundation_1.png" alt="Make Foundation"/>
+            </div>
+            <div class="cert-info-area">
+              <h4>Make Foundation</h4>
+              <div class="cert-meta">Make Academy · Abril 2026</div>
+              <a href="certificado_make.pdf" class="cert-link-btn" target="_blank">↓ Ver certificado</a>
+            </div>
           </div>
-          <a href="certificado_make.pdf" class="cert-btn" target="_blank">↓ Ver</a>
-        </div>
-        <div class="cert-row" style="opacity:0.4;border-style:dashed">
-          <div class="cert-main">
-            <h4>+ Próximos certificados</h4>
-            <div class="cert-meta">En curso</div>
-          </div>
+
+          <div class="cert-coming">+ Próximos certificados en curso</div>
         </div>
       </div>
     </div>
@@ -1002,42 +728,24 @@ footer p{font-size:0.78rem;color:rgba(244,240,232,0.3)}
   <div class="contact-circle" style="width:300px;height:300px;bottom:-100px;left:-100px"></div>
   <div style="position:relative;z-index:1">
     <div class="section-eyebrow" style="margin-bottom:0.5rem">
-      <div class="ey-line" style="background:rgba(244,240,232,0.2)"></div>
+      <div class="ey-line" style="background:rgba(244,240,232,0.18)"></div>
       <span class="ey-text" style="color:rgba(244,240,232,0.4)">Contacto</span>
     </div>
     <h2>¿<strong>Hablamos</strong>?</h2>
   </div>
   <div class="contact-layout">
-
-    <!-- Izquierda -->
     <div>
       <p class="contact-desc">Estoy abierta a nuevas oportunidades en administración, finanzas y proyectos donde pueda aportar mi perfil híbrido. Incorporación inmediata.</p>
       <div class="contact-cards">
-        <a href="mailto:brendafernandezsanchez5@gmail.com" class="contact-card">
-          <div class="cc-icon">✉</div>
-          <div class="cc-info">
-            <div class="cc-label">Email</div>
-            <div class="cc-value">brendafernandezsanchez5@gmail.com</div>
-          </div>
-          <div class="cc-arrow">→</div>
-        </a>
         <a href="https://www.linkedin.com/in/brenda-fern%C3%A1ndez-s%C3%A1nchez-659489241" class="contact-card" target="_blank">
-          <div class="cc-icon" style="font-size:0.9rem;font-weight:600;font-family:'DM Sans',sans-serif">in</div>
+          <div class="cc-icon" style="font-size:0.85rem;font-weight:600">in</div>
           <div class="cc-info">
             <div class="cc-label">LinkedIn</div>
             <div class="cc-value">Brenda Fernández Sánchez</div>
           </div>
           <div class="cc-arrow">→</div>
         </a>
-        <a href="https://github.com/brenda-fernandez02" class="contact-card" target="_blank">
-          <div class="cc-icon">⌥</div>
-          <div class="cc-info">
-            <div class="cc-label">GitHub</div>
-            <div class="cc-value">brenda-fernandez02</div>
-          </div>
-          <div class="cc-arrow">→</div>
-        </a>
-        <a href="Brenda_Fernandez_Administrativa.pdf" class="contact-card" target="_blank">
+        <a href="Brenda_Fernandez_Administrativa..pdf" class="contact-card" target="_blank">
           <div class="cc-icon">📄</div>
           <div class="cc-info">
             <div class="cc-label">Curriculum Vitae</div>
@@ -1047,22 +755,13 @@ footer p{font-size:0.78rem;color:rgba(244,240,232,0.3)}
         </a>
       </div>
     </div>
-
-    <!-- Formulario -->
     <div class="contact-form-wrap">
       <div class="form-title">Escríbeme</div>
       <div class="form-subtitle">Te respondo en menos de 24 horas</div>
-      <https://formspree.io/f/xojypzdq-->
-      <form class="contact-form" action="https://formspree.io/f/TU_ID_AQUI" method="POST" id="contactForm">
+      <form class="contact-form" action="https://formspree.io/f/xojypzdq" method="POST" id="contactForm">
         <div class="form-row">
-          <div class="form-field">
-            <label>Nombre</label>
-            <input type="text" name="name" placeholder="Tu nombre" required/>
-          </div>
-          <div class="form-field">
-            <label>Email</label>
-            <input type="email" name="email" placeholder="tu@email.com" required/>
-          </div>
+          <div class="form-field"><label>Nombre</label><input type="text" name="name" placeholder="Tu nombre" required/></div>
+          <div class="form-field"><label>Email</label><input type="email" name="email" placeholder="tu@email.com" required/></div>
         </div>
         <div class="form-field">
           <label>Motivo</label>
@@ -1074,10 +773,7 @@ footer p{font-size:0.78rem;color:rgba(244,240,232,0.3)}
             <option>Consulta general</option>
           </select>
         </div>
-        <div class="form-field">
-          <label>Mensaje</label>
-          <textarea name="message" rows="5" placeholder="Cuéntame en qué puedo ayudarte..." required></textarea>
-        </div>
+        <div class="form-field"><label>Mensaje</label><textarea name="message" rows="4" placeholder="Cuéntame en qué puedo ayudarte..." required></textarea></div>
         <button type="submit" class="form-submit" id="submitBtn">Enviar mensaje →</button>
         <div class="form-success" id="formSuccess">✓ Mensaje enviado. ¡Te respondo pronto!</div>
       </form>
@@ -1088,128 +784,87 @@ footer p{font-size:0.78rem;color:rgba(244,240,232,0.3)}
 <footer>
   <p>© 2026 Brenda Fernández — Portfolio</p>
   <div class="footer-links">
-    <a href="mailto:brendafernandezsanchez5@gmail.com">Email</a>
     <a href="https://www.linkedin.com/in/brenda-fern%C3%A1ndez-s%C3%A1nchez-659489241" target="_blank">LinkedIn</a>
-    <a href="https://github.com/brenda-fernandez02" target="_blank">GitHub</a>
+    <a href="Brenda_Fernandez_Administrativa..pdf" target="_blank">CV</a>
   </div>
 </footer>
 
 <script>
-// ── CURSOR (más rápido) ──
-const cur = document.getElementById('cur');
-const curRing = document.getElementById('curRing');
+// CURSOR más rápido
+const cur=document.getElementById('cur');
+const curRing=document.getElementById('curRing');
 let mx=0,my=0,rx=0,ry=0;
-document.addEventListener('mousemove',(e)=>{
-  mx=e.clientX; my=e.clientY;
-  cur.style.transform=`translate(${mx-5}px,${my-5}px)`;
-});
-function animRing(){
-  rx+=(mx-rx)*0.22; // más rápido: era 0.12
-  ry+=(my-ry)*0.22;
-  curRing.style.transform=`translate(${rx-16}px,${ry-16}px)`;
-  requestAnimationFrame(animRing);
-}
+document.addEventListener('mousemove',(e)=>{mx=e.clientX;my=e.clientY;cur.style.transform=`translate(${mx-5}px,${my-5}px)`});
+function animRing(){rx+=(mx-rx)*0.22;ry+=(my-ry)*0.22;curRing.style.transform=`translate(${rx-16}px,${ry-16}px)`;requestAnimationFrame(animRing)}
 animRing();
 document.querySelectorAll('a,button').forEach(el=>{
-  el.addEventListener('mouseenter',()=>{
-    cur.style.background='var(--accent)';
-    curRing.style.borderColor='var(--accent)';
-    curRing.style.transform+=' scale(1.4)';
-  });
-  el.addEventListener('mouseleave',()=>{
-    cur.style.background='var(--navy)';
-    curRing.style.borderColor='var(--navy)';
-  });
+  el.addEventListener('mouseenter',()=>{cur.style.background='var(--accent)';curRing.style.borderColor='var(--accent)'});
+  el.addEventListener('mouseleave',()=>{cur.style.background='var(--navy)';curRing.style.borderColor='var(--navy)'});
 });
 
-// ── REVEAL ON SCROLL ──
-const reveals=document.querySelectorAll('.reveal');
-const observer=new IntersectionObserver((entries)=>{
-  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target)}});
-},{threshold:0.08});
-reveals.forEach(r=>observer.observe(r));
+// REVEAL
+const observer=new IntersectionObserver((e)=>{e.forEach(r=>{if(r.isIntersecting){r.target.classList.add('visible');observer.unobserve(r.target)}})},{threshold:0.08});
+document.querySelectorAll('.reveal').forEach(r=>observer.observe(r));
 
-// ── FILTROS DE HERRAMIENTAS ──
-const catBtns=document.querySelectorAll('.tool-cat-btn');
-const toolCards=document.querySelectorAll('.tool-card');
-catBtns.forEach(btn=>{
+// FILTROS HERRAMIENTAS
+document.querySelectorAll('.tool-cat-btn').forEach(btn=>{
   btn.addEventListener('click',()=>{
-    catBtns.forEach(b=>b.classList.remove('active'));
+    document.querySelectorAll('.tool-cat-btn').forEach(b=>b.classList.remove('active'));
     btn.classList.add('active');
     const cat=btn.dataset.cat;
-    let delay=0;
-    toolCards.forEach(card=>{
+    let d=0;
+    document.querySelectorAll('.tool-card').forEach(card=>{
       const show=cat==='all'||card.dataset.cat===cat;
       card.style.display=show?'flex':'none';
-      if(show){
-        card.style.animation='none';
-        card.offsetHeight;
-        card.style.animationDelay=`${delay}s`;
-        card.style.animation='fadeIn 0.35s ease forwards';
-        delay+=0.05;
-      }
+      if(show){card.style.animation='none';card.offsetHeight;card.style.animationDelay=`${d}s`;card.style.animation='fadeIn 0.35s ease forwards';d+=0.05}
     });
   });
 });
 
-// ── CARRUSEL NETFLIX ──
+// CARRUSEL
 const track=document.getElementById('netflixTrack');
 const prevBtn=document.getElementById('prevBtn');
 const nextBtn=document.getElementById('nextBtn');
-const cardW=()=>track.querySelector('.project-card').offsetWidth+24;
+const cardW=()=>(track.querySelector('.project-card')||{offsetWidth:340}).offsetWidth+20;
 prevBtn.addEventListener('click',()=>track.scrollBy({left:-cardW()*2,behavior:'smooth'}));
 nextBtn.addEventListener('click',()=>track.scrollBy({left:cardW()*2,behavior:'smooth'}));
-// ocultar botones en extremos
 track.addEventListener('scroll',()=>{
-  prevBtn.style.opacity=track.scrollLeft<20?'0.3':'1';
-  nextBtn.style.opacity=track.scrollLeft+track.offsetWidth>=track.scrollWidth-20?'0.3':'1';
+  prevBtn.style.opacity=track.scrollLeft<20?'0.35':'1';
+  nextBtn.style.opacity=track.scrollLeft+track.offsetWidth>=track.scrollWidth-20?'0.35':'1';
 });
-prevBtn.style.opacity='0.3';
+prevBtn.style.opacity='0.35';
 
-// ── VÍDEO AVATAR ──
+// VÍDEO AVATAR
 function toggleVideo(){
   const video=document.getElementById('avatarVideo');
-  const placeholder=document.getElementById('avatarPlaceholder');
+  const thumb=document.getElementById('avatarThumb');
   const btn=document.getElementById('playBtn');
   if(video.paused||video.ended){
     video.style.display='block';
-    placeholder.style.display='none';
-    video.play().catch(()=>{
-      // si no encuentra el archivo, mostramos placeholder
+    if(thumb)thumb.style.display='none';
+    video.play().then(()=>{btn.textContent='⏸'}).catch(()=>{
       video.style.display='none';
-      placeholder.style.display='flex';
+      if(thumb)thumb.style.display='block';
     });
-    btn.textContent='⏸';
   } else {
     video.pause();
     btn.textContent='▶';
   }
 }
 
-// ── FORMULARIO FORMSPREE ──
+// FORMULARIO
 const form=document.getElementById('contactForm');
 const success=document.getElementById('formSuccess');
 const submitBtn=document.getElementById('submitBtn');
 if(form){
   form.addEventListener('submit',async(e)=>{
     e.preventDefault();
-    submitBtn.textContent='Enviando...';
-    submitBtn.style.opacity='0.7';
+    submitBtn.textContent='Enviando...';submitBtn.style.opacity='0.7';
     try{
       const res=await fetch(form.action,{method:'POST',body:new FormData(form),headers:{Accept:'application/json'}});
-      if(res.ok){
-        form.reset();
-        success.style.display='block';
-        submitBtn.textContent='¡Enviado! ✓';
-        setTimeout(()=>{success.style.display='none';submitBtn.textContent='Enviar mensaje →';submitBtn.style.opacity='1'},5000);
-      } else {
-        submitBtn.textContent='Error — inténtalo de nuevo';
-        submitBtn.style.opacity='1';
-      }
-    } catch(err){
-      submitBtn.textContent='Error de conexión';
-      submitBtn.style.opacity='1';
-    }
+      if(res.ok){form.reset();success.style.display='block';submitBtn.textContent='¡Enviado! ✓';setTimeout(()=>{success.style.display='none';submitBtn.textContent='Enviar mensaje →';submitBtn.style.opacity='1'},5000)}
+      else{submitBtn.textContent='Error — inténtalo de nuevo';submitBtn.style.opacity='1'}
+    }catch{submitBtn.textContent='Error de conexión';submitBtn.style.opacity='1'}
   });
 }
 </script>
