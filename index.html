@@ -530,10 +530,10 @@ footer p{font-size:0.77rem;color:rgba(244,240,232,0.28)}
       <!-- Avatar IA — vídeo -->
       <div class="project-card video-card">
         <div class="project-media" id="avatarMedia">
-          <video id="avatarVideo" loop playsinline preload="metadata">
+          <!-- preload=auto carga el primer frame como thumbnail sin foto encima -->
+          <video id="avatarVideo" loop playsinline preload="auto" style="width:100%;height:100%;object-fit:contain;background:#000;display:block">
             <source src="avatar.mp4" type="video/mp4">
           </video>
-          <img id="avatarThumb" src="foto.jpg" alt="Avatar IA" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top" onerror="this.style.display='none'"/>
           <div class="project-media-overlay"></div>
           <button class="play-btn" id="playBtn" onclick="toggleVideo()">▶</button>
         </div>
@@ -834,21 +834,14 @@ track.addEventListener('scroll',()=>{
 });
 prevBtn.style.opacity='0.35';
 
-// VÍDEO AVATAR
+// VÍDEO AVATAR — simplificado, el vídeo ya se ve de fondo parado
 function toggleVideo(){
   const video=document.getElementById('avatarVideo');
-  const thumb=document.getElementById('avatarThumb');
   const btn=document.getElementById('playBtn');
   if(video.paused||video.ended){
-    video.style.display='block';
-    if(thumb)thumb.style.display='none';
-    video.play().then(()=>{btn.textContent='⏸'}).catch(()=>{
-      video.style.display='none';
-      if(thumb)thumb.style.display='block';
-    });
+    video.play().then(()=>{btn.textContent='⏸'}).catch(()=>{btn.textContent='▶'});
   } else {
-    video.pause();
-    btn.textContent='▶';
+    video.pause();btn.textContent='▶';
   }
 }
 
@@ -867,6 +860,11 @@ if(form){
     }catch{submitBtn.textContent='Error de conexión';submitBtn.style.opacity='1'}
   });
 }
+</script>
+
+<!-- Chatbase chatbot -->
+<script>
+(function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="iN0moiTO7qqHP2qdaosSr";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
 </script>
 </body>
 </html>
