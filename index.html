@@ -678,24 +678,30 @@ footer p{font-size:0.77rem;color:rgba(244,240,232,0.28)}
   <div class="section-eyebrow"><div class="ey-line" style="background:rgba(244,240,232,0.25)"></div><span class="ey-text" style="color:rgba(244,240,232,0.45)">Herramientas</span></div>
   <h2 style="color:var(--cream);margin-bottom:2.5rem">Con lo que <strong>trabajo</strong></h2>
   <div class="tools-categories">
-    <button class="tool-cat-btn active" data-cat="all">Todas</button>
+    <button class="tool-cat-btn active" data-cat="ofi">Ofimática</button>
     <button class="tool-cat-btn" data-cat="ia">Inteligencia Artificial</button>
     <button class="tool-cat-btn" data-cat="auto">Automatización</button>
-    <button class="tool-cat-btn" data-cat="ofi">Ofimática</button>
+    <button class="tool-cat-btn" data-cat="all">Todas</button>
   </div>
   <div class="tools-visual-grid" id="toolsGrid">
-    <div class="tool-card" data-cat="ia" style="animation-delay:0.05s"><div class="tool-icon">🤖</div><div class="tool-card-name">ChatGPT</div><div class="tool-level-bar"><div class="tool-level-fill" style="width:98%"></div></div><div class="tool-level-label">Experto</div></div>
-    <div class="tool-card" data-cat="ia" style="animation-delay:0.1s"><div class="tool-icon">🧠</div><div class="tool-card-name">Claude</div><div class="tool-level-bar"><div class="tool-level-fill" style="width:98%"></div></div><div class="tool-level-label">Experto</div></div>
-    <div class="tool-card" data-cat="ia" style="animation-delay:0.15s"><div class="tool-icon">✨</div><div class="tool-card-name">Gemini</div><div class="tool-level-bar"><div class="tool-level-fill" style="width:95%"></div></div><div class="tool-level-label">Experto</div></div>
-    <div class="tool-card" data-cat="ia" style="animation-delay:0.2s"><div class="tool-icon">🔍</div><div class="tool-card-name">Perplexity</div><div class="tool-level-bar"><div class="tool-level-fill" style="width:95%"></div></div><div class="tool-level-label">Experto</div></div>
-    <div class="tool-card" data-cat="ia" style="animation-delay:0.25s"><div class="tool-icon">💼</div><div class="tool-card-name">Copilot</div><div class="tool-level-bar"><div class="tool-level-fill" style="width:90%"></div></div><div class="tool-level-label">Avanzado</div></div>
-    <div class="tool-card" data-cat="ia" style="animation-delay:0.3s"><div class="tool-icon">⚡</div><div class="tool-card-name">Grok</div><div class="tool-level-bar"><div class="tool-level-fill" style="width:88%"></div></div><div class="tool-level-label">Avanzado</div></div>
-    <div class="tool-card" data-cat="ia" style="animation-delay:0.35s"><div class="tool-icon">🎨</div><div class="tool-card-name">Midjourney</div><div class="tool-level-bar"><div class="tool-level-fill" style="width:70%"></div></div><div class="tool-level-label">Intermedio</div></div>
-    <div class="tool-card" data-cat="auto" style="animation-delay:0.1s"><div class="tool-icon">⚙️</div><div class="tool-card-name">Make</div><div class="tool-level-bar"><div class="tool-level-fill" style="width:100%"></div></div><div class="tool-level-label">Foundation ✓</div></div>
-    <div class="tool-card" data-cat="auto" style="animation-delay:0.15s"><div class="tool-icon">📋</div><div class="tool-card-name">Notion</div><div class="tool-level-bar"><div class="tool-level-fill" style="width:88%"></div></div><div class="tool-level-label">Avanzado</div></div>
-    <div class="tool-card" data-cat="ofi" style="animation-delay:0.1s"><div class="tool-icon">📊</div><div class="tool-card-name">Excel Avanzado</div><div class="tool-level-bar"><div class="tool-level-fill" style="width:92%"></div></div><div class="tool-level-label">Avanzado</div></div>
-    <div class="tool-card" data-cat="ofi" style="animation-delay:0.15s"><div class="tool-icon">📁</div><div class="tool-card-name">Google Workspace</div><div class="tool-level-bar"><div class="tool-level-fill" style="width:90%"></div></div><div class="tool-level-label">Avanzado</div></div>
-    <div class="tool-card" data-cat="ofi" style="animation-delay:0.2s"><div class="tool-icon">🎭</div><div class="tool-card-name">Canva IA</div><div class="tool-level-bar"><div class="tool-level-fill" style="width:88%"></div></div><div class="tool-level-label">Avanzado</div></div>
+    <!-- OFIMÁTICA — primera en salir, da peso a la administración -->
+    <div class="tool-card" data-cat="ofi" style="animation-delay:0.05s"><div class="tool-icon">📊</div><div class="tool-card-name">Excel Avanzado</div><div class="tool-level-bar"><div class="tool-level-fill" style="width:92%"></div></div><div class="tool-level-label">Avanzado</div></div>
+    <div class="tool-card" data-cat="ofi" style="animation-delay:0.1s"><div class="tool-icon">📁</div><div class="tool-card-name">Google Workspace</div><div class="tool-level-bar"><div class="tool-level-fill" style="width:90%"></div></div><div class="tool-level-label">Avanzado</div></div>
+    <div class="tool-card" data-cat="ofi" style="animation-delay:0.15s"><div class="tool-icon">💼</div><div class="tool-card-name">Microsoft 365</div><div class="tool-level-bar"><div class="tool-level-fill" style="width:90%"></div></div><div class="tool-level-label">Avanzado</div></div>
+    <div class="tool-card" data-cat="ofi" style="animation-delay:0.2s"><div class="tool-icon">📝</div><div class="tool-card-name">Word</div><div class="tool-level-bar"><div class="tool-level-fill" style="width:92%"></div></div><div class="tool-level-label">Avanzado</div></div>
+    <div class="tool-card" data-cat="ofi" style="animation-delay:0.25s"><div class="tool-icon">📊</div><div class="tool-card-name">PowerPoint</div><div class="tool-level-bar"><div class="tool-level-fill" style="width:88%"></div></div><div class="tool-level-label">Avanzado</div></div>
+    <div class="tool-card" data-cat="ofi" style="animation-delay:0.3s"><div class="tool-icon">🎨</div><div class="tool-card-name">Canva</div><div class="tool-level-bar"><div class="tool-level-fill" style="width:88%"></div></div><div class="tool-level-label">Avanzado</div></div>
+    <div class="tool-card" data-cat="ofi" style="animation-delay:0.35s"><div class="tool-icon">📋</div><div class="tool-card-name">Notion</div><div class="tool-level-bar"><div class="tool-level-fill" style="width:88%"></div></div><div class="tool-level-label">Avanzado</div></div>
+    <div class="tool-card" data-cat="ofi" style="animation-delay:0.4s"><div class="tool-icon">📧</div><div class="tool-card-name">Outlook</div><div class="tool-level-bar"><div class="tool-level-fill" style="width:92%"></div></div><div class="tool-level-label">Avanzado</div></div>
+    <!-- IA -->
+    <div class="tool-card" data-cat="ia" style="animation-delay:0.05s"><div class="tool-icon">🤖</div><div class="tool-card-name">ChatGPT</div><div class="tool-level-bar"><div class="tool-level-fill" style="width:92%"></div></div><div class="tool-level-label">Avanzado</div></div>
+    <div class="tool-card" data-cat="ia" style="animation-delay:0.1s"><div class="tool-icon">🧠</div><div class="tool-card-name">Claude</div><div class="tool-level-bar"><div class="tool-level-fill" style="width:92%"></div></div><div class="tool-level-label">Avanzado</div></div>
+    <div class="tool-card" data-cat="ia" style="animation-delay:0.15s"><div class="tool-icon">✨</div><div class="tool-card-name">Gemini</div><div class="tool-level-bar"><div class="tool-level-fill" style="width:90%"></div></div><div class="tool-level-label">Avanzado</div></div>
+    <div class="tool-card" data-cat="ia" style="animation-delay:0.2s"><div class="tool-icon">🔍</div><div class="tool-card-name">Perplexity</div><div class="tool-level-bar"><div class="tool-level-fill" style="width:90%"></div></div><div class="tool-level-label">Avanzado</div></div>
+    <div class="tool-card" data-cat="ia" style="animation-delay:0.25s"><div class="tool-icon">🪄</div><div class="tool-card-name">Copilot</div><div class="tool-level-bar"><div class="tool-level-fill" style="width:88%"></div></div><div class="tool-level-label">Avanzado · cert.</div></div>
+    <div class="tool-card" data-cat="ia" style="animation-delay:0.3s"><div class="tool-icon">🎨</div><div class="tool-card-name">Midjourney</div><div class="tool-level-bar"><div class="tool-level-fill" style="width:68%"></div></div><div class="tool-level-label">Intermedio</div></div>
+    <!-- AUTOMATIZACIÓN -->
+    <div class="tool-card" data-cat="auto" style="animation-delay:0.05s"><div class="tool-icon">⚙️</div><div class="tool-card-name">Make</div><div class="tool-level-bar"><div class="tool-level-fill" style="width:100%"></div></div><div class="tool-level-label">Foundation ✓</div></div>
   </div>
 </section>
 
@@ -989,19 +995,23 @@ const observer=new IntersectionObserver((e)=>{e.forEach(r=>{if(r.isIntersecting)
 document.querySelectorAll('.reveal').forEach(r=>observer.observe(r));
 
 // FILTROS HERRAMIENTAS
-document.querySelectorAll('.tool-cat-btn').forEach(btn=>{
-  btn.addEventListener('click',()=>{
-    document.querySelectorAll('.tool-cat-btn').forEach(b=>b.classList.remove('active'));
-    btn.classList.add('active');
-    const cat=btn.dataset.cat;
-    let d=0;
-    document.querySelectorAll('.tool-card').forEach(card=>{
-      const show=cat==='all'||card.dataset.cat===cat;
-      card.style.display=show?'flex':'none';
-      if(show){card.style.animation='none';card.offsetHeight;card.style.animationDelay=`${d}s`;card.style.animation='fadeIn 0.35s ease forwards';d+=0.05}
-    });
+// Mostrar ofimática por defecto al cargar
+function filterTools(cat){
+  document.querySelectorAll('.tool-cat-btn').forEach(b=>{
+    b.classList.toggle('active', b.dataset.cat===cat);
   });
+  let d=0;
+  document.querySelectorAll('.tool-card').forEach(card=>{
+    const show=cat==='all'||card.dataset.cat===cat;
+    card.style.display=show?'flex':'none';
+    if(show){card.style.animation='none';card.offsetHeight;card.style.animationDelay=`${d}s`;card.style.animation='fadeIn 0.35s ease forwards';d+=0.05}
+  });
+}
+document.querySelectorAll('.tool-cat-btn').forEach(btn=>{
+  btn.addEventListener('click',()=>filterTools(btn.dataset.cat));
 });
+// Iniciar con ofimática activa
+filterTools('ofi');
 
 // CARRUSEL
 const track=document.getElementById('netflixTrack');
