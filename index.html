@@ -68,32 +68,17 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .hero-stats{display:flex;gap:2.5rem;animation:fadeUp 0.8s 0.6s ease both;padding-top:2rem;border-top:1px solid var(--border);flex-wrap:wrap}
 .stat .num{font-family:'Cormorant Garamond',serif;font-size:2.6rem;font-weight:600;color:var(--navy);line-height:1;display:block}
 .stat .lbl{font-size:0.7rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--muted);margin-top:0.25rem;display:block}
-
-/* HERO DERECHO — foto bien posicionada */
 .hero-right{background:var(--navy3);position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;padding:2.5rem}
 .hero-right-bg{position:absolute;inset:0;background:linear-gradient(160deg,var(--navy2) 0%,var(--navy3) 100%)}
 .hero-grid{position:absolute;inset:0;opacity:0.06;background-image:linear-gradient(var(--cream) 1px,transparent 1px),linear-gradient(90deg,var(--cream) 1px,transparent 1px);background-size:48px 48px}
 .hero-circle{position:absolute;border-radius:50%;border:1px solid rgba(255,255,255,0.05)}
-/* Foto — centrada verticalmente, alineada con el texto */
-.hero-photo-frame{
-  position:absolute;
-  top:50%;left:50%;
-  transform:translate(-50%,-50%);
-  width:55%;max-width:260px;
-  height:72%;
-  overflow:hidden;
-  border-radius:160px 160px 160px 160px;
-  border:1px solid rgba(255,255,255,0.14);
-  z-index:2;
-  box-shadow:0 24px 60px rgba(0,0,0,0.3);
-}
+.hero-photo-frame{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:55%;max-width:260px;height:72%;overflow:hidden;border-radius:160px;border:1px solid rgba(255,255,255,0.14);z-index:2;box-shadow:0 24px 60px rgba(0,0,0,0.3)}
 .hero-photo-frame img{width:100%;height:100%;object-fit:cover;object-position:center 20%;display:block}
 .hero-photo-placeholder{width:100%;height:100%;background:var(--navy2);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:6rem;color:rgba(244,240,232,0.15)}
 .availability-chip{position:absolute;top:2rem;right:2rem;z-index:5;display:flex;align-items:center;gap:0.5rem;padding:0.45rem 0.9rem;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-radius:20px;backdrop-filter:blur(8px)}
 .availability-dot{width:7px;height:7px;border-radius:50%;background:#4ADE80;animation:blink 2s ease-in-out infinite}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:0.4}}
 .availability-text{font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(244,240,232,0.7)}
-/* Tarjeta cita — superpuesta sobre la parte baja de la foto */
 .hero-card{position:absolute;bottom:8%;left:2rem;right:2rem;z-index:3;background:rgba(15,30,54,0.75);border:1px solid rgba(244,240,232,0.1);border-radius:4px;padding:1.25rem 1.75rem;backdrop-filter:blur(12px)}
 .hero-card-label{font-size:0.68rem;text-transform:uppercase;letter-spacing:0.18em;color:rgba(244,240,232,0.35);margin-bottom:0.6rem}
 .hero-card-text{font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-weight:300;color:var(--cream);font-style:italic;line-height:1.4}
@@ -114,7 +99,6 @@ h2 strong{font-weight:600}
 .about-text p{color:var(--slate);margin-bottom:1.4rem;font-size:1rem;line-height:1.9}
 .about-highlight{margin-top:2rem;padding:2rem;background:var(--navy);border-radius:3px}
 .about-highlight p{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-style:italic;font-weight:300;color:var(--cream);margin:0;line-height:1.55}
-.about-highlight cite{display:block;margin-top:0.75rem;font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(244,240,232,0.35);font-style:normal}
 .sidebar-block{border-top:1px solid var(--border);padding:1.5rem 0}
 .sidebar-block:last-child{border-bottom:1px solid var(--border)}
 .sidebar-label{font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--muted);margin-bottom:0.75rem;font-weight:500}
@@ -158,7 +142,7 @@ h2 strong{font-weight:600}
 .tool-level-fill{height:100%;background:var(--accent);border-radius:2px;transition:width 0.6s ease}
 .tool-level-label{font-size:0.62rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(244,240,232,0.28);margin-top:0.35rem}
 
-/* PROYECTOS — carrusel Netflix limpio */
+/* PROYECTOS */
 #proyectos{background:var(--cream);padding:7rem 0}
 .proyectos-header{padding:0 4rem;margin-bottom:3rem}
 .netflix-row{position:relative}
@@ -168,17 +152,12 @@ h2 strong{font-weight:600}
 .netflix-prev:hover,.netflix-next:hover{background:var(--accent)}
 .netflix-prev{left:0.75rem}
 .netflix-next{right:0.75rem}
-
-/* Tarjetas de proyecto */
 .project-card{flex:0 0 340px;scroll-snap-align:start;background:var(--white);border:1px solid var(--border);border-radius:4px;overflow:hidden;transition:transform 0.3s,box-shadow 0.3s,border-color 0.3s}
 .project-card:hover{transform:translateY(-5px);box-shadow:0 18px 45px rgba(28,43,74,0.1);border-color:var(--accent)}
 .project-card.video-card{flex:0 0 380px}
-
-/* Media — imagen o vídeo */
 .project-media{width:100%;height:220px;overflow:hidden;position:relative;background:var(--navy3)}
 .project-media img{width:100%;height:100%;object-fit:cover;object-position:center center;display:block;transition:transform 0.4s ease}
 .project-card:hover .project-media img{transform:scale(1.04)}
-.project-media video{width:100%;height:100%;object-fit:contain;object-position:center center;background:#000;display:none}
 .project-media-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,transparent 50%,rgba(15,30,54,0.5) 100%)}
 .play-btn{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:48px;height:48px;border-radius:50%;background:rgba(255,255,255,0.15);border:2px solid rgba(255,255,255,0.5);display:flex;align-items:center;justify-content:center;font-size:1rem;color:white;cursor:pointer;z-index:5;transition:all 0.2s;backdrop-filter:blur(4px)}
 .play-btn:hover{background:rgba(255,255,255,0.3);transform:translate(-50%,-50%) scale(1.1)}
@@ -203,7 +182,6 @@ h2 strong{font-weight:600}
 .tl-company{font-size:0.8rem;color:var(--accent);font-weight:500;margin-bottom:0.55rem}
 .tl-content p{font-size:0.84rem;color:var(--slate);line-height:1.7}
 .tl-note{display:inline-block;margin-top:0.5rem;font-size:0.7rem;padding:0.18rem 0.55rem;background:var(--cream2);color:var(--muted);border-radius:2px}
-
 .edu-card{padding:1.5rem;border:1px solid var(--border);border-radius:3px;margin-bottom:1rem;background:var(--cream);transition:border-color 0.2s}
 .edu-card:hover{border-color:var(--accent)}
 .edu-period{font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-bottom:0.4rem}
@@ -211,26 +189,12 @@ h2 strong{font-weight:600}
 .edu-center{font-size:0.82rem;color:var(--accent);margin-bottom:0.5rem}
 .edu-card p{font-size:0.82rem;color:var(--slate);line-height:1.65}
 .edu-badge{display:inline-flex;align-items:center;gap:0.4rem;margin-top:0.7rem;font-size:0.7rem;padding:0.28rem 0.75rem;background:var(--accent-light);color:var(--accent);border-radius:2px;letter-spacing:0.04em;font-weight:500}
-
-/* CERTIFICADOS con imagen */
 .certs-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:0.5rem}
-.cert-card-visual{
-  border:1px solid var(--border);border-radius:4px;overflow:hidden;
-  background:var(--white);transition:border-color 0.2s,transform 0.2s;
-}
+.cert-card-visual{border:1px solid var(--border);border-radius:4px;overflow:hidden;background:var(--white);transition:border-color 0.2s,transform 0.2s}
 .cert-card-visual:hover{border-color:var(--accent);transform:translateY(-2px)}
-.cert-badge-area{
-  height:120px;display:flex;align-items:center;justify-content:center;
-  background:var(--cream2);padding:1rem;
-}
+.cert-badge-area{height:120px;display:flex;align-items:center;justify-content:center;background:var(--cream2);padding:1rem}
 .cert-badge-area img{max-height:90px;max-width:90px;object-fit:contain}
-/* Badge Copilot — creado con CSS */
-.copilot-badge{
-  width:80px;height:80px;border-radius:12px;
-  background:linear-gradient(135deg,#0078d4,#005a9e);
-  display:flex;flex-direction:column;align-items:center;justify-content:center;
-  gap:4px;
-}
+.copilot-badge{width:80px;height:80px;border-radius:12px;background:linear-gradient(135deg,#0078d4,#005a9e);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px}
 .copilot-badge-icon{font-size:1.8rem}
 .copilot-badge-text{font-size:0.55rem;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.8);font-weight:500}
 .cert-info-area{padding:1rem 1.1rem}
@@ -238,28 +202,15 @@ h2 strong{font-weight:600}
 .cert-info-area .cert-meta{font-size:0.73rem;color:var(--muted);margin-bottom:0.75rem}
 .cert-link-btn{display:inline-flex;align-items:center;gap:0.35rem;font-size:0.7rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent);text-decoration:none;font-weight:500;border-bottom:1px solid transparent;transition:border-color 0.2s}
 .cert-link-btn:hover{border-color:var(--accent)}
-.cert-coming{
-  border:1px dashed var(--border);border-radius:4px;
-  display:flex;align-items:center;justify-content:center;
-  min-height:80px;
-  font-size:0.8rem;color:var(--muted);letter-spacing:0.05em;
-  background:transparent;opacity:0.5;
-  grid-column:span 2;
-}
+.cert-coming{border:1px dashed var(--border);border-radius:4px;display:flex;align-items:center;justify-content:center;min-height:80px;font-size:0.8rem;color:var(--muted);letter-spacing:0.05em;background:transparent;opacity:0.5;grid-column:span 2}
 
 /* CONTACTO */
 #contacto{background:var(--navy);padding:7rem 4rem;position:relative;overflow:hidden}
 .contact-bg-grid{position:absolute;inset:0;opacity:0.04;background-image:linear-gradient(var(--cream) 1px,transparent 1px),linear-gradient(90deg,var(--cream) 1px,transparent 1px);background-size:60px 60px;pointer-events:none}
 .contact-circle{position:absolute;border-radius:50%;border:1px solid rgba(255,255,255,0.04);pointer-events:none}
-#contacto .ey-text{color:rgba(244,240,232,0.4)}
-#contacto .ey-line{background:rgba(244,240,232,0.18)}
 #contacto h2{color:var(--cream)}
-
-/* Layout contacto — dos columnas equilibradas */
 .contact-layout{display:grid;grid-template-columns:1fr 1.4fr;gap:5rem;margin-top:3.5rem;position:relative;z-index:1;align-items:start}
 .contact-desc{font-size:0.97rem;color:rgba(244,240,232,0.55);line-height:1.9;margin-bottom:2rem}
-
-/* Tarjetas de contacto — solo 2 (LinkedIn + CV) */
 .contact-cards{display:flex;flex-direction:column;gap:0.85rem}
 .contact-card{display:flex;align-items:center;gap:1.25rem;padding:1.25rem 1.5rem;border:1px solid rgba(255,255,255,0.08);border-radius:4px;background:rgba(255,255,255,0.03);text-decoration:none;transition:all 0.25s;position:relative;overflow:hidden}
 .contact-card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--accent);transform:scaleY(0);transition:transform 0.25s;transform-origin:bottom}
@@ -272,8 +223,6 @@ h2 strong{font-weight:600}
 .cc-value{font-size:0.88rem;color:rgba(244,240,232,0.8);font-weight:300}
 .cc-arrow{font-size:0.9rem;color:rgba(244,240,232,0.18);transition:color 0.2s,transform 0.2s}
 .contact-card:hover .cc-arrow{color:var(--accent);transform:translateX(3px)}
-
-/* Formulario */
 .contact-form-wrap{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:6px;padding:2.25rem}
 .form-title{font-family:'Cormorant Garamond',serif;font-size:1.45rem;font-weight:300;color:var(--cream);margin-bottom:0.35rem;font-style:italic}
 .form-subtitle{font-size:0.77rem;color:rgba(244,240,232,0.3);margin-bottom:1.75rem;letter-spacing:0.04em}
@@ -301,7 +250,15 @@ footer p{font-size:0.77rem;color:rgba(244,240,232,0.28)}
 .reveal{opacity:0;transform:translateY(28px);transition:opacity 0.65s ease,transform 0.65s ease}
 .reveal.visible{opacity:1;transform:none}
 
-/* RESPONSIVE TABLET */
+/* MODAL PERSONAL SHOPPER */
+#psModal{display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.7);backdrop-filter:blur(8px);align-items:center;justify-content:center;padding:1rem}
+#psMessages::-webkit-scrollbar{width:4px}
+#psMessages::-webkit-scrollbar-track{background:transparent}
+#psMessages::-webkit-scrollbar-thumb{background:rgba(167,139,250,0.3);border-radius:2px}
+@keyframes psDots{0%,100%{opacity:0.3;transform:scale(0.8)}50%{opacity:1;transform:scale(1)}}
+#psModal a{color:#c084fc!important;text-decoration:underline}
+
+/* RESPONSIVE */
 @media(max-width:1024px){
   nav{padding:1.2rem 1.5rem}
   .nav-links{display:none}
@@ -317,191 +274,47 @@ footer p{font-size:0.77rem;color:rgba(244,240,232,0.28)}
   .tools-visual-grid{grid-template-columns:repeat(3,1fr)}
   .form-row{grid-template-columns:1fr}
   .certs-grid{grid-template-columns:1fr 1fr}
-  .cert-coming{grid-column:span 2}
   footer{flex-direction:column;gap:1rem;padding:1.5rem;text-align:center}
   .skills-grid{grid-template-columns:1fr 1fr}
-  .skills-intro{grid-template-columns:1fr}
-  .contact-form-wrap{padding:1.5rem}
 }
-
-/* RESPONSIVE MÓVIL */
 @media(max-width:640px){
   .cursor,.cursor-ring{display:none}
   *{cursor:auto}
-
-  /* NAV */
   nav{padding:1rem 1.25rem}
   .nav-logo{font-size:1.3rem}
-  .nav-cta{font-size:0.7rem;padding:0.45rem 1rem;letter-spacing:0.06em}
-
-  /* HERO — foto centrada con texto debajo */
+  .nav-cta{font-size:0.7rem;padding:0.45rem 1rem}
   .hero{display:flex;flex-direction:column;min-height:auto}
-  .hero-right{
-    display:flex;
-    height:300px;
-    order:-1;
-    padding:0;
-    position:relative;
-    flex-shrink:0;
-  }
-  .hero-photo-frame{
-    position:absolute;
-    top:50%;left:50%;
-    transform:translate(-50%,-50%);
-    width:160px;max-width:160px;
-    height:200px;
-    border-radius:90px;
-    box-shadow:0 16px 40px rgba(0,0,0,0.4);
-  }
-  .hero-card{
-    display:block;
-    position:absolute;
-    bottom:0.75rem;
-    left:1rem;right:1rem;
-    padding:0.9rem 1.25rem;
-    font-size:0.9rem;
-  }
-  .hero-card-text{font-size:1.05rem}
-  .hero-card-label{font-size:0.62rem;margin-bottom:0.4rem}
-  .hero-card-author{font-size:0.65rem;margin-top:0.4rem}
-  .availability-chip{
-    top:0.75rem;right:0.75rem;
-    font-size:0.62rem;padding:0.35rem 0.75rem;
-  }
+  .hero-right{display:flex;height:300px;order:-1;padding:0;position:relative;flex-shrink:0}
+  .hero-photo-frame{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:160px;max-width:160px;height:200px;border-radius:90px}
   .hero-left{padding:1.75rem 1.25rem 3rem;order:1}
-  .hero-eyebrow{margin-bottom:1rem}
   .hero h1{font-size:2.5rem;margin-bottom:1.25rem}
-  .hero-desc{font-size:0.9rem;max-width:100%;margin-bottom:2rem;line-height:1.8}
+  .hero-desc{font-size:0.9rem;max-width:100%;margin-bottom:2rem}
   .hero-actions{flex-direction:column;gap:0.75rem;margin-bottom:2.5rem}
   .btn-primary,.btn-outline{width:100%;justify-content:center;padding:0.9rem 1.25rem;font-size:0.78rem}
   .hero-stats{gap:0;display:grid;grid-template-columns:repeat(4,1fr);text-align:center;padding-top:1.75rem}
   .stat .num{font-size:1.8rem}
-  .stat .lbl{font-size:0.62rem}
-
-  /* SECCIONES */
   section{padding:3rem 1.25rem}
   #proyectos{padding:3rem 0}
   #herramientas{padding:3rem 1.25rem}
   .proyectos-header{padding:0 1.25rem}
   h2{font-size:1.8rem}
-
-  /* SOBRE MÍ */
   .about-layout{gap:1.75rem}
-  .about-text p{font-size:0.92rem}
-  .about-highlight{padding:1.5rem}
-  .about-highlight p{font-size:1rem}
-
-  /* HABILIDADES — scroll horizontal tipo carrusel */
   .skills-intro{gap:1.5rem}
   .skills-intro-text{position:relative;top:auto}
-  .skills-intro-text p{font-size:0.88rem;margin-top:0.75rem}
-  .skills-grid{
-    display:flex;
-    overflow-x:auto;
-    scroll-snap-type:x mandatory;
-    gap:1px;
-    background:transparent;
-    border:none;
-    -webkit-overflow-scrolling:touch;
-    scrollbar-width:none;
-    margin:0 -1.25rem;
-    padding:0 1.25rem;
-  }
+  .skills-grid{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:1px;background:transparent;border:none;-webkit-overflow-scrolling:touch;scrollbar-width:none;margin:0 -1.25rem;padding:0 1.25rem}
   .skills-grid::-webkit-scrollbar{display:none}
-  .skill-item{
-    flex:0 0 220px;
-    scroll-snap-align:start;
-    border:1px solid var(--border);
-    border-radius:4px;
-    padding:1.5rem;
-    background:var(--white);
-  }
-  .skill-item::after{display:none}
-  .skill-num{font-size:2rem;margin-bottom:0.75rem}
-
-  /* HERRAMIENTAS — grid 2 col más compacto */
+  .skill-item{flex:0 0 220px;scroll-snap-align:start;border:1px solid var(--border);border-radius:4px;padding:1.5rem;background:var(--white)}
   .tools-visual-grid{grid-template-columns:repeat(2,1fr)}
-  .tools-categories{
-    display:flex;overflow-x:auto;gap:0.4rem;
-    scrollbar-width:none;padding-bottom:0.25rem;
-    flex-wrap:nowrap;
-  }
+  .tools-categories{display:flex;overflow-x:auto;gap:0.4rem;scrollbar-width:none;padding-bottom:0.25rem;flex-wrap:nowrap}
   .tools-categories::-webkit-scrollbar{display:none}
-  .tool-cat-btn{flex-shrink:0;font-size:0.65rem;padding:0.35rem 0.8rem}
-  .tool-card{padding:1.25rem 0.75rem}
-  .tool-icon{width:42px;height:42px;font-size:1.25rem;margin-bottom:0.7rem}
-  .tool-card-name{font-size:0.76rem}
-  .tool-level-label{font-size:0.6rem}
-
-  /* PROYECTOS */
   .netflix-track{padding:0.5rem 1.25rem 1.5rem;gap:1rem}
   .project-card{flex:0 0 270px}
   .project-card.video-card{flex:0 0 290px}
   .project-media{height:160px}
-  .netflix-prev{left:0.15rem;width:36px;height:36px;font-size:1rem}
-  .netflix-next{right:0.15rem;width:36px;height:36px;font-size:1rem}
-  .project-body{padding:1.25rem}
-  .project-card h3{font-size:1.1rem}
-  .project-card p{font-size:0.8rem}
-
-  /* TRAYECTORIA — timeline horizontal en móvil */
   .trajectory-layout{gap:2.5rem}
-  .traj-col-title{font-size:0.65rem;margin-bottom:1.5rem}
-
-  /* Timeline compacto */
-  .timeline-item{
-    grid-template-columns:1fr;
-    gap:0.4rem;
-    margin-bottom:0;
-    padding:1.25rem;
-    border:1px solid var(--border);
-    border-radius:4px;
-    background:var(--white);
-    margin-bottom:0.75rem;
-  }
-  .timeline-item:last-child{margin-bottom:0}
-  .tl-date{
-    font-size:0.68rem;
-    color:var(--accent);
-    font-family:'DM Sans',sans-serif;
-    font-weight:500;
-    letter-spacing:0.08em;
-    text-transform:uppercase;
-  }
-  .tl-content h3{font-size:0.92rem;margin-bottom:0.15rem}
-  .tl-company{font-size:0.78rem;margin-bottom:0.4rem}
-  .tl-content p{font-size:0.8rem;line-height:1.65}
-  .tl-note{font-size:0.67rem;margin-top:0.4rem}
-
-  /* Formación */
-  .edu-card{padding:1.25rem}
-  .edu-card h3{font-size:0.88rem}
-  .edu-card p{font-size:0.8rem}
-  .edu-badge{font-size:0.67rem;padding:0.22rem 0.6rem}
-
-  /* Certificados */
-  .certs-grid{grid-template-columns:1fr 1fr}
-  .cert-badge-area{height:90px}
-  .cert-info-area{padding:0.85rem}
-  .cert-info-area h4{font-size:0.78rem}
-  .cert-info-area .cert-meta{font-size:0.68rem}
-  .cert-coming{grid-column:span 2;min-height:50px;font-size:0.75rem}
-
-  /* CONTACTO */
+  .timeline-item{grid-template-columns:1fr;gap:0.4rem;padding:1.25rem;border:1px solid var(--border);border-radius:4px;background:var(--white);margin-bottom:0.75rem}
   .contact-layout{gap:2rem}
-  .contact-desc{font-size:0.88rem;margin-bottom:1.5rem}
-  .contact-card{padding:1rem 1.25rem;gap:1rem}
-  .cc-icon{width:38px;height:38px;font-size:0.9rem}
-  .cc-value{font-size:0.82rem}
-  .contact-form-wrap{padding:1.25rem}
-  .form-title{font-size:1.2rem}
-  .form-row{grid-template-columns:1fr}
-  .form-field input,.form-field textarea,.form-field select{font-size:0.85rem;padding:0.8rem 0.9rem}
-
-  /* FOOTER */
   footer{flex-direction:column;gap:0.75rem;padding:1.25rem;text-align:center}
-  footer p,.footer-links a{font-size:0.72rem}
-  .footer-links{gap:1.5rem}
 }
 </style>
 </head>
@@ -594,22 +407,13 @@ footer p{font-size:0.77rem;color:rgba(244,240,232,0.28)}
       <div class="sidebar-block">
         <div class="sidebar-label">Idiomas</div>
         <div class="sidebar-pills">
-          <span class="s-pill">Español (nativo)</span>
-          <span class="s-pill">Inglés B2</span>
-          <span class="s-pill">Italiano</span>
-          <span class="s-pill">Francés</span>
+          <span class="s-pill">Español (nativo)</span><span class="s-pill">Inglés B2</span><span class="s-pill">Italiano</span><span class="s-pill">Francés</span>
         </div>
       </div>
       <div class="sidebar-block">
         <div class="sidebar-label">Especialidades</div>
         <div class="sidebar-pills">
-          <span class="s-pill">Administración</span>
-          <span class="s-pill">Finanzas</span>
-          <span class="s-pill">Gestión documental</span>
-          <span class="s-pill">Contabilidad</span>
-          <span class="s-pill">Atención al cliente</span>
-          <span class="s-pill">Prompt Engineering</span>
-          <span class="s-pill">Automatización IA</span>
+          <span class="s-pill">Administración</span><span class="s-pill">Finanzas</span><span class="s-pill">Gestión documental</span><span class="s-pill">Contabilidad</span><span class="s-pill">Atención al cliente</span><span class="s-pill">Prompt Engineering</span><span class="s-pill">Automatización IA</span>
         </div>
       </div>
       <div class="sidebar-block" style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem">
@@ -636,39 +440,12 @@ footer p{font-size:0.77rem;color:rgba(244,240,232,0.28)}
       <p>Competencias administrativas de alto nivel, potenciadas con las herramientas de IA más relevantes del mercado actual.</p>
     </div>
     <div class="skills-grid">
-      <div class="skill-item">
-        <div class="skill-num">01</div>
-        <h3>Administración y Finanzas</h3>
-        <p>Gestión contable, control presupuestario, elaboración de balances y reporting financiero. Excel avanzado con tablas dinámicas.</p>
-      </div>
-      <div class="skill-item">
-        <div class="skill-num">02</div>
-        <h3>Gestión Documental</h3>
-        <p>Validación y registro de expedientes hipotecarios, digitalización, auditoría y protección de datos bajo protocolos corporativos.</p>
-      </div>
-      <div class="skill-item">
-        <div class="skill-num">03</div>
-        <h3>Prompt Engineering</h3>
-        <p>Diseño de prompts avanzados para LLMs, orientados a obtener resultados concretos y aplicables al entorno empresarial.</p>
-        <span class="skill-badge-ia">+ IA</span>
-      </div>
-      <div class="skill-item">
-        <div class="skill-num">04</div>
-        <h3>Automatización de Procesos</h3>
-        <p>Flujos de trabajo automatizados con Make para optimizar tareas administrativas, notificaciones y gestión de datos.</p>
-        <span class="skill-badge-ia">+ IA</span>
-      </div>
-      <div class="skill-item">
-        <div class="skill-num">05</div>
-        <h3>Atención al Cliente</h3>
-        <p>Experiencia en entornos bancarios y de captación. Comunicación asertiva, gestión de incidencias y CRM.</p>
-      </div>
-      <div class="skill-item">
-        <div class="skill-num">06</div>
-        <h3>IA Generativa Aplicada</h3>
-        <p>Generación de avatares, contenido visual y textual con IA. Integración de herramientas generativas en flujos de trabajo reales.</p>
-        <span class="skill-badge-ia">+ IA</span>
-      </div>
+      <div class="skill-item"><div class="skill-num">01</div><h3>Administración y Finanzas</h3><p>Gestión contable, control presupuestario, elaboración de balances y reporting financiero. Excel avanzado con tablas dinámicas.</p></div>
+      <div class="skill-item"><div class="skill-num">02</div><h3>Gestión Documental</h3><p>Validación y registro de expedientes hipotecarios, digitalización, auditoría y protección de datos bajo protocolos corporativos.</p></div>
+      <div class="skill-item"><div class="skill-num">03</div><h3>Prompt Engineering</h3><p>Diseño de prompts avanzados para LLMs, orientados a obtener resultados concretos y aplicables al entorno empresarial.</p><span class="skill-badge-ia">+ IA</span></div>
+      <div class="skill-item"><div class="skill-num">04</div><h3>Automatización de Procesos</h3><p>Flujos de trabajo automatizados con Make para optimizar tareas administrativas, notificaciones y gestión de datos.</p><span class="skill-badge-ia">+ IA</span></div>
+      <div class="skill-item"><div class="skill-num">05</div><h3>Atención al Cliente</h3><p>Experiencia en entornos bancarios y de captación. Comunicación asertiva, gestión de incidencias y CRM.</p></div>
+      <div class="skill-item"><div class="skill-num">06</div><h3>IA Generativa Aplicada</h3><p>Generación de avatares, contenido visual y textual con IA. Integración de herramientas generativas en flujos de trabajo reales.</p><span class="skill-badge-ia">+ IA</span></div>
     </div>
   </div>
 </section>
@@ -684,7 +461,6 @@ footer p{font-size:0.77rem;color:rgba(244,240,232,0.28)}
     <button class="tool-cat-btn" data-cat="all">Todas</button>
   </div>
   <div class="tools-visual-grid" id="toolsGrid">
-    <!-- OFIMÁTICA — primera en salir, da peso a la administración -->
     <div class="tool-card" data-cat="ofi" style="animation-delay:0.05s"><div class="tool-icon">📊</div><div class="tool-card-name">Excel Avanzado</div><div class="tool-level-bar"><div class="tool-level-fill" style="width:92%"></div></div><div class="tool-level-label">Avanzado</div></div>
     <div class="tool-card" data-cat="ofi" style="animation-delay:0.1s"><div class="tool-icon">📁</div><div class="tool-card-name">Google Workspace</div><div class="tool-level-bar"><div class="tool-level-fill" style="width:90%"></div></div><div class="tool-level-label">Avanzado</div></div>
     <div class="tool-card" data-cat="ofi" style="animation-delay:0.15s"><div class="tool-icon">💼</div><div class="tool-card-name">Microsoft 365</div><div class="tool-level-bar"><div class="tool-level-fill" style="width:90%"></div></div><div class="tool-level-label">Avanzado</div></div>
@@ -693,19 +469,17 @@ footer p{font-size:0.77rem;color:rgba(244,240,232,0.28)}
     <div class="tool-card" data-cat="ofi" style="animation-delay:0.3s"><div class="tool-icon">🎨</div><div class="tool-card-name">Canva</div><div class="tool-level-bar"><div class="tool-level-fill" style="width:88%"></div></div><div class="tool-level-label">Avanzado</div></div>
     <div class="tool-card" data-cat="ofi" style="animation-delay:0.35s"><div class="tool-icon">📋</div><div class="tool-card-name">Notion</div><div class="tool-level-bar"><div class="tool-level-fill" style="width:88%"></div></div><div class="tool-level-label">Avanzado</div></div>
     <div class="tool-card" data-cat="ofi" style="animation-delay:0.4s"><div class="tool-icon">📧</div><div class="tool-card-name">Outlook</div><div class="tool-level-bar"><div class="tool-level-fill" style="width:92%"></div></div><div class="tool-level-label">Avanzado</div></div>
-    <!-- IA -->
     <div class="tool-card" data-cat="ia" style="animation-delay:0.05s"><div class="tool-icon">🤖</div><div class="tool-card-name">ChatGPT</div><div class="tool-level-bar"><div class="tool-level-fill" style="width:92%"></div></div><div class="tool-level-label">Avanzado</div></div>
     <div class="tool-card" data-cat="ia" style="animation-delay:0.1s"><div class="tool-icon">🧠</div><div class="tool-card-name">Claude</div><div class="tool-level-bar"><div class="tool-level-fill" style="width:92%"></div></div><div class="tool-level-label">Avanzado</div></div>
     <div class="tool-card" data-cat="ia" style="animation-delay:0.15s"><div class="tool-icon">✨</div><div class="tool-card-name">Gemini</div><div class="tool-level-bar"><div class="tool-level-fill" style="width:90%"></div></div><div class="tool-level-label">Avanzado</div></div>
     <div class="tool-card" data-cat="ia" style="animation-delay:0.2s"><div class="tool-icon">🔍</div><div class="tool-card-name">Perplexity</div><div class="tool-level-bar"><div class="tool-level-fill" style="width:90%"></div></div><div class="tool-level-label">Avanzado</div></div>
     <div class="tool-card" data-cat="ia" style="animation-delay:0.25s"><div class="tool-icon">🪄</div><div class="tool-card-name">Copilot</div><div class="tool-level-bar"><div class="tool-level-fill" style="width:88%"></div></div><div class="tool-level-label">Avanzado · cert.</div></div>
     <div class="tool-card" data-cat="ia" style="animation-delay:0.3s"><div class="tool-icon">🎨</div><div class="tool-card-name">Midjourney</div><div class="tool-level-bar"><div class="tool-level-fill" style="width:68%"></div></div><div class="tool-level-label">Intermedio</div></div>
-    <!-- AUTOMATIZACIÓN -->
     <div class="tool-card" data-cat="auto" style="animation-delay:0.05s"><div class="tool-icon">⚙️</div><div class="tool-card-name">Make</div><div class="tool-level-bar"><div class="tool-level-fill" style="width:100%"></div></div><div class="tool-level-label">Foundation ✓</div></div>
   </div>
 </section>
 
-<!-- PROYECTOS — carrusel Netflix -->
+<!-- PROYECTOS -->
 <section id="proyectos" class="reveal">
   <div class="proyectos-header">
     <div class="section-eyebrow"><div class="ey-line"></div><span class="ey-text">Proyectos</span></div>
@@ -715,10 +489,9 @@ footer p{font-size:0.77rem;color:rgba(244,240,232,0.28)}
     <button class="netflix-prev" id="prevBtn">‹</button>
     <div class="netflix-track" id="netflixTrack">
 
-      <!-- Avatar IA — vídeo -->
+      <!-- Avatar IA -->
       <div class="project-card video-card">
         <div class="project-media" id="avatarMedia">
-          <!-- preload=auto carga el primer frame como thumbnail sin foto encima -->
           <video id="avatarVideo" loop playsinline preload="auto" style="width:100%;height:100%;object-fit:contain;background:#000;display:block">
             <source src="avatar.mp4" type="video/mp4">
           </video>
@@ -736,7 +509,7 @@ footer p{font-size:0.77rem;color:rgba(244,240,232,0.28)}
       <!-- TFG -->
       <div class="project-card">
         <div class="project-media">
-          <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600&q=80" alt="Plan empresarial" onerror="this.style.display='none'"/>
+          <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600&q=80" alt="Plan empresarial"/>
           <div class="project-media-overlay"></div>
         </div>
         <div class="project-body">
@@ -751,7 +524,7 @@ footer p{font-size:0.77rem;color:rgba(244,240,232,0.28)}
       <!-- Excel -->
       <div class="project-card">
         <div class="project-media">
-          <img src="https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=600&q=80" alt="Excel contabilidad" onerror="this.style.display='none'"/>
+          <img src="https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=600&q=80" alt="Excel contabilidad"/>
           <div class="project-media-overlay"></div>
         </div>
         <div class="project-body">
@@ -766,7 +539,7 @@ footer p{font-size:0.77rem;color:rgba(244,240,232,0.28)}
       <!-- Prompts -->
       <div class="project-card">
         <div class="project-media">
-          <img src="https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=600&q=80" alt="Prompt engineering" onerror="this.style.display='none'"/>
+          <img src="https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=600&q=80" alt="Prompt engineering"/>
           <div class="project-media-overlay"></div>
         </div>
         <div class="project-body">
@@ -780,7 +553,7 @@ footer p{font-size:0.77rem;color:rgba(244,240,232,0.28)}
       <!-- Pipeline -->
       <div class="project-card">
         <div class="project-media">
-          <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=600&q=80" alt="Contenido IA" onerror="this.style.display='none'"/>
+          <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=600&q=80" alt="Contenido IA"/>
           <div class="project-media-overlay"></div>
         </div>
         <div class="project-body">
@@ -794,7 +567,7 @@ footer p{font-size:0.77rem;color:rgba(244,240,232,0.28)}
       <!-- Agente -->
       <div class="project-card">
         <div class="project-media">
-          <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=600&q=80" alt="Agente IA" onerror="this.style.display='none'"/>
+          <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=600&q=80" alt="Agente IA"/>
           <div class="project-media-overlay"></div>
         </div>
         <div class="project-body">
@@ -805,10 +578,10 @@ footer p{font-size:0.77rem;color:rgba(244,240,232,0.28)}
         </div>
       </div>
 
-      <!-- Personal Shopper IA -->
+      <!-- ===================== PERSONAL SHOPPER IA ===================== -->
       <div class="project-card">
         <div class="project-media" style="background:linear-gradient(135deg,#1C2B4A 0%,#8B4A6B 100%);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden">
-          <div style="position:absolute;inset:0;opacity:0.06;background-image:linear-gradient(var(--cream) 1px,transparent 1px),linear-gradient(90deg,var(--cream) 1px,transparent 1px);background-size:32px 32px"></div>
+          <div style="position:absolute;inset:0;opacity:0.06;background-image:linear-gradient(#F4F0E8 1px,transparent 1px),linear-gradient(90deg,#F4F0E8 1px,transparent 1px);background-size:32px 32px"></div>
           <div style="position:relative;z-index:1;text-align:center">
             <div style="font-size:3rem;margin-bottom:0.5rem">👗</div>
             <div style="font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(244,240,232,0.5)">Asistente interactivo</div>
@@ -817,19 +590,52 @@ footer p{font-size:0.77rem;color:rgba(244,240,232,0.28)}
         <div class="project-body">
           <div class="project-type">IA Aplicada · Moda</div>
           <h3>Personal Shopper con IA</h3>
-          <p>Asistente de moda entrenado con reglas de outfit, guías de tallas y tiendas reales. Propone looks completos adaptados a tu estilo, presupuesto y tipo de cuerpo.</p>
+          <p>Asistente de moda entrenado con reglas de outfit, guías de tallas y tiendas reales. Propone looks completos adaptados a tu estilo, presupuesto y ocasión.</p>
           <div class="project-tags">
             <span class="tag">Claude API</span><span class="tag">Prompt Engineering</span><span class="tag">Moda</span>
           </div>
-          <a href="https://claude.ai/project/019daf77-1660-767e-80cb-6ea113b3a01f" class="project-link" target="_blank">→ Abrir en Claude</a>
-          <div style="margin-top:0.5rem;font-size:0.68rem;color:var(--muted)">Requiere cuenta gratuita en Claude.ai</div>
+          <button onclick="abrirShopper()" class="project-link" style="background:none;border:none;border-bottom:1px solid transparent;font-family:'DM Sans',sans-serif;padding:0;margin-top:0.9rem;cursor:pointer">→ Probar ahora</button>
         </div>
       </div>
+      <!-- ============================================================= -->
 
     </div>
     <button class="netflix-next" id="nextBtn">›</button>
   </div>
 </section>
+
+<!-- MODAL PERSONAL SHOPPER -->
+<div id="psModal" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.75);backdrop-filter:blur(8px);align-items:center;justify-content:center;padding:1rem">
+  <div style="background:#0f0f1a;border-radius:16px;width:100%;max-width:600px;height:85vh;max-height:700px;display:flex;flex-direction:column;overflow:hidden;border:1px solid rgba(255,255,255,0.1);font-family:'DM Sans',sans-serif">
+    <!-- Header modal -->
+    <div style="background:rgba(255,255,255,0.05);padding:14px 20px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,0.08);flex-shrink:0">
+      <div style="display:flex;align-items:center;gap:10px">
+        <div style="width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#7c3aed,#a855f7);display:flex;align-items:center;justify-content:center;font-size:18px">👗</div>
+        <div>
+          <div style="color:#fff;font-weight:600;font-size:14px">Maya — Personal Shopper IA</div>
+          <div style="color:#a78bfa;font-size:11px">● En línea</div>
+        </div>
+      </div>
+      <button onclick="cerrarShopper()" style="background:rgba(255,255,255,0.08);border:none;color:#fff;width:32px;height:32px;border-radius:50%;font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center">✕</button>
+    </div>
+    <!-- Mensajes -->
+    <div id="psMessages" style="flex:1;overflow-y:auto;padding:20px 16px;display:flex;flex-direction:column;gap:14px"></div>
+    <!-- Sugerencias -->
+    <div id="psSugg" style="padding:0 16px 10px;display:flex;gap:8px;flex-wrap:wrap">
+      <button onclick="psEnviar('Necesito un look para una cena especial')" style="background:rgba(167,139,250,0.1);border:1px solid rgba(167,139,250,0.3);color:#c084fc;padding:5px 12px;border-radius:20px;font-size:11px;cursor:pointer;font-family:'DM Sans',sans-serif">🌙 Cena especial</button>
+      <button onclick="psEnviar('Busco ropa para la oficina en verano')" style="background:rgba(167,139,250,0.1);border:1px solid rgba(167,139,250,0.3);color:#c084fc;padding:5px 12px;border-radius:20px;font-size:11px;cursor:pointer;font-family:'DM Sans',sans-serif">👔 Oficina verano</button>
+      <button onclick="psEnviar('Outfit para boda de día')" style="background:rgba(167,139,250,0.1);border:1px solid rgba(167,139,250,0.3);color:#c084fc;padding:5px 12px;border-radius:20px;font-size:11px;cursor:pointer;font-family:'DM Sans',sans-serif">💍 Boda de día</button>
+      <button onclick="psEnviar('Look casual para el fin de semana')" style="background:rgba(167,139,250,0.1);border:1px solid rgba(167,139,250,0.3);color:#c084fc;padding:5px 12px;border-radius:20px;font-size:11px;cursor:pointer;font-family:'DM Sans',sans-serif">😎 Casual</button>
+    </div>
+    <!-- Input -->
+    <div style="padding:10px 16px 16px;border-top:1px solid rgba(255,255,255,0.08);display:flex;gap:10px;flex-shrink:0">
+      <input id="psInput" type="text" placeholder="Cuéntame qué necesitas..."
+        onkeydown="if(event.key==='Enter')psEnviar()"
+        style="flex:1;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:24px;padding:10px 18px;color:#fff;font-size:13px;outline:none;font-family:'DM Sans',sans-serif"/>
+      <button onclick="psEnviar()" style="width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,#7c3aed,#a855f7);border:none;color:#fff;font-size:16px;cursor:pointer;flex-shrink:0">➤</button>
+    </div>
+  </div>
+</div>
 
 <!-- TRAYECTORIA -->
 <section id="trayectoria" class="reveal">
@@ -842,37 +648,19 @@ footer p{font-size:0.77rem;color:rgba(244,240,232,0.28)}
       <div class="traj-col-title">Experiencia laboral</div>
       <div class="timeline-item">
         <div class="tl-date">2025–2026</div>
-        <div class="tl-content">
-          <h3>Atención Rápida</h3>
-          <div class="tl-company">CaixaBank</div>
-          <p>Optimización del flujo de atención, gestión operativa de cajeros, atención al cliente en ventanilla y soporte administrativo en la operativa diaria de la sucursal.</p>
-        </div>
+        <div class="tl-content"><h3>Atención Rápida</h3><div class="tl-company">CaixaBank</div><p>Optimización del flujo de atención, gestión operativa de cajeros, atención al cliente en ventanilla y soporte administrativo en la operativa diaria de la sucursal.</p></div>
       </div>
       <div class="timeline-item">
         <div class="tl-date">2026<br>Mar–Abr</div>
-        <div class="tl-content">
-          <h3>Auxiliar Administrativa</h3>
-          <div class="tl-company">Gescove — Gestoría de Fincas</div>
-          <p>Gestión contable de comunidades de vecinos, coordinación de incidencias urgentes y participación en reuniones con propietarios. Alta responsabilidad directa sobre cuentas activas.</p>
-          <span class="tl-note">Contabilidad · Comunidades · Incidencias</span>
-        </div>
+        <div class="tl-content"><h3>Auxiliar Administrativa</h3><div class="tl-company">Gescove — Gestoría de Fincas</div><p>Gestión contable de comunidades de vecinos, coordinación de incidencias urgentes y participación en reuniones con propietarios.</p><span class="tl-note">Contabilidad · Comunidades · Incidencias</span></div>
       </div>
       <div class="timeline-item">
         <div class="tl-date">2024</div>
-        <div class="tl-content">
-          <h3>Grabadora de Datos — Hipotecario</h3>
-          <div class="tl-company">FK2</div>
-          <p>Gestión documental avanzada de expedientes hipotecarios, auditoría de datos técnicos y legales, coordinación interdepartamental y protección de datos sensibles.</p>
-        </div>
+        <div class="tl-content"><h3>Grabadora de Datos — Hipotecario</h3><div class="tl-company">FK2</div><p>Gestión documental avanzada de expedientes hipotecarios, auditoría de datos técnicos y legales, coordinación interdepartamental y protección de datos sensibles.</p></div>
       </div>
       <div class="timeline-item">
         <div class="tl-date">2022<br>Mar–Jun</div>
-        <div class="tl-content">
-          <h3>Auxiliar Administrativa — Prácticas</h3>
-          <div class="tl-company">Moreno y Fernández Asesores</div>
-          <p>Gestión documental, atención a clientes empresariales y apoyo en trámites administrativos en asesoría.</p>
-          <span class="tl-note">Prácticas de Grado Superior</span>
-        </div>
+        <div class="tl-content"><h3>Auxiliar Administrativa — Prácticas</h3><div class="tl-company">Moreno y Fernández Asesores</div><p>Gestión documental, atención a clientes empresariales y apoyo en trámites administrativos en asesoría.</p><span class="tl-note">Prácticas de Grado Superior</span></div>
       </div>
     </div>
     <div>
@@ -890,39 +678,17 @@ footer p{font-size:0.77rem;color:rgba(244,240,232,0.28)}
         <div class="edu-center">IES Ribera del Tajo</div>
         <p>Gestión empresarial, contabilidad, administración de recursos y finanzas corporativas.</p>
       </div>
-
-      <!-- CERTIFICADOS con visual -->
       <div style="margin-top:2rem">
         <div class="traj-col-title">Certificados</div>
         <div class="certs-grid">
-
-          <!-- Copilot -->
           <div class="cert-card-visual">
-            <div class="cert-badge-area">
-              <div class="copilot-badge">
-                <div class="copilot-badge-icon">✦</div>
-                <div class="copilot-badge-text">Copilot</div>
-              </div>
-            </div>
-            <div class="cert-info-area">
-              <h4>Copilot: domina la IA en Microsoft 365</h4>
-              <div class="cert-meta">Microsoft · LinkedIn Learning · Abril 2026</div>
-              <a href="certificado_copilot.pdf" class="cert-link-btn" target="_blank">↓ Ver certificado</a>
-            </div>
+            <div class="cert-badge-area"><div class="copilot-badge"><div class="copilot-badge-icon">✦</div><div class="copilot-badge-text">Copilot</div></div></div>
+            <div class="cert-info-area"><h4>Copilot: domina la IA en Microsoft 365</h4><div class="cert-meta">Microsoft · LinkedIn Learning · Abril 2026</div><a href="certificado_copilot.pdf" class="cert-link-btn" target="_blank">↓ Ver certificado</a></div>
           </div>
-
-          <!-- Make -->
           <div class="cert-card-visual">
-            <div class="cert-badge-area">
-              <img src="make-foundation_1.png" alt="Make Foundation"/>
-            </div>
-            <div class="cert-info-area">
-              <h4>Make Foundation</h4>
-              <div class="cert-meta">Make Academy · Abril 2026</div>
-              <a href="certificado_make.pdf" class="cert-link-btn" target="_blank">↓ Ver certificado</a>
-            </div>
+            <div class="cert-badge-area"><img src="make-foundation_1.png" alt="Make Foundation"/></div>
+            <div class="cert-info-area"><h4>Make Foundation</h4><div class="cert-meta">Make Academy · Abril 2026</div><a href="certificado_make.pdf" class="cert-link-btn" target="_blank">↓ Ver certificado</a></div>
           </div>
-
           <div class="cert-coming">+ Próximos certificados en curso</div>
         </div>
       </div>
@@ -948,18 +714,12 @@ footer p{font-size:0.77rem;color:rgba(244,240,232,0.28)}
       <div class="contact-cards">
         <a href="https://www.linkedin.com/in/brenda-fern%C3%A1ndez-s%C3%A1nchez-659489241" class="contact-card" target="_blank">
           <div class="cc-icon" style="font-size:0.85rem;font-weight:600">in</div>
-          <div class="cc-info">
-            <div class="cc-label">LinkedIn</div>
-            <div class="cc-value">Brenda Fernández Sánchez</div>
-          </div>
+          <div class="cc-info"><div class="cc-label">LinkedIn</div><div class="cc-value">Brenda Fernández Sánchez</div></div>
           <div class="cc-arrow">→</div>
         </a>
         <a href="Brenda_Fernandez_Administrativa..pdf" class="contact-card" target="_blank">
           <div class="cc-icon">📄</div>
-          <div class="cc-info">
-            <div class="cc-label">Curriculum Vitae</div>
-            <div class="cc-value">Descargar CV en PDF</div>
-          </div>
+          <div class="cc-info"><div class="cc-label">Curriculum Vitae</div><div class="cc-value">Descargar CV en PDF</div></div>
           <div class="cc-arrow">↓</div>
         </a>
       </div>
@@ -999,85 +759,157 @@ footer p{font-size:0.77rem;color:rgba(244,240,232,0.28)}
 </footer>
 
 <script>
-// CURSOR más rápido
-const cur=document.getElementById('cur');
-const curRing=document.getElementById('curRing');
+// CURSOR
+const cur=document.getElementById('cur'),curRing=document.getElementById('curRing');
 let mx=0,my=0,rx=0,ry=0;
-document.addEventListener('mousemove',(e)=>{mx=e.clientX;my=e.clientY;cur.style.transform=`translate(${mx-5}px,${my-5}px)`});
-function animRing(){rx+=(mx-rx)*0.22;ry+=(my-ry)*0.22;curRing.style.transform=`translate(${rx-16}px,${ry-16}px)`;requestAnimationFrame(animRing)}
-animRing();
+document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.transform=`translate(${mx-5}px,${my-5}px)`});
+(function animRing(){rx+=(mx-rx)*0.22;ry+=(my-ry)*0.22;curRing.style.transform=`translate(${rx-16}px,${ry-16}px)`;requestAnimationFrame(animRing)})();
 document.querySelectorAll('a,button').forEach(el=>{
   el.addEventListener('mouseenter',()=>{cur.style.background='var(--accent)';curRing.style.borderColor='var(--accent)'});
   el.addEventListener('mouseleave',()=>{cur.style.background='var(--navy)';curRing.style.borderColor='var(--navy)'});
 });
 
 // REVEAL
-const observer=new IntersectionObserver((e)=>{e.forEach(r=>{if(r.isIntersecting){r.target.classList.add('visible');observer.unobserve(r.target)}})},{threshold:0.08});
-document.querySelectorAll('.reveal').forEach(r=>observer.observe(r));
+const obs=new IntersectionObserver(e=>e.forEach(r=>{if(r.isIntersecting){r.target.classList.add('visible');obs.unobserve(r.target)}}),{threshold:0.08});
+document.querySelectorAll('.reveal').forEach(r=>obs.observe(r));
 
-// FILTROS HERRAMIENTAS
-// Mostrar ofimática por defecto al cargar
+// HERRAMIENTAS
 function filterTools(cat){
-  document.querySelectorAll('.tool-cat-btn').forEach(b=>{
-    b.classList.toggle('active', b.dataset.cat===cat);
-  });
+  document.querySelectorAll('.tool-cat-btn').forEach(b=>b.classList.toggle('active',b.dataset.cat===cat));
   let d=0;
-  document.querySelectorAll('.tool-card').forEach(card=>{
-    const show=cat==='all'||card.dataset.cat===cat;
-    card.style.display=show?'flex':'none';
-    if(show){card.style.animation='none';card.offsetHeight;card.style.animationDelay=`${d}s`;card.style.animation='fadeIn 0.35s ease forwards';d+=0.05}
+  document.querySelectorAll('.tool-card').forEach(c=>{
+    const show=cat==='all'||c.dataset.cat===cat;
+    c.style.display=show?'flex':'none';
+    if(show){c.style.animation='none';c.offsetHeight;c.style.animationDelay=d+'s';c.style.animation='fadeIn 0.35s ease forwards';d+=0.05}
   });
 }
-document.querySelectorAll('.tool-cat-btn').forEach(btn=>{
-  btn.addEventListener('click',()=>filterTools(btn.dataset.cat));
-});
-// Iniciar con ofimática activa
+document.querySelectorAll('.tool-cat-btn').forEach(b=>b.addEventListener('click',()=>filterTools(b.dataset.cat)));
 filterTools('ofi');
 
 // CARRUSEL
 const track=document.getElementById('netflixTrack');
-const prevBtn=document.getElementById('prevBtn');
-const nextBtn=document.getElementById('nextBtn');
 const cardW=()=>(track.querySelector('.project-card')||{offsetWidth:340}).offsetWidth+20;
-prevBtn.addEventListener('click',()=>track.scrollBy({left:-cardW()*2,behavior:'smooth'}));
-nextBtn.addEventListener('click',()=>track.scrollBy({left:cardW()*2,behavior:'smooth'}));
-track.addEventListener('scroll',()=>{
-  prevBtn.style.opacity=track.scrollLeft<20?'0.35':'1';
-  nextBtn.style.opacity=track.scrollLeft+track.offsetWidth>=track.scrollWidth-20?'0.35':'1';
-});
-prevBtn.style.opacity='0.35';
+document.getElementById('prevBtn').addEventListener('click',()=>track.scrollBy({left:-cardW()*2,behavior:'smooth'}));
+document.getElementById('nextBtn').addEventListener('click',()=>track.scrollBy({left:cardW()*2,behavior:'smooth'}));
+document.getElementById('prevBtn').style.opacity='0.35';
 
-// VÍDEO AVATAR — simplificado, el vídeo ya se ve de fondo parado
+// VÍDEO
 function toggleVideo(){
-  const video=document.getElementById('avatarVideo');
-  const btn=document.getElementById('playBtn');
-  if(video.paused||video.ended){
-    video.play().then(()=>{btn.textContent='⏸'}).catch(()=>{btn.textContent='▶'});
-  } else {
-    video.pause();btn.textContent='▶';
-  }
+  const v=document.getElementById('avatarVideo'),b=document.getElementById('playBtn');
+  v.paused||v.ended?v.play().then(()=>b.textContent='⏸').catch(()=>b.textContent='▶'):(v.pause(),b.textContent='▶');
 }
 
 // FORMULARIO
 const form=document.getElementById('contactForm');
-const success=document.getElementById('formSuccess');
-const submitBtn=document.getElementById('submitBtn');
 if(form){
-  form.addEventListener('submit',async(e)=>{
+  form.addEventListener('submit',async e=>{
     e.preventDefault();
-    submitBtn.textContent='Enviando...';submitBtn.style.opacity='0.7';
+    const btn=document.getElementById('submitBtn');
+    btn.textContent='Enviando...';btn.style.opacity='0.7';
     try{
-      const res=await fetch(form.action,{method:'POST',body:new FormData(form),headers:{Accept:'application/json'}});
-      if(res.ok){form.reset();success.style.display='block';submitBtn.textContent='¡Enviado! ✓';setTimeout(()=>{success.style.display='none';submitBtn.textContent='Enviar mensaje →';submitBtn.style.opacity='1'},5000)}
-      else{submitBtn.textContent='Error — inténtalo de nuevo';submitBtn.style.opacity='1'}
-    }catch{submitBtn.textContent='Error de conexión';submitBtn.style.opacity='1'}
+      const r=await fetch(form.action,{method:'POST',body:new FormData(form),headers:{Accept:'application/json'}});
+      if(r.ok){form.reset();document.getElementById('formSuccess').style.display='block';btn.textContent='¡Enviado! ✓';setTimeout(()=>{document.getElementById('formSuccess').style.display='none';btn.textContent='Enviar mensaje →';btn.style.opacity='1'},5000)}
+      else{btn.textContent='Error — inténtalo de nuevo';btn.style.opacity='1'}
+    }catch{btn.textContent='Error de conexión';btn.style.opacity='1'}
   });
 }
+
+// ===================== PERSONAL SHOPPER IA =====================
+const PS_SYSTEM=`Eres Maya, una personal shopper experta y cercana. Tu misión es recomendar outfits completos con prendas reales de tiendas españolas.
+
+FLUJO OBLIGATORIO:
+PASO 1 — Primera respuesta: saluda con entusiasmo y pregunta SOLO la ocasión y si es para ti o para regalar. NO recomiendes nada.
+PASO 2 — Con la ocasión clara, pregunta: género, talla, presupuesto en € y colores preferidos. NO recomiendes nada.
+PASO 3 — Pregunta tiendas preferidas: Económico (Primark, H&M, Pull&Bear) | Intermedio (Zara, Mango, Stradivarius) | Premium (Massimo Dutti, ASOS). NO recomiendes nada.
+PASO 4 — Solo con TODOS los datos propón outfit de 5-6 prendas con: nombre+marca, color, precio aproximado en € y link de búsqueda.
+
+LINKS (sustituye TERMINO por la prenda con+guiones, ej: vestido+midi+negro):
+Zara: https://www.zara.com/es/es/search?searchTerm=TERMINO
+H&M: https://www2.hm.com/es_es/buscar.html?q=TERMINO
+Mango: https://shop.mango.com/es/buscar?query=TERMINO
+Stradivarius: https://www.stradivarius.com/es/search?searchTerm=TERMINO
+Pull&Bear: https://www.pullandbear.com/es/search?searchTerm=TERMINO
+Massimo Dutti: https://www.massimodutti.com/es/search?searchTerm=TERMINO
+ASOS: https://www.asos.com/es/buscar/?q=TERMINO
+Primark: https://www.primark.com/es-es/c/mujer
+
+Al final: precio total, por qué funciona el conjunto, y 1 alternativa más económica.
+Responde SIEMPRE en español. Tono cercano y entusiasta. Máximo 2 preguntas a la vez.`;
+
+let psHistory=[],psLoading=false;
+
+function abrirShopper(){
+  document.getElementById('psModal').style.display='flex';
+  document.body.style.overflow='hidden';
+  if(psHistory.length===0) psEnviar('Hola, quiero un outfit');
+}
+function cerrarShopper(){
+  document.getElementById('psModal').style.display='none';
+  document.body.style.overflow='';
+}
+document.getElementById('psModal').addEventListener('click',function(e){if(e.target===this)cerrarShopper()});
+
+function psEnviar(txt){
+  const inp=document.getElementById('psInput');
+  const msg=txt||inp.value.trim();
+  if(!msg||psLoading)return;
+  inp.value='';
+  if(psHistory.length>0)document.getElementById('psSugg').style.display='none';
+  psHistory.push({role:'user',content:msg});
+  psRender();psLoading=true;psTyping();
+  fetch('https://api.anthropic.com/v1/messages',{
+    method:'POST',
+    headers:{'Content-Type':'application/json'},
+    body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:1000,system:PS_SYSTEM,messages:psHistory})
+  }).then(r=>r.json()).then(d=>{
+    psRemoveTyping();
+    const reply=d.content?.[0]?.text||'Lo siento, hubo un error. Inténtalo de nuevo.';
+    psHistory.push({role:'assistant',content:reply});
+    psRender();psLoading=false;
+  }).catch(()=>{
+    psRemoveTyping();
+    psHistory.push({role:'assistant',content:'⚠️ Error de conexión. Inténtalo de nuevo.'});
+    psRender();psLoading=false;
+  });
+}
+
+function psMd(t){
+  return t
+    .replace(/\*\*(.*?)\*\*/g,'<strong>$1</strong>')
+    .replace(/\*(.*?)\*/g,'<em>$1</em>')
+    .replace(/\[([^\]]+)\]\((https?:\/\/[^\)]+)\)/g,'<a href="$2" target="_blank" rel="noopener" style="color:#c084fc;text-decoration:underline">$1</a>')
+    .replace(/\n/g,'<br>');
+}
+
+function psRender(){
+  const el=document.getElementById('psMessages');
+  el.innerHTML=psHistory.map(m=>`
+    <div style="display:flex;justify-content:${m.role==='user'?'flex-end':'flex-start'};gap:8px;align-items:flex-start">
+      ${m.role==='assistant'?'<div style="width:28px;height:28px;border-radius:50%;background:linear-gradient(135deg,#7c3aed,#a855f7);display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0;margin-top:2px">👗</div>':''}
+      <div style="max-width:78%;padding:10px 14px;border-radius:${m.role==='user'?'18px 18px 4px 18px':'18px 18px 18px 4px'};background:${m.role==='user'?'linear-gradient(135deg,#7c3aed,#a855f7)':'rgba(255,255,255,0.08)'};color:#fff;font-size:13px;line-height:1.6;border:${m.role==='assistant'?'1px solid rgba(255,255,255,0.1)':'none'}">${psMd(m.content)}</div>
+    </div>`).join('');
+  el.scrollTop=el.scrollHeight;
+}
+
+function psTyping(){
+  const el=document.getElementById('psMessages');
+  el.innerHTML+=`<div id="psDots" style="display:flex;align-items:center;gap:8px">
+    <div style="width:28px;height:28px;border-radius:50%;background:linear-gradient(135deg,#7c3aed,#a855f7);display:flex;align-items:center;justify-content:center;font-size:14px">👗</div>
+    <div style="background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.1);padding:10px 14px;border-radius:18px 18px 18px 4px;display:flex;gap:4px">
+      ${[0,1,2].map(i=>`<div style="width:7px;height:7px;border-radius:50%;background:#a78bfa;animation:psDots 1.2s ease-in-out infinite;animation-delay:${i*0.2}s"></div>`).join('')}
+    </div>
+  </div>`;
+  el.scrollTop=el.scrollHeight;
+}
+function psRemoveTyping(){const d=document.getElementById('psDots');if(d)d.remove();}
+// ===============================================================
 </script>
 
-<!-- Chatbase chatbot -->
+<!-- Chatbase -->
 <script>
 (function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="iN0moiTO7qqHP2qdaosSr";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
 </script>
+
+<style>@keyframes psDots{0%,100%{opacity:0.3;transform:scale(0.8)}50%{opacity:1;transform:scale(1)}}</style>
 </body>
 </html>
