@@ -251,14 +251,55 @@ footer p{font-size:0.77rem;color:rgba(244,240,232,0.28)}
 .reveal{opacity:0;transform:translateY(28px);transition:opacity 0.65s ease,transform 0.65s ease}
 .reveal.visible{opacity:1;transform:none}
 
-/* MODAL PERSONAL SHOPPER */
-#psModal{display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.7);backdrop-filter:blur(8px);align-items:center;justify-content:center;padding:1rem}
-#psMessages::-webkit-scrollbar{width:4px}
-#psMessages::-webkit-scrollbar-track{background:transparent}
-#psMessages::-webkit-scrollbar-thumb{background:rgba(167,139,250,0.3);border-radius:2px}
-@keyframes psDots{0%,100%{opacity:0.3;transform:scale(0.8)}50%{opacity:1;transform:scale(1)}}
-#psModal a{color:#c084fc!important;text-decoration:underline}
+<!-- MODAL PERSONAL SHOPPER BOTPRESS -->
+<div id="psModal" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(10,5,20,0.85);backdrop-filter:blur(12px);align-items:center;justify-content:center;padding:1rem;cursor:auto">
+  <div style="background:linear-gradient(135deg,#0f0f1a 0%,#1a0a2e 100%);border-radius:20px;width:100%;max-width:480px;height:90vh;max-height:780px;display:flex;flex-direction:column;overflow:hidden;border:1px solid rgba(167,139,250,0.2);box-shadow:0 25px 60px rgba(124,58,237,0.3),0 0 0 1px rgba(255,255,255,0.05);position:relative">
+    
+    <!-- Header -->
+    <div style="padding:16px 20px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,0.06);flex-shrink:0;background:rgba(255,255,255,0.03)">
+      <div style="display:flex;align-items:center;gap:12px">
+        <div style="width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,#7c3aed,#a855f7);display:flex;align-items:center;justify-content:center;font-size:20px;box-shadow:0 4px 12px rgba(124,58,237,0.4)">👗</div>
+        <div>
+          <div style="color:#fff;font-weight:600;font-size:14px;font-family:'DM Sans',sans-serif;letter-spacing:0.02em">Personal Shopper IA</div>
+          <div style="display:flex;align-items:center;gap:5px;margin-top:2px">
+            <div style="width:6px;height:6px;border-radius:50%;background:#4ade80;animation:blink 2s ease-in-out infinite"></div>
+            <span style="color:#a78bfa;font-size:11px;font-family:'DM Sans',sans-serif">Élise · En línea</span>
+          </div>
+        </div>
+      </div>
+      <button onclick="cerrarShopper()" style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);color:rgba(255,255,255,0.7);width:32px;height:32px;border-radius:50%;font-size:14px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all 0.2s;font-family:'DM Sans',sans-serif" onmouseover="this.style.background='rgba(255,255,255,0.12)'" onmouseout="this.style.background='rgba(255,255,255,0.06)'">✕</button>
+    </div>
 
+    <!-- Iframe Botpress -->
+    <iframe 
+      src="https://cdn.botpress.cloud/webchat/v3.6/shareable.html?configUrl=https://files.bpcontent.cloud/2026/04/30/06/20260430062051-HOX3BWME.json"
+      style="flex:1;border:none;width:100%;background:transparent"
+      allow="microphone"
+      loading="lazy">
+    </iframe>
+
+    <!-- Footer -->
+    <div style="padding:8px 16px;border-top:1px solid rgba(255,255,255,0.06);display:flex;align-items:center;justify-content:center;gap:6px;flex-shrink:0">
+      <span style="font-size:10px;color:rgba(255,255,255,0.2);font-family:'DM Sans',sans-serif;letter-spacing:0.05em">Proyecto de</span>
+      <span style="font-size:10px;color:rgba(167,139,250,0.5);font-family:'DM Sans',sans-serif;font-weight:500;letter-spacing:0.05em">Brenda Fernández · IA aplicada</span>
+    </div>
+  </div>
+</div>
+
+<script>
+function abrirShopper(){
+  const modal=document.getElementById('psModal');
+  modal.style.display='flex';
+  document.body.style.overflow='hidden';
+}
+function cerrarShopper(){
+  document.getElementById('psModal').style.display='none';
+  document.body.style.overflow='';
+}
+document.getElementById('psModal').addEventListener('click',function(e){
+  if(e.target===this)cerrarShopper();
+});
+</script>
 /* RESPONSIVE */
 @media(max-width:1024px){
   nav{padding:1.2rem 1.5rem}
