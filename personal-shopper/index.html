@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Personal Shopper IA — Brenda Fernández</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'DM Sans',sans-serif;background:#0f0a1e;color:#fff;min-height:100vh;overflow-x:hidden}
+
+/* FONDO */
+.bg{position:fixed;inset:0;z-index:0;background:radial-gradient(ellipse at 20% 50%,rgba(124,58,237,0.15) 0%,transparent 60%),radial-gradient(ellipse at 80% 20%,rgba(139,74,107,0.1) 0%,transparent 50%),#0f0a1e}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.2rem 2rem;display:flex;align-items:center;justify-content:space-between;background:rgba(15,10,30,0.8);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,0.06)}
+.nav-logo{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:600;color:#fff;text-decoration:none}
+.nav-logo span{color:#a855f7}
+.nav-back{font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.4);text-decoration:none;transition:color 0.2s;display:flex;align-items:center;gap:0.5rem}
+.nav-back:hover{color:#a855f7}
+
+/* HERO */
+.hero{position:relative;z-index:1;text-align:center;padding:8rem 2rem 3rem}
+.hero-badge{display:inline-flex;align-items:center;gap:0.5rem;padding:0.4rem 1rem;background:rgba(168,85,247,0.1);border:1px solid rgba(168,85,247,0.3);border-radius:20px;font-size:0.75rem;letter-spacing:0.15em;text-transform:uppercase;color:#a855f7;margin-bottom:1.5rem}
+.hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2.5rem,6vw,4.5rem);font-weight:300;line-height:1.1;margin-bottom:1rem}
+.hero h1 strong{font-weight:600;background:linear-gradient(135deg,#a855f7,#ec4899);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero p{font-size:1rem;color:rgba(255,255,255,0.5);max-width:520px;margin:0 auto 1.5rem;line-height:1.8}
+.hero-steps{display:flex;justify-content:center;gap:2rem;flex-wrap:wrap;margin-bottom:3rem}
+.step{display:flex;align-items:center;gap:0.5rem;font-size:0.8rem;color:rgba(255,255,255,0.4)}
+.step-num{width:24px;height:24px;border-radius:50%;background:rgba(168,85,247,0.2);border:1px solid rgba(168,85,247,0.4);display:flex;align-items:center;justify-content:center;font-size:0.7rem;color:#a855f7;font-weight:600}
+
+/* FORMULARIO */
+.form-container{position:relative;z-index:1;max-width:760px;margin:0 auto;padding:0 1.5rem 4rem}
+.typeform-wrap{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:20px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,0.4)}
+.typeform-header{padding:1.25rem 1.75rem;border-bottom:1px solid rgba(255,255,255,0.06);display:flex;align-items:center;gap:0.75rem;background:rgba(255,255,255,0.02)}
+.typeform-header-icon{width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,#7c3aed,#a855f7);display:flex;align-items:center;justify-content:center;font-size:18px}
+.typeform-header-text{font-size:0.85rem;font-weight:500;color:rgba(255,255,255,0.8)}
+.typeform-header-sub{font-size:0.72rem;color:rgba(255,255,255,0.3);margin-top:1px}
+
+/* FOOTER */
+.page-footer{position:relative;z-index:1;text-align:center;padding:2rem;border-top:1px solid rgba(255,255,255,0.06)}
+.page-footer p{font-size:0.75rem;color:rgba(255,255,255,0.2)}
+.page-footer a{color:rgba(168,85,247,0.6);text-decoration:none}
+.page-footer a:hover{color:#a855f7}
+</style>
+</head>
+<body>
+
+<div class="bg"></div>
+
+<nav>
+  <a href="../" class="nav-back">← Volver al portfolio</a>
+  <a href="../" class="nav-logo">BF<span>.</span></a>
+  <span style="font-size:0.75rem;color:rgba(255,255,255,0.3);letter-spacing:0.1em;text-transform:uppercase">Personal Shopper IA</span>
+</nav>
+
+<div class="hero">
+  <div class="hero-badge">✨ Powered by IA</div>
+  <h1>Tu <strong>outfit perfecto</strong><br>en minutos</h1>
+  <p>Rellena el formulario con tu estilo, ocasión y presupuesto. Nuestra IA creará un look completo con prendas reales y te lo enviará a tu email.</p>
+  <div class="hero-steps">
+    <div class="step"><div class="step-num">1</div>Rellena tu perfil</div>
+    <div class="step"><div class="step-num">2</div>La IA analiza tu estilo</div>
+    <div class="step"><div class="step-num">3</div>Recibes tu outfit por email</div>
+  </div>
+</div>
+
+<div class="form-container">
+  <div class="typeform-wrap">
+    <div class="typeform-header">
+      <div class="typeform-header-icon">👗</div>
+      <div>
+        <div class="typeform-header-text">Personal Shopper IA — Brenda Fernández</div>
+        <div class="typeform-header-sub">Completa todas las preguntas para recibir tu outfit personalizado</div>
+      </div>
+    </div>
+    <div data-tf-live="zpFGHFw4" style="height:600px"></div>
+  </div>
+</div>
+
+<div class="page-footer">
+  <p>Proyecto de <a href="../">Brenda Fernández</a> · IA aplicada a moda · Desarrollado con Make, Typeform y IA Generativa</p>
+</div>
+
+<script src="//embed.typeform.com/next/embed.js"></script>
+</body>
+</html>
