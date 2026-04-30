@@ -12,31 +12,14 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
 <style>
-:root{
-  --cream:#F4F0E8;
-  --cream2:#EDE8DC;
-  --white:#FDFBF7;
-  --navy:#1C2B4A;
-  --navy2:#253760;
-  --navy3:#0F1E36;
-  --slate:#4A5568;
-  --muted:#7A7265;
-  --border:#D8D2C4;
-  --border2:#C8C2B4;
-  --accent:#2D5FA8;
-  --accent-light:#E8EEF8;
-}
+:root{--cream:#F4F0E8;--cream2:#EDE8DC;--white:#FDFBF7;--navy:#1C2B4A;--navy2:#253760;--navy3:#0F1E36;--slate:#4A5568;--muted:#7A7265;--border:#D8D2C4;--border2:#C8C2B4;--accent:#2D5FA8;--accent-light:#E8EEF8}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{font-family:'DM Sans',sans-serif;background:var(--cream);color:#1A1A1A;font-size:16px;line-height:1.7;overflow-x:hidden}
-
-/* CURSOR */
 *{cursor:none}
-#psModal *{cursor:auto}
-.cursor{width:10px;height:10px;border-radius:50%;background:var(--navy);position:fixed;top:0;left:0;pointer-events:none;z-index:9999;transition:transform 0.08s ease,background 0.15s;mix-blend-mode:multiply}
+#psModal,#psModal *{cursor:auto!important}
+.cursor{width:10px;height:10px;border-radius:50%;background:var(--navy);position:fixed;top:0;left:0;pointer-events:none;z-index:10000;transition:transform 0.08s ease,background 0.15s;mix-blend-mode:multiply}
 .cursor-ring{width:32px;height:32px;border-radius:50%;border:1.5px solid var(--navy);position:fixed;top:0;left:0;pointer-events:none;z-index:9998;mix-blend-mode:multiply}
-
-/* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1.4rem 4rem;background:rgba(244,240,232,0.93);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
 .nav-logo{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:600;color:var(--navy);text-decoration:none}
 .nav-logo span{display:inline-block;width:6px;height:6px;background:var(--accent);border-radius:50%;margin-left:3px;margin-bottom:8px;vertical-align:middle}
@@ -45,8 +28,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .nav-links a:hover{color:var(--navy)}
 .nav-cta{display:inline-flex;align-items:center;gap:0.5rem;padding:0.55rem 1.4rem;background:var(--navy);color:var(--cream);font-size:0.78rem;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;border-radius:2px;transition:background 0.2s}
 .nav-cta:hover{background:var(--accent)}
-
-/* HERO */
 .hero{min-height:100vh;display:grid;grid-template-columns:52% 48%;position:relative;overflow:hidden}
 .hero-left{display:flex;flex-direction:column;justify-content:center;padding:9rem 4rem 5rem;position:relative;z-index:2}
 .hero-lines{position:absolute;inset:0;pointer-events:none}
@@ -83,9 +64,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .hero-card{position:absolute;bottom:8%;left:2rem;right:2rem;z-index:3;background:rgba(15,30,54,0.75);border:1px solid rgba(244,240,232,0.1);border-radius:4px;padding:1.25rem 1.75rem;backdrop-filter:blur(12px)}
 .hero-card-label{font-size:0.68rem;text-transform:uppercase;letter-spacing:0.18em;color:rgba(244,240,232,0.35);margin-bottom:0.6rem}
 .hero-card-text{font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-weight:300;color:var(--cream);font-style:italic;line-height:1.4}
-.hero-card-author{margin-top:0.6rem;font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(244,240,232,0.3)}
-
-/* SECCIONES */
 section{padding:7rem 4rem}
 .section-header{margin-bottom:4rem}
 .section-eyebrow{display:flex;align-items:center;gap:1rem;margin-bottom:1rem}
@@ -93,8 +71,6 @@ section{padding:7rem 4rem}
 .ey-text{font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent);font-weight:500}
 h2{font-family:'Cormorant Garamond',serif;font-size:clamp(2.2rem,4vw,3.5rem);font-weight:300;color:var(--navy);line-height:1.1}
 h2 strong{font-weight:600}
-
-/* SOBRE MÍ */
 #sobre-mi{background:var(--white)}
 .about-layout{display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:start}
 .about-text p{color:var(--slate);margin-bottom:1.4rem;font-size:1rem;line-height:1.9}
@@ -107,8 +83,6 @@ h2 strong{font-weight:600}
 .s-pill{padding:0.35rem 0.9rem;border:1px solid var(--border2);border-radius:2px;font-size:0.82rem;color:var(--slate);background:var(--cream)}
 .sidebar-value{font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:600;color:var(--navy)}
 .sidebar-value span{font-family:'DM Sans',sans-serif;font-size:0.85rem;color:var(--muted);font-weight:300;margin-left:0.3rem}
-
-/* HABILIDADES */
 #habilidades{background:var(--cream2)}
 .skills-intro{display:grid;grid-template-columns:1fr 2fr;gap:5rem;align-items:start}
 .skills-intro-text{position:sticky;top:8rem}
@@ -123,11 +97,7 @@ h2 strong{font-weight:600}
 .skill-item h3{font-size:0.92rem;font-weight:500;color:var(--navy);margin-bottom:0.5rem}
 .skill-item p{font-size:0.85rem;color:var(--slate);line-height:1.7}
 .skill-badge-ia{display:inline-block;margin-top:0.75rem;font-size:0.65rem;padding:0.2rem 0.6rem;background:var(--accent-light);color:var(--accent);border-radius:2px;letter-spacing:0.1em;text-transform:uppercase;font-weight:500}
-
-/* HERRAMIENTAS */
 #herramientas{background:var(--navy3);padding:6rem 4rem}
-#herramientas .ey-text{color:rgba(244,240,232,0.45)}
-#herramientas .ey-line{background:rgba(244,240,232,0.25)}
 #herramientas h2{color:var(--cream);margin-bottom:2.5rem}
 .tools-categories{display:flex;gap:0.75rem;margin-bottom:3rem;flex-wrap:wrap}
 .tool-cat-btn{padding:0.45rem 1.1rem;border:1px solid rgba(255,255,255,0.1);background:transparent;color:rgba(244,240,232,0.45);font-family:'DM Sans',sans-serif;font-size:0.73rem;letter-spacing:0.1em;text-transform:uppercase;border-radius:2px;cursor:pointer;transition:all 0.2s}
@@ -140,10 +110,8 @@ h2 strong{font-weight:600}
 .tool-card:hover .tool-icon{transform:scale(1.1)}
 .tool-card-name{font-size:0.82rem;color:rgba(244,240,232,0.8);margin-bottom:0.5rem}
 .tool-level-bar{width:100%;height:2px;background:rgba(255,255,255,0.07);border-radius:2px;overflow:hidden;margin-top:0.4rem}
-.tool-level-fill{height:100%;background:var(--accent);border-radius:2px;transition:width 0.6s ease}
+.tool-level-fill{height:100%;background:var(--accent);border-radius:2px}
 .tool-level-label{font-size:0.62rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(244,240,232,0.28);margin-top:0.35rem}
-
-/* PROYECTOS */
 #proyectos{background:var(--cream);padding:7rem 0}
 .proyectos-header{padding:0 4rem;margin-bottom:3rem}
 .netflix-row{position:relative}
@@ -157,11 +125,10 @@ h2 strong{font-weight:600}
 .project-card:hover{transform:translateY(-5px);box-shadow:0 18px 45px rgba(28,43,74,0.1);border-color:var(--accent)}
 .project-card.video-card{flex:0 0 380px}
 .project-media{width:100%;height:220px;overflow:hidden;position:relative;background:var(--navy3)}
-.project-media img{width:100%;height:100%;object-fit:cover;object-position:center center;display:block;transition:transform 0.4s ease}
+.project-media img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.4s ease}
 .project-card:hover .project-media img{transform:scale(1.04)}
 .project-media-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,transparent 50%,rgba(15,30,54,0.5) 100%)}
 .play-btn{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:48px;height:48px;border-radius:50%;background:rgba(255,255,255,0.15);border:2px solid rgba(255,255,255,0.5);display:flex;align-items:center;justify-content:center;font-size:1rem;color:white;cursor:pointer;z-index:5;transition:all 0.2s;backdrop-filter:blur(4px)}
-.play-btn:hover{background:rgba(255,255,255,0.3);transform:translate(-50%,-50%) scale(1.1)}
 .project-body{padding:1.5rem}
 .project-type{font-size:0.67rem;text-transform:uppercase;letter-spacing:0.15em;color:var(--accent);font-weight:500;margin-bottom:0.6rem}
 .project-card h3{font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-weight:600;color:var(--navy);margin-bottom:0.5rem;line-height:1.25}
@@ -170,8 +137,6 @@ h2 strong{font-weight:600}
 .tag{font-size:0.68rem;padding:0.2rem 0.6rem;border:1px solid var(--border);color:var(--muted);border-radius:2px}
 .project-link{display:inline-flex;align-items:center;gap:0.4rem;margin-top:0.9rem;font-size:0.76rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent);text-decoration:none;font-weight:500;border-bottom:1px solid transparent;transition:border-color 0.2s}
 .project-link:hover{border-color:var(--accent)}
-
-/* TRAYECTORIA */
 #trayectoria{background:var(--white)}
 .trajectory-layout{display:grid;grid-template-columns:1fr 1fr;gap:6rem}
 .traj-col-title{font-size:0.68rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted);margin-bottom:2.5rem;display:flex;align-items:center;gap:1rem}
@@ -189,7 +154,7 @@ h2 strong{font-weight:600}
 .edu-card h3{font-size:0.93rem;font-weight:500;color:var(--navy);margin-bottom:0.2rem}
 .edu-center{font-size:0.82rem;color:var(--accent);margin-bottom:0.5rem}
 .edu-card p{font-size:0.82rem;color:var(--slate);line-height:1.65}
-.edu-badge{display:inline-flex;align-items:center;gap:0.4rem;margin-top:0.7rem;font-size:0.7rem;padding:0.28rem 0.75rem;background:var(--accent-light);color:var(--accent);border-radius:2px;letter-spacing:0.04em;font-weight:500}
+.edu-badge{display:inline-flex;align-items:center;gap:0.4rem;margin-top:0.7rem;font-size:0.7rem;padding:0.28rem 0.75rem;background:var(--accent-light);color:var(--accent);border-radius:2px;font-weight:500}
 .certs-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:0.5rem}
 .cert-card-visual{border:1px solid var(--border);border-radius:4px;overflow:hidden;background:var(--white);transition:border-color 0.2s,transform 0.2s}
 .cert-card-visual:hover{border-color:var(--accent);transform:translateY(-2px)}
@@ -203,9 +168,7 @@ h2 strong{font-weight:600}
 .cert-info-area .cert-meta{font-size:0.73rem;color:var(--muted);margin-bottom:0.75rem}
 .cert-link-btn{display:inline-flex;align-items:center;gap:0.35rem;font-size:0.7rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent);text-decoration:none;font-weight:500;border-bottom:1px solid transparent;transition:border-color 0.2s}
 .cert-link-btn:hover{border-color:var(--accent)}
-.cert-coming{border:1px dashed var(--border);border-radius:4px;display:flex;align-items:center;justify-content:center;min-height:80px;font-size:0.8rem;color:var(--muted);letter-spacing:0.05em;background:transparent;opacity:0.5;grid-column:span 2}
-
-/* CONTACTO */
+.cert-coming{border:1px dashed var(--border);border-radius:4px;display:flex;align-items:center;justify-content:center;min-height:80px;font-size:0.8rem;color:var(--muted);background:transparent;opacity:0.5;grid-column:span 2}
 #contacto{background:var(--navy);padding:7rem 4rem;position:relative;overflow:hidden}
 .contact-bg-grid{position:absolute;inset:0;opacity:0.04;background-image:linear-gradient(var(--cream) 1px,transparent 1px),linear-gradient(90deg,var(--cream) 1px,transparent 1px);background-size:60px 60px;pointer-events:none}
 .contact-circle{position:absolute;border-radius:50%;border:1px solid rgba(255,255,255,0.04);pointer-events:none}
@@ -238,126 +201,16 @@ h2 strong{font-weight:600}
 .form-submit{padding:0.95rem;background:var(--accent);color:white;border:none;border-radius:2px;font-size:0.78rem;letter-spacing:0.12em;text-transform:uppercase;font-weight:500;font-family:'DM Sans',sans-serif;cursor:pointer;transition:background 0.2s,transform 0.2s;margin-top:0.25rem}
 .form-submit:hover{background:#3a6fc4;transform:translateY(-1px)}
 .form-success{display:none;padding:0.9rem;border:1px solid rgba(74,222,128,0.3);border-radius:2px;color:rgba(74,222,128,0.85);font-size:0.83rem;text-align:center;background:rgba(74,222,128,0.05)}
-
-/* FOOTER */
 footer{background:var(--navy3);border-top:1px solid rgba(255,255,255,0.05);padding:2rem 4rem;display:flex;justify-content:space-between;align-items:center}
 footer p{font-size:0.77rem;color:rgba(244,240,232,0.28)}
 .footer-links{display:flex;gap:2rem}
 .footer-links a{font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(244,240,232,0.28);text-decoration:none;transition:color 0.2s}
 .footer-links a:hover{color:rgba(244,240,232,0.7)}
-
-/* ANIMACIONES */
 @keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
 .reveal{opacity:0;transform:translateY(28px);transition:opacity 0.65s ease,transform 0.65s ease}
 .reveal.visible{opacity:1;transform:none}
-
-<!-- MODAL PERSONAL SHOPPER BOTPRESS -->
-<div id="psModal" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(10,5,20,0.85);backdrop-filter:blur(12px);align-items:center;justify-content:center;padding:1rem;cursor:auto">
-  <div style="background:linear-gradient(135deg,#0f0f1a 0%,#1a0a2e 100%);border-radius:20px;width:100%;max-width:480px;height:90vh;max-height:780px;display:flex;flex-direction:column;overflow:hidden;border:1px solid rgba(167,139,250,0.2);box-shadow:0 25px 60px rgba(124,58,237,0.3),0 0 0 1px rgba(255,255,255,0.05);position:relative">
-    
-    <!-- Header -->
-    <div style="padding:16px 20px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,0.06);flex-shrink:0;background:rgba(255,255,255,0.03)">
-      <div style="display:flex;align-items:center;gap:12px">
-        <div style="width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,#7c3aed,#a855f7);display:flex;align-items:center;justify-content:center;font-size:20px;box-shadow:0 4px 12px rgba(124,58,237,0.4)">👗</div>
-        <div>
-          <div style="color:#fff;font-weight:600;font-size:14px;font-family:'DM Sans',sans-serif;letter-spacing:0.02em">Personal Shopper IA</div>
-          <div style="display:flex;align-items:center;gap:5px;margin-top:2px">
-            <div style="width:6px;height:6px;border-radius:50%;background:#4ade80;animation:blink 2s ease-in-out infinite"></div>
-            <span style="color:#a78bfa;font-size:11px;font-family:'DM Sans',sans-serif">Élise · En línea</span>
-          </div>
-        </div>
-      </div>
-      <button onclick="cerrarShopper()" style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);color:rgba(255,255,255,0.7);width:32px;height:32px;border-radius:50%;font-size:14px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all 0.2s;font-family:'DM Sans',sans-serif" onmouseover="this.style.background='rgba(255,255,255,0.12)'" onmouseout="this.style.background='rgba(255,255,255,0.06)'">✕</button>
-    </div>
-
-    <!-- Iframe Botpress -->
-    <iframe 
-      src="https://cdn.botpress.cloud/webchat/v3.6/shareable.html?configUrl=https://files.bpcontent.cloud/2026/04/30/06/20260430062051-HOX3BWME.json"
-      style="flex:1;border:none;width:100%;background:transparent"
-      allow="microphone"
-      loading="lazy">
-    </iframe>
-
-    <!-- Footer -->
-    <div style="padding:8px 16px;border-top:1px solid rgba(255,255,255,0.06);display:flex;align-items:center;justify-content:center;gap:6px;flex-shrink:0">
-      <span style="font-size:10px;color:rgba(255,255,255,0.2);font-family:'DM Sans',sans-serif;letter-spacing:0.05em">Proyecto de</span>
-      <span style="font-size:10px;color:rgba(167,139,250,0.5);font-family:'DM Sans',sans-serif;font-weight:500;letter-spacing:0.05em">Brenda Fernández · IA aplicada</span>
-    </div>
-  </div>
-</div>
-
-<script>
-function abrirShopper(){
-  const modal=document.getElementById('psModal');
-  modal.style.display='flex';
-  document.body.style.overflow='hidden';
-}
-function cerrarShopper(){
-  document.getElementById('psModal').style.display='none';
-  document.body.style.overflow='';
-}
-document.getElementById('psModal').addEventListener('click',function(e){
-  if(e.target===this)cerrarShopper();
-});
-</script>
-/* RESPONSIVE */
-@media(max-width:1024px){
-  nav{padding:1.2rem 1.5rem}
-  .nav-links{display:none}
-  .hero{grid-template-columns:1fr}
-  .hero-right{display:none}
-  .hero-left{padding:8rem 1.5rem 4rem}
-  section{padding:5rem 1.5rem}
-  #proyectos{padding:5rem 0}
-  #herramientas{padding:5rem 1.5rem}
-  .proyectos-header{padding:0 1.5rem}
-  .netflix-track{padding:0.5rem 1.5rem 2rem}
-  .about-layout,.skills-intro,.trajectory-layout,.contact-layout{grid-template-columns:1fr;gap:2.5rem}
-  .tools-visual-grid{grid-template-columns:repeat(3,1fr)}
-  .form-row{grid-template-columns:1fr}
-  .certs-grid{grid-template-columns:1fr 1fr}
-  footer{flex-direction:column;gap:1rem;padding:1.5rem;text-align:center}
-  .skills-grid{grid-template-columns:1fr 1fr}
-}
-@media(max-width:640px){
-  .cursor,.cursor-ring{display:none}
-  *{cursor:auto}
-  nav{padding:1rem 1.25rem}
-  .nav-logo{font-size:1.3rem}
-  .nav-cta{font-size:0.7rem;padding:0.45rem 1rem}
-  .hero{display:flex;flex-direction:column;min-height:auto}
-  .hero-right{display:flex;height:300px;order:-1;padding:0;position:relative;flex-shrink:0}
-  .hero-photo-frame{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:160px;max-width:160px;height:200px;border-radius:90px}
-  .hero-left{padding:1.75rem 1.25rem 3rem;order:1}
-  .hero h1{font-size:2.5rem;margin-bottom:1.25rem}
-  .hero-desc{font-size:0.9rem;max-width:100%;margin-bottom:2rem}
-  .hero-actions{flex-direction:column;gap:0.75rem;margin-bottom:2.5rem}
-  .btn-primary,.btn-outline{width:100%;justify-content:center;padding:0.9rem 1.25rem;font-size:0.78rem}
-  .hero-stats{gap:0;display:grid;grid-template-columns:repeat(4,1fr);text-align:center;padding-top:1.75rem}
-  .stat .num{font-size:1.8rem}
-  section{padding:3rem 1.25rem}
-  #proyectos{padding:3rem 0}
-  #herramientas{padding:3rem 1.25rem}
-  .proyectos-header{padding:0 1.25rem}
-  h2{font-size:1.8rem}
-  .about-layout{gap:1.75rem}
-  .skills-intro{gap:1.5rem}
-  .skills-intro-text{position:relative;top:auto}
-  .skills-grid{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:1px;background:transparent;border:none;-webkit-overflow-scrolling:touch;scrollbar-width:none;margin:0 -1.25rem;padding:0 1.25rem}
-  .skills-grid::-webkit-scrollbar{display:none}
-  .skill-item{flex:0 0 220px;scroll-snap-align:start;border:1px solid var(--border);border-radius:4px;padding:1.5rem;background:var(--white)}
-  .tools-visual-grid{grid-template-columns:repeat(2,1fr)}
-  .tools-categories{display:flex;overflow-x:auto;gap:0.4rem;scrollbar-width:none;padding-bottom:0.25rem;flex-wrap:nowrap}
-  .tools-categories::-webkit-scrollbar{display:none}
-  .netflix-track{padding:0.5rem 1.25rem 1.5rem;gap:1rem}
-  .project-card{flex:0 0 270px}
-  .project-card.video-card{flex:0 0 290px}
-  .project-media{height:160px}
-  .trajectory-layout{gap:2.5rem}
-  .timeline-item{grid-template-columns:1fr;gap:0.4rem;padding:1.25rem;border:1px solid var(--border);border-radius:4px;background:var(--white);margin-bottom:0.75rem}
-  .contact-layout{gap:2rem}
-  footer{flex-direction:column;gap:0.75rem;padding:1.25rem;text-align:center}
-}
+@media(max-width:1024px){nav{padding:1.2rem 1.5rem}.nav-links{display:none}.hero{grid-template-columns:1fr}.hero-right{display:none}.hero-left{padding:8rem 1.5rem 4rem}section{padding:5rem 1.5rem}#proyectos{padding:5rem 0}#herramientas{padding:5rem 1.5rem}.proyectos-header{padding:0 1.5rem}.netflix-track{padding:0.5rem 1.5rem 2rem}.about-layout,.skills-intro,.trajectory-layout,.contact-layout{grid-template-columns:1fr;gap:2.5rem}.tools-visual-grid{grid-template-columns:repeat(3,1fr)}.form-row{grid-template-columns:1fr}.skills-grid{grid-template-columns:1fr 1fr}footer{flex-direction:column;gap:1rem;padding:1.5rem;text-align:center}}
+@media(max-width:640px){.cursor,.cursor-ring{display:none}*{cursor:auto}nav{padding:1rem 1.25rem}.nav-logo{font-size:1.3rem}.hero{display:flex;flex-direction:column;min-height:auto}.hero-right{display:flex;height:300px;order:-1;padding:0;position:relative;flex-shrink:0}.hero-photo-frame{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:160px;max-width:160px;height:200px;border-radius:90px}.hero-left{padding:1.75rem 1.25rem 3rem;order:1}.hero h1{font-size:2.5rem}.hero-desc{font-size:0.9rem;max-width:100%;margin-bottom:2rem}.hero-actions{flex-direction:column;gap:0.75rem;margin-bottom:2.5rem}.btn-primary,.btn-outline{width:100%;justify-content:center;padding:0.9rem 1.25rem;font-size:0.78rem}.hero-stats{gap:0;display:grid;grid-template-columns:repeat(4,1fr);text-align:center;padding-top:1.75rem}.stat .num{font-size:1.8rem}section{padding:3rem 1.25rem}#proyectos{padding:3rem 0}#herramientas{padding:3rem 1.25rem}.proyectos-header{padding:0 1.25rem}h2{font-size:1.8rem}.netflix-track{padding:0.5rem 1.25rem 1.5rem;gap:1rem}.project-card{flex:0 0 270px}.project-card.video-card{flex:0 0 290px}.project-media{height:160px}.timeline-item{grid-template-columns:1fr;gap:0.4rem;padding:1.25rem;border:1px solid var(--border);border-radius:4px;background:var(--white);margin-bottom:0.75rem}.contact-layout{gap:2rem}footer{flex-direction:column;gap:0.75rem;padding:1.25rem;text-align:center}}
 </style>
 </head>
 <body>
@@ -365,7 +218,6 @@ document.getElementById('psModal').addEventListener('click',function(e){
 <div class="cursor" id="cur"></div>
 <div class="cursor-ring" id="curRing"></div>
 
-<!-- NAV -->
 <nav>
   <a href="#" class="nav-logo">BF<span></span></a>
   <ul class="nav-links">
@@ -378,7 +230,6 @@ document.getElementById('psModal').addEventListener('click',function(e){
   <a href="Brenda_Fernandez_Administrativa..pdf" class="nav-cta" target="_blank">↓ Descargar CV</a>
 </nav>
 
-<!-- HERO -->
 <section class="hero" id="inicio">
   <div class="hero-lines">
     <div class="hero-line v" style="left:25%"></div>
@@ -387,19 +238,9 @@ document.getElementById('psModal').addEventListener('click',function(e){
     <div class="hero-line h" style="top:66%"></div>
   </div>
   <div class="hero-left">
-    <div class="hero-eyebrow">
-      <div class="hero-eyebrow-line"></div>
-      <span class="hero-eyebrow-text">Administración · Inteligencia Artificial</span>
-    </div>
-    <h1>
-      <strong>Brenda</strong>
-      Fernández
-      <em>Técnico Superior · IA aplicada</em>
-    </h1>
-    <p class="hero-desc">
-      Técnico Superior en Administración y Finanzas con experiencia en banca, hipotecas y asesoría.
-      <strong>Me apasiona que todo esté en orden</strong> — y la IA me ha enseñado que siempre hay una forma más inteligente de conseguirlo.
-    </p>
+    <div class="hero-eyebrow"><div class="hero-eyebrow-line"></div><span class="hero-eyebrow-text">Administración · Inteligencia Artificial</span></div>
+    <h1><strong>Brenda</strong>Fernández<em>Técnico Superior · IA aplicada</em></h1>
+    <p class="hero-desc">Técnico Superior en Administración y Finanzas con experiencia en banca, hipotecas y asesoría. <strong>Me apasiona que todo esté en orden</strong> — y la IA me ha enseñado que siempre hay una forma más inteligente de conseguirlo.</p>
     <div class="hero-actions">
       <a href="#proyectos" class="btn-primary">Ver proyectos →</a>
       <a href="Brenda_Fernandez_Administrativa..pdf" class="btn-outline" target="_blank">↓ Descargar CV</a>
@@ -416,21 +257,12 @@ document.getElementById('psModal').addEventListener('click',function(e){
     <div class="hero-grid"></div>
     <div class="hero-circle" style="width:500px;height:500px;top:-150px;right:-150px"></div>
     <div class="hero-circle" style="width:250px;height:250px;top:80px;right:80px"></div>
-    <div class="hero-photo-frame">
-      <img src="foto.jpg" alt="Brenda Fernández" onerror="this.outerHTML='<div class=hero-photo-placeholder>B</div>'"/>
-    </div>
-    <div class="availability-chip">
-      <div class="availability-dot"></div>
-      <span class="availability-text">Disponible para trabajar</span>
-    </div>
-    <div class="hero-card">
-      <div class="hero-card-label">Lo que me mueve</div>
-      <div class="hero-card-text">Me gusta el orden, aprender sin parar y aportar desde donde estoy.</div>
-    </div>
+    <div class="hero-photo-frame"><img src="foto.jpg" alt="Brenda Fernández" onerror="this.outerHTML='<div class=hero-photo-placeholder>B</div>'"/></div>
+    <div class="availability-chip"><div class="availability-dot"></div><span class="availability-text">Disponible para trabajar</span></div>
+    <div class="hero-card"><div class="hero-card-label">Lo que me mueve</div><div class="hero-card-text">Me gusta el orden, aprender sin parar y aportar desde donde estoy.</div></div>
   </div>
 </section>
 
-<!-- SOBRE MÍ -->
 <section id="sobre-mi" class="reveal">
   <div class="section-header">
     <div class="section-eyebrow"><div class="ey-line"></div><span class="ey-text">Sobre mí</span></div>
@@ -441,39 +273,17 @@ document.getElementById('psModal').addEventListener('click',function(e){
       <p>Soy Brenda, y llevo ya un tiempo trabajando en administración — en banca, en gestión hipotecaria y en asesoría. Son entornos donde los detalles importan y donde el orden no es opcional. Eso me encaja bastante bien, porque soy de las que no descansa hasta que todo cuadra.</p>
       <p>Con la IA empecé como la mayoría: usando ChatGPT y Gemini para cosas concretas. Pero cuando me puse a formarme en serio, me di cuenta de que era mucho más que eso. Avatares, automatizaciones, prompting avanzado... se abrió un mundo que no he dejado de explorar desde entonces.</p>
       <p>Hoy lo que más me ilusiona es juntar las dos cosas: la solidez de la gestión administrativa con las posibilidades que da la IA. No para cambiar de rumbo, sino para hacer mejor lo que ya me gusta hacer.</p>
-      <div class="about-highlight">
-        <p>Lo que más valoro de mi perfil es que conozco cómo funciona una empresa por dentro — y eso, combinado con la IA, marca la diferencia.</p>
-      </div>
+      <div class="about-highlight"><p>Lo que más valoro de mi perfil es que conozco cómo funciona una empresa por dentro — y eso, combinado con la IA, marca la diferencia.</p></div>
     </div>
     <div>
-      <div class="sidebar-block">
-        <div class="sidebar-label">Idiomas</div>
-        <div class="sidebar-pills">
-          <span class="s-pill">Español (nativo)</span><span class="s-pill">Inglés B2</span><span class="s-pill">Italiano</span><span class="s-pill">Francés</span>
-        </div>
-      </div>
-      <div class="sidebar-block">
-        <div class="sidebar-label">Especialidades</div>
-        <div class="sidebar-pills">
-          <span class="s-pill">Administración</span><span class="s-pill">Finanzas</span><span class="s-pill">Gestión documental</span><span class="s-pill">Contabilidad</span><span class="s-pill">Atención al cliente</span><span class="s-pill">Prompt Engineering</span><span class="s-pill">Automatización IA</span>
-        </div>
-      </div>
-      <div class="sidebar-block" style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem">
-        <div><div class="sidebar-value">1+ <span>años</span></div><div class="sidebar-label" style="margin-top:0.2rem">Experiencia</div></div>
-        <div><div class="sidebar-value">10+</div><div class="sidebar-label" style="margin-top:0.2rem">Herramientas IA</div></div>
-      </div>
-      <div class="sidebar-block">
-        <div class="sidebar-label">Disponibilidad</div>
-        <div style="display:flex;align-items:center;gap:0.6rem;margin-top:0.2rem">
-          <div style="width:8px;height:8px;border-radius:50%;background:#4ADE80;animation:blink 2s ease-in-out infinite"></div>
-          <span style="font-size:0.87rem;color:var(--slate)">Incorporación inmediata</span>
-        </div>
-      </div>
+      <div class="sidebar-block"><div class="sidebar-label">Idiomas</div><div class="sidebar-pills"><span class="s-pill">Español (nativo)</span><span class="s-pill">Inglés B2</span><span class="s-pill">Italiano</span><span class="s-pill">Francés</span></div></div>
+      <div class="sidebar-block"><div class="sidebar-label">Especialidades</div><div class="sidebar-pills"><span class="s-pill">Administración</span><span class="s-pill">Finanzas</span><span class="s-pill">Gestión documental</span><span class="s-pill">Contabilidad</span><span class="s-pill">Atención al cliente</span><span class="s-pill">Prompt Engineering</span><span class="s-pill">Automatización IA</span></div></div>
+      <div class="sidebar-block" style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem"><div><div class="sidebar-value">1+ <span>años</span></div><div class="sidebar-label" style="margin-top:0.2rem">Experiencia</div></div><div><div class="sidebar-value">10+</div><div class="sidebar-label" style="margin-top:0.2rem">Herramientas IA</div></div></div>
+      <div class="sidebar-block"><div class="sidebar-label">Disponibilidad</div><div style="display:flex;align-items:center;gap:0.6rem;margin-top:0.2rem"><div style="width:8px;height:8px;border-radius:50%;background:#4ADE80;animation:blink 2s ease-in-out infinite"></div><span style="font-size:0.87rem;color:var(--slate)">Incorporación inmediata</span></div></div>
     </div>
   </div>
 </section>
 
-<!-- HABILIDADES -->
 <section id="habilidades" class="reveal">
   <div class="skills-intro">
     <div class="skills-intro-text">
@@ -492,7 +302,6 @@ document.getElementById('psModal').addEventListener('click',function(e){
   </div>
 </section>
 
-<!-- HERRAMIENTAS -->
 <section id="herramientas" class="reveal">
   <div class="section-eyebrow"><div class="ey-line" style="background:rgba(244,240,232,0.25)"></div><span class="ey-text" style="color:rgba(244,240,232,0.45)">Herramientas</span></div>
   <h2 style="color:var(--cream);margin-bottom:2.5rem">Con lo que <strong>trabajo</strong></h2>
@@ -503,25 +312,24 @@ document.getElementById('psModal').addEventListener('click',function(e){
     <button class="tool-cat-btn" data-cat="all">Todas</button>
   </div>
   <div class="tools-visual-grid" id="toolsGrid">
-    <div class="tool-card" data-cat="ofi" style="animation-delay:0.05s"><div class="tool-icon">📊</div><div class="tool-card-name">Excel Avanzado</div><div class="tool-level-bar"><div class="tool-level-fill" style="width:92%"></div></div><div class="tool-level-label">Avanzado</div></div>
-    <div class="tool-card" data-cat="ofi" style="animation-delay:0.1s"><div class="tool-icon">📁</div><div class="tool-card-name">Google Workspace</div><div class="tool-level-bar"><div class="tool-level-fill" style="width:90%"></div></div><div class="tool-level-label">Avanzado</div></div>
-    <div class="tool-card" data-cat="ofi" style="animation-delay:0.15s"><div class="tool-icon">💼</div><div class="tool-card-name">Microsoft 365</div><div class="tool-level-bar"><div class="tool-level-fill" style="width:90%"></div></div><div class="tool-level-label">Avanzado</div></div>
-    <div class="tool-card" data-cat="ofi" style="animation-delay:0.2s"><div class="tool-icon">📝</div><div class="tool-card-name">Word</div><div class="tool-level-bar"><div class="tool-level-fill" style="width:92%"></div></div><div class="tool-level-label">Avanzado</div></div>
-    <div class="tool-card" data-cat="ofi" style="animation-delay:0.25s"><div class="tool-icon">📊</div><div class="tool-card-name">PowerPoint</div><div class="tool-level-bar"><div class="tool-level-fill" style="width:88%"></div></div><div class="tool-level-label">Avanzado</div></div>
-    <div class="tool-card" data-cat="ofi" style="animation-delay:0.3s"><div class="tool-icon">🎨</div><div class="tool-card-name">Canva</div><div class="tool-level-bar"><div class="tool-level-fill" style="width:88%"></div></div><div class="tool-level-label">Avanzado</div></div>
-    <div class="tool-card" data-cat="ofi" style="animation-delay:0.35s"><div class="tool-icon">📋</div><div class="tool-card-name">Notion</div><div class="tool-level-bar"><div class="tool-level-fill" style="width:88%"></div></div><div class="tool-level-label">Avanzado</div></div>
-    <div class="tool-card" data-cat="ofi" style="animation-delay:0.4s"><div class="tool-icon">📧</div><div class="tool-card-name">Outlook</div><div class="tool-level-bar"><div class="tool-level-fill" style="width:92%"></div></div><div class="tool-level-label">Avanzado</div></div>
-    <div class="tool-card" data-cat="ia" style="animation-delay:0.05s"><div class="tool-icon">🤖</div><div class="tool-card-name">ChatGPT</div><div class="tool-level-bar"><div class="tool-level-fill" style="width:92%"></div></div><div class="tool-level-label">Avanzado</div></div>
-    <div class="tool-card" data-cat="ia" style="animation-delay:0.1s"><div class="tool-icon">🧠</div><div class="tool-card-name">Claude</div><div class="tool-level-bar"><div class="tool-level-fill" style="width:92%"></div></div><div class="tool-level-label">Avanzado</div></div>
-    <div class="tool-card" data-cat="ia" style="animation-delay:0.15s"><div class="tool-icon">✨</div><div class="tool-card-name">Gemini</div><div class="tool-level-bar"><div class="tool-level-fill" style="width:90%"></div></div><div class="tool-level-label">Avanzado</div></div>
-    <div class="tool-card" data-cat="ia" style="animation-delay:0.2s"><div class="tool-icon">🔍</div><div class="tool-card-name">Perplexity</div><div class="tool-level-bar"><div class="tool-level-fill" style="width:90%"></div></div><div class="tool-level-label">Avanzado</div></div>
-    <div class="tool-card" data-cat="ia" style="animation-delay:0.25s"><div class="tool-icon">🪄</div><div class="tool-card-name">Copilot</div><div class="tool-level-bar"><div class="tool-level-fill" style="width:88%"></div></div><div class="tool-level-label">Avanzado · cert.</div></div>
-    <div class="tool-card" data-cat="ia" style="animation-delay:0.3s"><div class="tool-icon">🎨</div><div class="tool-card-name">Midjourney</div><div class="tool-level-bar"><div class="tool-level-fill" style="width:68%"></div></div><div class="tool-level-label">Intermedio</div></div>
-    <div class="tool-card" data-cat="auto" style="animation-delay:0.05s"><div class="tool-icon">⚙️</div><div class="tool-card-name">Make</div><div class="tool-level-bar"><div class="tool-level-fill" style="width:100%"></div></div><div class="tool-level-label">Foundation ✓</div></div>
+    <div class="tool-card" data-cat="ofi"><div class="tool-icon">📊</div><div class="tool-card-name">Excel Avanzado</div><div class="tool-level-bar"><div class="tool-level-fill" style="width:92%"></div></div><div class="tool-level-label">Avanzado</div></div>
+    <div class="tool-card" data-cat="ofi"><div class="tool-icon">📁</div><div class="tool-card-name">Google Workspace</div><div class="tool-level-bar"><div class="tool-level-fill" style="width:90%"></div></div><div class="tool-level-label">Avanzado</div></div>
+    <div class="tool-card" data-cat="ofi"><div class="tool-icon">💼</div><div class="tool-card-name">Microsoft 365</div><div class="tool-level-bar"><div class="tool-level-fill" style="width:90%"></div></div><div class="tool-level-label">Avanzado</div></div>
+    <div class="tool-card" data-cat="ofi"><div class="tool-icon">📝</div><div class="tool-card-name">Word</div><div class="tool-level-bar"><div class="tool-level-fill" style="width:92%"></div></div><div class="tool-level-label">Avanzado</div></div>
+    <div class="tool-card" data-cat="ofi"><div class="tool-icon">📊</div><div class="tool-card-name">PowerPoint</div><div class="tool-level-bar"><div class="tool-level-fill" style="width:88%"></div></div><div class="tool-level-label">Avanzado</div></div>
+    <div class="tool-card" data-cat="ofi"><div class="tool-icon">🎨</div><div class="tool-card-name">Canva</div><div class="tool-level-bar"><div class="tool-level-fill" style="width:88%"></div></div><div class="tool-level-label">Avanzado</div></div>
+    <div class="tool-card" data-cat="ofi"><div class="tool-icon">📋</div><div class="tool-card-name">Notion</div><div class="tool-level-bar"><div class="tool-level-fill" style="width:88%"></div></div><div class="tool-level-label">Avanzado</div></div>
+    <div class="tool-card" data-cat="ofi"><div class="tool-icon">📧</div><div class="tool-card-name">Outlook</div><div class="tool-level-bar"><div class="tool-level-fill" style="width:92%"></div></div><div class="tool-level-label">Avanzado</div></div>
+    <div class="tool-card" data-cat="ia"><div class="tool-icon">🤖</div><div class="tool-card-name">ChatGPT</div><div class="tool-level-bar"><div class="tool-level-fill" style="width:92%"></div></div><div class="tool-level-label">Avanzado</div></div>
+    <div class="tool-card" data-cat="ia"><div class="tool-icon">🧠</div><div class="tool-card-name">Claude</div><div class="tool-level-bar"><div class="tool-level-fill" style="width:92%"></div></div><div class="tool-level-label">Avanzado</div></div>
+    <div class="tool-card" data-cat="ia"><div class="tool-icon">✨</div><div class="tool-card-name">Gemini</div><div class="tool-level-bar"><div class="tool-level-fill" style="width:90%"></div></div><div class="tool-level-label">Avanzado</div></div>
+    <div class="tool-card" data-cat="ia"><div class="tool-icon">🔍</div><div class="tool-card-name">Perplexity</div><div class="tool-level-bar"><div class="tool-level-fill" style="width:90%"></div></div><div class="tool-level-label">Avanzado</div></div>
+    <div class="tool-card" data-cat="ia"><div class="tool-icon">🪄</div><div class="tool-card-name">Copilot</div><div class="tool-level-bar"><div class="tool-level-fill" style="width:88%"></div></div><div class="tool-level-label">Avanzado · cert.</div></div>
+    <div class="tool-card" data-cat="ia"><div class="tool-icon">🎨</div><div class="tool-card-name">Midjourney</div><div class="tool-level-bar"><div class="tool-level-fill" style="width:68%"></div></div><div class="tool-level-label">Intermedio</div></div>
+    <div class="tool-card" data-cat="auto"><div class="tool-icon">⚙️</div><div class="tool-card-name">Make</div><div class="tool-level-bar"><div class="tool-level-fill" style="width:100%"></div></div><div class="tool-level-label">Foundation ✓</div></div>
   </div>
 </section>
 
-<!-- PROYECTOS -->
 <section id="proyectos" class="reveal">
   <div class="proyectos-header">
     <div class="section-eyebrow"><div class="ey-line"></div><span class="ey-text">Proyectos</span></div>
@@ -531,12 +339,9 @@ document.getElementById('psModal').addEventListener('click',function(e){
     <button class="netflix-prev" id="prevBtn">‹</button>
     <div class="netflix-track" id="netflixTrack">
 
-      <!-- Avatar IA -->
       <div class="project-card video-card">
-        <div class="project-media" id="avatarMedia">
-          <video id="avatarVideo" loop playsinline preload="auto" style="width:100%;height:100%;object-fit:contain;background:#000;display:block">
-            <source src="avatar.mp4" type="video/mp4">
-          </video>
+        <div class="project-media">
+          <video id="avatarVideo" loop playsinline preload="auto" style="width:100%;height:100%;object-fit:contain;background:#000;display:block"><source src="avatar.mp4" type="video/mp4"></video>
           <div class="project-media-overlay"></div>
           <button class="play-btn" id="playBtn" onclick="toggleVideo()">▶</button>
         </div>
@@ -548,12 +353,8 @@ document.getElementById('psModal').addEventListener('click',function(e){
         </div>
       </div>
 
-      <!-- TFG -->
       <div class="project-card">
-        <div class="project-media">
-          <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600&q=80" alt="Plan empresarial"/>
-          <div class="project-media-overlay"></div>
-        </div>
+        <div class="project-media"><img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600&q=80" alt="Plan empresarial"/><div class="project-media-overlay"></div></div>
         <div class="project-body">
           <div class="project-type">TFG · Administración de Empresas</div>
           <h3>Enigma Room, S.L. — Plan Empresarial</h3>
@@ -563,12 +364,8 @@ document.getElementById('psModal').addEventListener('click',function(e){
         </div>
       </div>
 
-      <!-- Excel -->
       <div class="project-card">
-        <div class="project-media">
-          <img src="https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=600&q=80" alt="Excel contabilidad"/>
-          <div class="project-media-overlay"></div>
-        </div>
+        <div class="project-media"><img src="https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=600&q=80" alt="Excel"/><div class="project-media-overlay"></div></div>
         <div class="project-body">
           <div class="project-type">Excel · Finanzas</div>
           <h3>Modelo de Contabilidad — Enigma Room</h3>
@@ -578,12 +375,8 @@ document.getElementById('psModal').addEventListener('click',function(e){
         </div>
       </div>
 
-      <!-- Prompts -->
       <div class="project-card">
-        <div class="project-media">
-          <img src="https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=600&q=80" alt="Prompt engineering"/>
-          <div class="project-media-overlay"></div>
-        </div>
+        <div class="project-media"><img src="https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=600&q=80" alt="Prompts"/><div class="project-media-overlay"></div></div>
         <div class="project-body">
           <div class="project-type">Prompting · Automatización</div>
           <h3>Sistema de Prompts para Atención al Cliente</h3>
@@ -592,12 +385,8 @@ document.getElementById('psModal').addEventListener('click',function(e){
         </div>
       </div>
 
-      <!-- Pipeline -->
       <div class="project-card">
-        <div class="project-media">
-          <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=600&q=80" alt="Contenido IA"/>
-          <div class="project-media-overlay"></div>
-        </div>
+        <div class="project-media"><img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=600&q=80" alt="Pipeline"/><div class="project-media-overlay"></div></div>
         <div class="project-body">
           <div class="project-type">Contenido · IA</div>
           <h3>Pipeline de Contenido con IA Generativa</h3>
@@ -606,12 +395,8 @@ document.getElementById('psModal').addEventListener('click',function(e){
         </div>
       </div>
 
-      <!-- Agente -->
       <div class="project-card">
-        <div class="project-media">
-          <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=600&q=80" alt="Agente IA"/>
-          <div class="project-media-overlay"></div>
-        </div>
+        <div class="project-media"><img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=600&q=80" alt="Agente"/><div class="project-media-overlay"></div></div>
         <div class="project-body">
           <div class="project-type">Automatización · Investigación</div>
           <h3>Agente de Investigación Automatizado</h3>
@@ -620,7 +405,7 @@ document.getElementById('psModal').addEventListener('click',function(e){
         </div>
       </div>
 
-      <!-- ===================== PERSONAL SHOPPER IA ===================== -->
+      <!-- PERSONAL SHOPPER -->
       <div class="project-card">
         <div class="project-media" style="background:linear-gradient(135deg,#1C2B4A 0%,#8B4A6B 100%);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden">
           <div style="position:absolute;inset:0;opacity:0.06;background-image:linear-gradient(#F4F0E8 1px,transparent 1px),linear-gradient(90deg,#F4F0E8 1px,transparent 1px);background-size:32px 32px"></div>
@@ -632,54 +417,44 @@ document.getElementById('psModal').addEventListener('click',function(e){
         <div class="project-body">
           <div class="project-type">IA Aplicada · Moda</div>
           <h3>Personal Shopper con IA</h3>
-          <p>Asistente de moda entrenado con reglas de outfit, guías de tallas y tiendas reales. Propone looks completos adaptados a tu estilo, presupuesto y ocasión.</p>
-          <div class="project-tags">
-            <span class="tag">Claude API</span><span class="tag">Prompt Engineering</span><span class="tag">Moda</span>
-          </div>
+          <p>Asistente de moda con criterio de estilista. Recomienda outfits completos adaptados a tu estilo, presupuesto y ocasión con links a tiendas reales.</p>
+          <div class="project-tags"><span class="tag">Botpress</span><span class="tag">Prompt Engineering</span><span class="tag">Moda</span></div>
           <button onclick="abrirShopper()" class="project-link" style="background:none;border:none;border-bottom:1px solid transparent;font-family:'DM Sans',sans-serif;padding:0;margin-top:0.9rem;cursor:pointer">→ Probar ahora</button>
         </div>
       </div>
-      <!-- ============================================================= -->
 
     </div>
     <button class="netflix-next" id="nextBtn">›</button>
   </div>
 </section>
 
-<!-- MODAL PERSONAL SHOPPER -->
-<div id="psModal" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.75);backdrop-filter:blur(8px);align-items:center;justify-content:center;padding:1rem">
-  <div style="background:#0f0f1a;border-radius:16px;width:100%;max-width:600px;height:85vh;max-height:700px;display:flex;flex-direction:column;overflow:hidden;border:1px solid rgba(255,255,255,0.1);font-family:'DM Sans',sans-serif">
-    <!-- Header modal -->
-    <div style="background:rgba(255,255,255,0.05);padding:14px 20px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,0.08);flex-shrink:0">
-      <div style="display:flex;align-items:center;gap:10px">
-        <div style="width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#7c3aed,#a855f7);display:flex;align-items:center;justify-content:center;font-size:18px">👗</div>
+<!-- MODAL PERSONAL SHOPPER CON BOTPRESS -->
+<div id="psModal" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(10,5,20,0.85);backdrop-filter:blur(12px);align-items:center;justify-content:center;padding:1rem">
+  <div style="background:linear-gradient(135deg,#0f0f1a 0%,#1a0a2e 100%);border-radius:20px;width:100%;max-width:480px;height:90vh;max-height:780px;display:flex;flex-direction:column;overflow:hidden;border:1px solid rgba(167,139,250,0.2);box-shadow:0 25px 60px rgba(124,58,237,0.3)">
+    <!-- Header -->
+    <div style="padding:16px 20px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,0.06);flex-shrink:0;background:rgba(255,255,255,0.03)">
+      <div style="display:flex;align-items:center;gap:12px">
+        <div style="width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,#7c3aed,#a855f7);display:flex;align-items:center;justify-content:center;font-size:20px;box-shadow:0 4px 12px rgba(124,58,237,0.4)">👗</div>
         <div>
-          <div style="color:#fff;font-weight:600;font-size:14px">Maya — Personal Shopper IA</div>
-          <div style="color:#a78bfa;font-size:11px">● En línea</div>
+          <div style="color:#fff;font-weight:600;font-size:14px;font-family:'DM Sans',sans-serif">Personal Shopper IA</div>
+          <div style="display:flex;align-items:center;gap:5px;margin-top:2px">
+            <div style="width:6px;height:6px;border-radius:50%;background:#4ade80;animation:blink 2s ease-in-out infinite"></div>
+            <span style="color:#a78bfa;font-size:11px;font-family:'DM Sans',sans-serif">Élise · En línea</span>
+          </div>
         </div>
       </div>
-      <button onclick="cerrarShopper()" style="background:rgba(255,255,255,0.08);border:none;color:#fff;width:32px;height:32px;border-radius:50%;font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center">✕</button>
+      <button onclick="cerrarShopper()" style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);color:rgba(255,255,255,0.7);width:32px;height:32px;border-radius:50%;font-size:14px;cursor:pointer;display:flex;align-items:center;justify-content:center;font-family:'DM Sans',sans-serif">✕</button>
     </div>
-    <!-- Mensajes -->
-    <div id="psMessages" style="flex:1;overflow-y:auto;padding:20px 16px;display:flex;flex-direction:column;gap:14px"></div>
-    <!-- Sugerencias -->
-    <div id="psSugg" style="padding:0 16px 10px;display:flex;gap:8px;flex-wrap:wrap">
-      <button onclick="psEnviar('Necesito un look para una cena especial')" style="background:rgba(167,139,250,0.1);border:1px solid rgba(167,139,250,0.3);color:#c084fc;padding:5px 12px;border-radius:20px;font-size:11px;cursor:pointer;font-family:'DM Sans',sans-serif">🌙 Cena especial</button>
-      <button onclick="psEnviar('Busco ropa para la oficina en verano')" style="background:rgba(167,139,250,0.1);border:1px solid rgba(167,139,250,0.3);color:#c084fc;padding:5px 12px;border-radius:20px;font-size:11px;cursor:pointer;font-family:'DM Sans',sans-serif">👔 Oficina verano</button>
-      <button onclick="psEnviar('Outfit para boda de día')" style="background:rgba(167,139,250,0.1);border:1px solid rgba(167,139,250,0.3);color:#c084fc;padding:5px 12px;border-radius:20px;font-size:11px;cursor:pointer;font-family:'DM Sans',sans-serif">💍 Boda de día</button>
-      <button onclick="psEnviar('Look casual para el fin de semana')" style="background:rgba(167,139,250,0.1);border:1px solid rgba(167,139,250,0.3);color:#c084fc;padding:5px 12px;border-radius:20px;font-size:11px;cursor:pointer;font-family:'DM Sans',sans-serif">😎 Casual</button>
-    </div>
-    <!-- Input -->
-    <div style="padding:10px 16px 16px;border-top:1px solid rgba(255,255,255,0.08);display:flex;gap:10px;flex-shrink:0">
-      <input id="psInput" type="text" placeholder="Cuéntame qué necesitas..."
-        onkeydown="if(event.key==='Enter')psEnviar()"
-        style="flex:1;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:24px;padding:10px 18px;color:#fff;font-size:13px;outline:none;font-family:'DM Sans',sans-serif"/>
-      <button onclick="psEnviar()" style="width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,#7c3aed,#a855f7);border:none;color:#fff;font-size:16px;cursor:pointer;flex-shrink:0">➤</button>
+    <!-- Iframe Botpress -->
+    <iframe src="https://cdn.botpress.cloud/webchat/v3.6/shareable.html?configUrl=https://files.bpcontent.cloud/2026/04/30/06/20260430062051-HOX3BWME.json" style="flex:1;border:none;width:100%;background:transparent" allow="microphone" loading="lazy"></iframe>
+    <!-- Footer -->
+    <div style="padding:8px 16px;border-top:1px solid rgba(255,255,255,0.06);display:flex;align-items:center;justify-content:center;gap:6px;flex-shrink:0">
+      <span style="font-size:10px;color:rgba(255,255,255,0.2);font-family:'DM Sans',sans-serif">Proyecto de</span>
+      <span style="font-size:10px;color:rgba(167,139,250,0.5);font-family:'DM Sans',sans-serif;font-weight:500">Brenda Fernández · IA aplicada</span>
     </div>
   </div>
 </div>
 
-<!-- TRAYECTORIA -->
 <section id="trayectoria" class="reveal">
   <div class="section-header">
     <div class="section-eyebrow"><div class="ey-line"></div><span class="ey-text">Trayectoria</span></div>
@@ -688,49 +463,20 @@ document.getElementById('psModal').addEventListener('click',function(e){
   <div class="trajectory-layout">
     <div>
       <div class="traj-col-title">Experiencia laboral</div>
-      <div class="timeline-item">
-        <div class="tl-date">2025–2026</div>
-        <div class="tl-content"><h3>Atención Rápida</h3><div class="tl-company">CaixaBank</div><p>Optimización del flujo de atención, gestión operativa de cajeros, atención al cliente en ventanilla y soporte administrativo en la operativa diaria de la sucursal.</p></div>
-      </div>
-      <div class="timeline-item">
-        <div class="tl-date">2026<br>Mar–Abr</div>
-        <div class="tl-content"><h3>Auxiliar Administrativa</h3><div class="tl-company">Gescove — Gestoría de Fincas</div><p>Gestión contable de comunidades de vecinos, coordinación de incidencias urgentes y participación en reuniones con propietarios.</p><span class="tl-note">Contabilidad · Comunidades · Incidencias</span></div>
-      </div>
-      <div class="timeline-item">
-        <div class="tl-date">2024</div>
-        <div class="tl-content"><h3>Grabadora de Datos — Hipotecario</h3><div class="tl-company">FK2</div><p>Gestión documental avanzada de expedientes hipotecarios, auditoría de datos técnicos y legales, coordinación interdepartamental y protección de datos sensibles.</p></div>
-      </div>
-      <div class="timeline-item">
-        <div class="tl-date">2022<br>Mar–Jun</div>
-        <div class="tl-content"><h3>Auxiliar Administrativa — Prácticas</h3><div class="tl-company">Moreno y Fernández Asesores</div><p>Gestión documental, atención a clientes empresariales y apoyo en trámites administrativos en asesoría.</p><span class="tl-note">Prácticas de Grado Superior</span></div>
-      </div>
+      <div class="timeline-item"><div class="tl-date">2025–2026</div><div class="tl-content"><h3>Atención Rápida</h3><div class="tl-company">CaixaBank</div><p>Optimización del flujo de atención, gestión operativa de cajeros, atención al cliente en ventanilla y soporte administrativo en la operativa diaria de la sucursal.</p></div></div>
+      <div class="timeline-item"><div class="tl-date">2026<br>Mar–Abr</div><div class="tl-content"><h3>Auxiliar Administrativa</h3><div class="tl-company">Gescove — Gestoría de Fincas</div><p>Gestión contable de comunidades de vecinos, coordinación de incidencias urgentes y participación en reuniones con propietarios.</p><span class="tl-note">Contabilidad · Comunidades · Incidencias</span></div></div>
+      <div class="timeline-item"><div class="tl-date">2024</div><div class="tl-content"><h3>Grabadora de Datos — Hipotecario</h3><div class="tl-company">FK2</div><p>Gestión documental avanzada de expedientes hipotecarios, auditoría de datos técnicos y legales, coordinación interdepartamental y protección de datos sensibles.</p></div></div>
+      <div class="timeline-item"><div class="tl-date">2022<br>Mar–Jun</div><div class="tl-content"><h3>Auxiliar Administrativa — Prácticas</h3><div class="tl-company">Moreno y Fernández Asesores</div><p>Gestión documental, atención a clientes empresariales y apoyo en trámites administrativos en asesoría.</p><span class="tl-note">Prácticas de Grado Superior</span></div></div>
     </div>
     <div>
       <div class="traj-col-title">Formación</div>
-      <div class="edu-card">
-        <div class="edu-period">2026</div>
-        <h3>Programa Superior en Inteligencia Artificial</h3>
-        <div class="edu-center">Fedeto — Talavera de la Reina</div>
-        <p>IA aplicada, prompting, herramientas generativas y automatización con IA en entornos empresariales.</p>
-        <div class="edu-badge">🎓 27 créditos universitarios · Universidad de Nebrija</div>
-      </div>
-      <div class="edu-card">
-        <div class="edu-period">2020 — 2022</div>
-        <h3>Grado Superior en Administración y Finanzas</h3>
-        <div class="edu-center">IES Ribera del Tajo</div>
-        <p>Gestión empresarial, contabilidad, administración de recursos y finanzas corporativas.</p>
-      </div>
+      <div class="edu-card"><div class="edu-period">2026</div><h3>Programa Superior en Inteligencia Artificial</h3><div class="edu-center">Fedeto — Talavera de la Reina</div><p>IA aplicada, prompting, herramientas generativas y automatización con IA en entornos empresariales.</p><div class="edu-badge">🎓 27 créditos universitarios · Universidad de Nebrija</div></div>
+      <div class="edu-card"><div class="edu-period">2020 — 2022</div><h3>Grado Superior en Administración y Finanzas</h3><div class="edu-center">IES Ribera del Tajo</div><p>Gestión empresarial, contabilidad, administración de recursos y finanzas corporativas.</p></div>
       <div style="margin-top:2rem">
         <div class="traj-col-title">Certificados</div>
         <div class="certs-grid">
-          <div class="cert-card-visual">
-            <div class="cert-badge-area"><div class="copilot-badge"><div class="copilot-badge-icon">✦</div><div class="copilot-badge-text">Copilot</div></div></div>
-            <div class="cert-info-area"><h4>Copilot: domina la IA en Microsoft 365</h4><div class="cert-meta">Microsoft · LinkedIn Learning · Abril 2026</div><a href="certificado_copilot.pdf" class="cert-link-btn" target="_blank">↓ Ver certificado</a></div>
-          </div>
-          <div class="cert-card-visual">
-            <div class="cert-badge-area"><img src="make-foundation_1.png" alt="Make Foundation"/></div>
-            <div class="cert-info-area"><h4>Make Foundation</h4><div class="cert-meta">Make Academy · Abril 2026</div><a href="certificado_make.pdf" class="cert-link-btn" target="_blank">↓ Ver certificado</a></div>
-          </div>
+          <div class="cert-card-visual"><div class="cert-badge-area"><div class="copilot-badge"><div class="copilot-badge-icon">✦</div><div class="copilot-badge-text">Copilot</div></div></div><div class="cert-info-area"><h4>Copilot: domina la IA en Microsoft 365</h4><div class="cert-meta">Microsoft · LinkedIn Learning · Abril 2026</div><a href="certificado_copilot.pdf" class="cert-link-btn" target="_blank">↓ Ver certificado</a></div></div>
+          <div class="cert-card-visual"><div class="cert-badge-area"><img src="make-foundation_1.png" alt="Make Foundation"/></div><div class="cert-info-area"><h4>Make Foundation</h4><div class="cert-meta">Make Academy · Abril 2026</div><a href="certificado_make.pdf" class="cert-link-btn" target="_blank">↓ Ver certificado</a></div></div>
           <div class="cert-coming">+ Próximos certificados en curso</div>
         </div>
       </div>
@@ -738,32 +484,20 @@ document.getElementById('psModal').addEventListener('click',function(e){
   </div>
 </section>
 
-<!-- CONTACTO -->
 <section id="contacto" class="reveal">
   <div class="contact-bg-grid"></div>
   <div class="contact-circle" style="width:600px;height:600px;top:-200px;right:-200px"></div>
   <div class="contact-circle" style="width:300px;height:300px;bottom:-100px;left:-100px"></div>
   <div style="position:relative;z-index:1">
-    <div class="section-eyebrow" style="margin-bottom:0.5rem">
-      <div class="ey-line" style="background:rgba(244,240,232,0.18)"></div>
-      <span class="ey-text" style="color:rgba(244,240,232,0.4)">Contacto</span>
-    </div>
+    <div class="section-eyebrow" style="margin-bottom:0.5rem"><div class="ey-line" style="background:rgba(244,240,232,0.18)"></div><span class="ey-text" style="color:rgba(244,240,232,0.4)">Contacto</span></div>
     <h2>¿<strong>Hablamos</strong>?</h2>
   </div>
   <div class="contact-layout">
     <div>
       <p class="contact-desc">Estoy abierta a nuevas oportunidades en administración, finanzas y proyectos donde pueda aportar mi perfil híbrido. Incorporación inmediata.</p>
       <div class="contact-cards">
-        <a href="https://www.linkedin.com/in/brenda-fern%C3%A1ndez-s%C3%A1nchez-659489241" class="contact-card" target="_blank">
-          <div class="cc-icon" style="font-size:0.85rem;font-weight:600">in</div>
-          <div class="cc-info"><div class="cc-label">LinkedIn</div><div class="cc-value">Brenda Fernández Sánchez</div></div>
-          <div class="cc-arrow">→</div>
-        </a>
-        <a href="Brenda_Fernandez_Administrativa..pdf" class="contact-card" target="_blank">
-          <div class="cc-icon">📄</div>
-          <div class="cc-info"><div class="cc-label">Curriculum Vitae</div><div class="cc-value">Descargar CV en PDF</div></div>
-          <div class="cc-arrow">↓</div>
-        </a>
+        <a href="https://www.linkedin.com/in/brenda-fern%C3%A1ndez-s%C3%A1nchez-659489241" class="contact-card" target="_blank"><div class="cc-icon" style="font-size:0.85rem;font-weight:600">in</div><div class="cc-info"><div class="cc-label">LinkedIn</div><div class="cc-value">Brenda Fernández Sánchez</div></div><div class="cc-arrow">→</div></a>
+        <a href="Brenda_Fernandez_Administrativa..pdf" class="contact-card" target="_blank"><div class="cc-icon">📄</div><div class="cc-info"><div class="cc-label">Curriculum Vitae</div><div class="cc-value">Descargar CV en PDF</div></div><div class="cc-arrow">↓</div></a>
       </div>
     </div>
     <div class="contact-form-wrap">
@@ -774,16 +508,7 @@ document.getElementById('psModal').addEventListener('click',function(e){
           <div class="form-field"><label>Nombre</label><input type="text" name="name" placeholder="Tu nombre" required/></div>
           <div class="form-field"><label>Email</label><input type="email" name="email" placeholder="tu@email.com" required/></div>
         </div>
-        <div class="form-field">
-          <label>Motivo</label>
-          <select name="subject">
-            <option value="">Selecciona un motivo...</option>
-            <option>Oferta de trabajo</option>
-            <option>Colaboración</option>
-            <option>Prácticas</option>
-            <option>Consulta general</option>
-          </select>
-        </div>
+        <div class="form-field"><label>Motivo</label><select name="subject"><option value="">Selecciona un motivo...</option><option>Oferta de trabajo</option><option>Colaboración</option><option>Prácticas</option><option>Consulta general</option></select></div>
         <div class="form-field"><label>Mensaje</label><textarea name="message" rows="4" placeholder="Cuéntame en qué puedo ayudarte..." required></textarea></div>
         <button type="submit" class="form-submit" id="submitBtn">Enviar mensaje →</button>
         <div class="form-success" id="formSuccess">✓ Mensaje enviado. ¡Te respondo pronto!</div>
@@ -801,7 +526,6 @@ document.getElementById('psModal').addEventListener('click',function(e){
 </footer>
 
 <script>
-// CURSOR
 const cur=document.getElementById('cur'),curRing=document.getElementById('curRing');
 let mx=0,my=0,rx=0,ry=0;
 document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.transform=`translate(${mx-5}px,${my-5}px)`});
@@ -811,11 +535,9 @@ document.querySelectorAll('a,button').forEach(el=>{
   el.addEventListener('mouseleave',()=>{cur.style.background='var(--navy)';curRing.style.borderColor='var(--navy)'});
 });
 
-// REVEAL
 const obs=new IntersectionObserver(e=>e.forEach(r=>{if(r.isIntersecting){r.target.classList.add('visible');obs.unobserve(r.target)}}),{threshold:0.08});
 document.querySelectorAll('.reveal').forEach(r=>obs.observe(r));
 
-// HERRAMIENTAS
 function filterTools(cat){
   document.querySelectorAll('.tool-cat-btn').forEach(b=>b.classList.toggle('active',b.dataset.cat===cat));
   let d=0;
@@ -828,20 +550,17 @@ function filterTools(cat){
 document.querySelectorAll('.tool-cat-btn').forEach(b=>b.addEventListener('click',()=>filterTools(b.dataset.cat)));
 filterTools('ofi');
 
-// CARRUSEL
 const track=document.getElementById('netflixTrack');
 const cardW=()=>(track.querySelector('.project-card')||{offsetWidth:340}).offsetWidth+20;
 document.getElementById('prevBtn').addEventListener('click',()=>track.scrollBy({left:-cardW()*2,behavior:'smooth'}));
 document.getElementById('nextBtn').addEventListener('click',()=>track.scrollBy({left:cardW()*2,behavior:'smooth'}));
 document.getElementById('prevBtn').style.opacity='0.35';
 
-// VÍDEO
 function toggleVideo(){
   const v=document.getElementById('avatarVideo'),b=document.getElementById('playBtn');
   v.paused||v.ended?v.play().then(()=>b.textContent='⏸').catch(()=>b.textContent='▶'):(v.pause(),b.textContent='▶');
 }
 
-// FORMULARIO
 const form=document.getElementById('contactForm');
 if(form){
   form.addEventListener('submit',async e=>{
@@ -856,102 +575,20 @@ if(form){
   });
 }
 
-// ===================== PERSONAL SHOPPER IA =====================
-const PS_SYSTEM=`Eres Maya, una personal shopper experta y cercana. Tu misión es recomendar outfits completos con prendas reales de tiendas españolas.
-
-FLUJO OBLIGATORIO:
-PASO 1 — Primera respuesta: saluda con entusiasmo y pregunta SOLO la ocasión y si es para ti o para regalar. NO recomiendes nada.
-PASO 2 — Con la ocasión clara, pregunta: género, talla, presupuesto en € y colores preferidos. NO recomiendes nada.
-PASO 3 — Pregunta tiendas preferidas: Económico (Primark, H&M, Pull&Bear) | Intermedio (Zara, Mango, Stradivarius) | Premium (Massimo Dutti, ASOS). NO recomiendes nada.
-PASO 4 — Solo con TODOS los datos propón outfit de 5-6 prendas con: nombre+marca, color, precio aproximado en € y link de búsqueda.
-
-LINKS (sustituye TERMINO por la prenda con+guiones, ej: vestido+midi+negro):
-Zara: https://www.zara.com/es/es/search?searchTerm=TERMINO
-H&M: https://www2.hm.com/es_es/buscar.html?q=TERMINO
-Mango: https://shop.mango.com/es/buscar?query=TERMINO
-Stradivarius: https://www.stradivarius.com/es/search?searchTerm=TERMINO
-Pull&Bear: https://www.pullandbear.com/es/search?searchTerm=TERMINO
-Massimo Dutti: https://www.massimodutti.com/es/search?searchTerm=TERMINO
-ASOS: https://www.asos.com/es/buscar/?q=TERMINO
-Primark: https://www.primark.com/es-es/c/mujer
-
-Al final: precio total, por qué funciona el conjunto, y 1 alternativa más económica.
-Responde SIEMPRE en español. Tono cercano y entusiasta. Máximo 2 preguntas a la vez.`;
-
-let psHistory=[],psLoading=false;
-
 function abrirShopper(){
   document.getElementById('psModal').style.display='flex';
   document.body.style.overflow='hidden';
-  if(psHistory.length===0) psEnviar('Hola, quiero un outfit');
 }
 function cerrarShopper(){
   document.getElementById('psModal').style.display='none';
   document.body.style.overflow='';
 }
 document.getElementById('psModal').addEventListener('click',function(e){if(e.target===this)cerrarShopper()});
-
-function psEnviar(txt){
-  const inp=document.getElementById('psInput');
-  const msg=txt||inp.value.trim();
-  if(!msg||psLoading)return;
-  inp.value='';
-  if(psHistory.length>0)document.getElementById('psSugg').style.display='none';
-  psHistory.push({role:'user',content:msg});
-  psRender();psLoading=true;psTyping();
-  fetch('https://portfolio-brenda-fdz.vercel.app/api/chat',{
-    method:'POST',
-    headers:{'Content-Type':'application/json'},
-    body:JSON.stringify({messages:psHistory})
-  }).then(r=>r.json()).then(d=>{
-    psRemoveTyping();
-    const reply=d.reply||'Lo siento, hubo un error. Inténtalo de nuevo.';
-    psHistory.push({role:'assistant',content:reply});
-    psRender();psLoading=false;
-  }).catch(()=>{
-    psRemoveTyping();
-    psHistory.push({role:'assistant',content:'⚠️ Error de conexión. Inténtalo de nuevo.'});
-    psRender();psLoading=false;
-  });
-}
-
-function psMd(t){
-  return t
-    .replace(/\*\*(.*?)\*\*/g,'<strong>$1</strong>')
-    .replace(/\*(.*?)\*/g,'<em>$1</em>')
-    .replace(/\[([^\]]+)\]\((https?:\/\/[^\)]+)\)/g,'<a href="$2" target="_blank" rel="noopener" style="color:#c084fc;text-decoration:underline">$1</a>')
-    .replace(/\n/g,'<br>');
-}
-
-function psRender(){
-  const el=document.getElementById('psMessages');
-  el.innerHTML=psHistory.map(m=>`
-    <div style="display:flex;justify-content:${m.role==='user'?'flex-end':'flex-start'};gap:8px;align-items:flex-start">
-      ${m.role==='assistant'?'<div style="width:28px;height:28px;border-radius:50%;background:linear-gradient(135deg,#7c3aed,#a855f7);display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0;margin-top:2px">👗</div>':''}
-      <div style="max-width:78%;padding:10px 14px;border-radius:${m.role==='user'?'18px 18px 4px 18px':'18px 18px 18px 4px'};background:${m.role==='user'?'linear-gradient(135deg,#7c3aed,#a855f7)':'rgba(255,255,255,0.08)'};color:#fff;font-size:13px;line-height:1.6;border:${m.role==='assistant'?'1px solid rgba(255,255,255,0.1)':'none'}">${psMd(m.content)}</div>
-    </div>`).join('');
-  el.scrollTop=el.scrollHeight;
-}
-
-function psTyping(){
-  const el=document.getElementById('psMessages');
-  el.innerHTML+=`<div id="psDots" style="display:flex;align-items:center;gap:8px">
-    <div style="width:28px;height:28px;border-radius:50%;background:linear-gradient(135deg,#7c3aed,#a855f7);display:flex;align-items:center;justify-content:center;font-size:14px">👗</div>
-    <div style="background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.1);padding:10px 14px;border-radius:18px 18px 18px 4px;display:flex;gap:4px">
-      ${[0,1,2].map(i=>`<div style="width:7px;height:7px;border-radius:50%;background:#a78bfa;animation:psDots 1.2s ease-in-out infinite;animation-delay:${i*0.2}s"></div>`).join('')}
-    </div>
-  </div>`;
-  el.scrollTop=el.scrollHeight;
-}
-function psRemoveTyping(){const d=document.getElementById('psDots');if(d)d.remove();}
-// ===============================================================
 </script>
 
 <!-- Chatbase -->
 <script>
 (function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="iN0moiTO7qqHP2qdaosSr";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
 </script>
-
-<style>@keyframes psDots{0%,100%{opacity:0.3;transform:scale(0.8)}50%{opacity:1;transform:scale(1)}}</style>
 </body>
 </html>
