@@ -857,7 +857,7 @@ function psEnviar(txt){
   if(psHistory.length>0)document.getElementById('psSugg').style.display='none';
   psHistory.push({role:'user',content:msg});
   psRender();psLoading=true;psTyping();
-  fetch('/api/chat',{
+  fetch('https://portfolio-brenda-fdz.vercel.app/api/chat',{
     method:'POST',
     headers:{'Content-Type':'application/json'},
     body:JSON.stringify({messages:psHistory})
