@@ -472,17 +472,25 @@ footer p{font-size:0.77rem;color:rgba(244,240,232,0.28)}
   <div class="netflix-row">
     <button class="netflix-prev" id="prevBtn">‹</button>
     <div class="netflix-track" id="netflixTrack">
-      <div class="project-card video-card">
-        <div class="project-media">
-          <video id="avatarVideo" loop playsinline preload="auto" style="width:100%;height:100%;object-fit:contain;background:#000;display:block"><source src="avatar.mp4" type="video/mp4"></video>
-          <div class="project-media-overlay"></div>
-          <button class="play-btn" id="playBtn" onclick="toggleVideo()">▶</button>
-        </div>
+      <div class="project-card">
+        <div class="project-media"><img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?w=600&q=80" alt="Personal Shopper IA"/><div class="project-media-overlay"></div></div>
         <div class="project-body">
-          <div class="project-type">IA Generativa · Avatar</div>
-          <h3>Avatar IA Personal</h3>
-          <p>Avatar realista generado con IA a partir de mi propia imagen y voz. Creado con herramientas de síntesis de voz e imagen para representar una marca personal digital moderna. Demuestra el dominio de la IA generativa aplicada a la comunicación profesional.</p>
-          <div class="project-tags"><span class="tag">IA Generativa</span><span class="tag">Avatar IA</span><span class="tag">Síntesis de voz</span><span class="tag">Marca personal</span></div>
+          <div class="project-type">IA Aplicada · Moda</div>
+          <h3>Personal Shopper con IA</h3>
+          <p>Chatbot de moda entrenado con prompts avanzados y criterio de estilista. Recomienda outfits completos adaptados al estilo, tipo de cuerpo, presupuesto y ocasión del usuario, con links directos a tiendas reales españolas.</p>
+          <div class="project-tags"><span class="tag">Botpress</span><span class="tag">Prompt Engineering</span><span class="tag">Moda</span></div>
+          <button onclick="abrirShopper()" class="project-link" style="background:none;border:none;border-bottom:1px solid transparent;font-family:'DM Sans',sans-serif;padding:0;margin-top:0.9rem;cursor:pointer">💬 Probar chatbot</button>
+        </div>
+      </div>
+      <!-- AUTOMATIZACIÓN MAKE — imagen local -->
+      <div class="project-card">
+        <div class="project-media"><img src="make-fashion.jpg" alt="Agente de Moda Automatizado"/><div class="project-media-overlay"></div></div>
+        <div class="project-body">
+          <div class="project-type">Automatización · Make · IA</div>
+          <h3>Agente de Moda Automatizado</h3>
+          <p>Flujo de automatización real construido con Make: el usuario rellena un formulario inteligente en Typeform con su perfil de estilo, Make lo procesa con IA y envía automáticamente un outfit personalizado por email con prendas, precios y links de compra. Todo sin intervención manual.</p>
+          <div class="project-tags"><span class="tag">Make</span><span class="tag">Typeform</span><span class="tag">Make AI Toolkit</span><span class="tag">Gmail</span><span class="tag">Automatización</span></div>
+          <a href="personal-shopper/" class="project-link">📋 Crear mi outfit</a>
         </div>
       </div>
       <div class="project-card">
@@ -505,25 +513,17 @@ footer p{font-size:0.77rem;color:rgba(244,240,232,0.28)}
           <a href="Contabilidad.xlsx" class="project-link" target="_blank">↓ Descargar Excel</a>
         </div>
       </div>
-      <div class="project-card">
-        <div class="project-media"><img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?w=600&q=80" alt="Personal Shopper IA"/><div class="project-media-overlay"></div></div>
-        <div class="project-body">
-          <div class="project-type">IA Aplicada · Moda</div>
-          <h3>Personal Shopper con IA</h3>
-          <p>Chatbot de moda entrenado con prompts avanzados y criterio de estilista. Recomienda outfits completos adaptados al estilo, tipo de cuerpo, presupuesto y ocasión del usuario, con links directos a tiendas reales españolas.</p>
-          <div class="project-tags"><span class="tag">Botpress</span><span class="tag">Prompt Engineering</span><span class="tag">Moda</span></div>
-          <button onclick="abrirShopper()" class="project-link" style="background:none;border:none;border-bottom:1px solid transparent;font-family:'DM Sans',sans-serif;padding:0;margin-top:0.9rem;cursor:pointer">💬 Probar chatbot</button>
+      <div class="project-card video-card">
+        <div class="project-media">
+          <video id="avatarVideo" loop playsinline preload="auto" style="width:100%;height:100%;object-fit:contain;background:#000;display:block"><source src="avatar.mp4" type="video/mp4"></video>
+          <div class="project-media-overlay"></div>
+          <button class="play-btn" id="playBtn" onclick="toggleVideo()">▶</button>
         </div>
-      </div>
-      <!-- AUTOMATIZACIÓN MAKE — imagen local -->
-      <div class="project-card">
-        <div class="project-media"><img src="make-fashion.jpg" alt="Agente de Moda Automatizado"/><div class="project-media-overlay"></div></div>
         <div class="project-body">
-          <div class="project-type">Automatización · Make · IA</div>
-          <h3>Agente de Moda Automatizado</h3>
-          <p>Flujo de automatización real construido con Make: el usuario rellena un formulario inteligente en Typeform con su perfil de estilo, Make lo procesa con IA y envía automáticamente un outfit personalizado por email con prendas, precios y links de compra. Todo sin intervención manual.</p>
-          <div class="project-tags"><span class="tag">Make</span><span class="tag">Typeform</span><span class="tag">Make AI Toolkit</span><span class="tag">Gmail</span><span class="tag">Automatización</span></div>
-          <a href="personal-shopper/" class="project-link">📋 Crear mi outfit</a>
+          <div class="project-type">IA Generativa · Avatar</div>
+          <h3>Avatar IA Personal</h3>
+          <p>Avatar realista generado con IA a partir de mi propia imagen y voz. Creado con herramientas de síntesis de voz e imagen para representar una marca personal digital moderna. Demuestra el dominio de la IA generativa aplicada a la comunicación profesional.</p>
+          <div class="project-tags"><span class="tag">IA Generativa</span><span class="tag">Avatar IA</span><span class="tag">Síntesis de voz</span><span class="tag">Marca personal</span></div>
         </div>
       </div>
       <div class="project-card">
