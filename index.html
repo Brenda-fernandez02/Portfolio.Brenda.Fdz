@@ -259,9 +259,9 @@ footer p{font-size:0.77rem;color:rgba(244,240,232,0.28)}
   <div class="about-layout">
     <div class="about-text">
       <p>Soy Brenda, y llevo ya un tiempo trabajando en administración — en banca, en gestión hipotecaria y en asesoría. Son entornos donde los detalles importan y donde el orden no es opcional. Eso me encaja bastante bien, porque soy de las que no descansa hasta que todo cuadra.</p>
-      <p>Con la IA empecé como la mayoría: usando ChatGPT y Gemini para cosas concretas. Pero cuando me puse a formarme en serio, me di cuenta de que era mucho más que eso. Avatares, automatizaciones, prompting avanzado... se abrió un mundo que no he dejado de explorar desde entonces.</p>
-      <p>Hoy lo que más me ilusiona es juntar las dos cosas: la solidez de la gestión administrativa con las posibilidades que da la IA. No para cambiar de rumbo, sino para hacer mejor lo que ya me gusta hacer.</p>
-      <div class="about-highlight"><p>Lo que más valoro de mi perfil es que conozco cómo funciona una empresa por dentro — y eso, combinado con la IA, marca la diferencia.</p></div>
+      <p>Con la IA empecé como la mayoría: usando ChatGPT y Gemini para cosas concretas. Pero cuando me puse a formarme en serio, me di cuenta de que era mucho más que eso. Automatizaciones con Make, chatbots, agentes digitales... se abrió un mundo que no he dejado de explorar desde entonces — y que ya aplico en proyectos reales.</p>
+      <p>Hoy lo que más me ilusiona es juntar las dos cosas. No para cambiar de rumbo, sino porque conozco cómo funciona una empresa por dentro — y eso me permite ver exactamente qué procesos se pueden hacer más rápido, más solos y con menos errores. Si buscas a alguien fiable en administración, estoy. Si además quieres que esa persona te ayude a digitalizar, mejor todavía.</p>
+      <div class="about-highlight"><p>La IA no me aleja de la administración. Me hace mejor en ella.</p></div>
     </div>
     <div>
       <div class="sidebar-block"><div class="sidebar-label">Idiomas</div><div class="sidebar-pills"><span class="s-pill">Español (nativo)</span><span class="s-pill">Inglés B2</span><span class="s-pill">Italiano</span><span class="s-pill">Francés</span></div></div>
@@ -482,17 +482,138 @@ footer p{font-size:0.77rem;color:rgba(244,240,232,0.28)}
           <button onclick="abrirShopper()" class="project-link" style="background:none;border:none;border-bottom:1px solid transparent;font-family:'DM Sans',sans-serif;padding:0;margin-top:0.9rem;cursor:pointer">💬 Probar chatbot</button>
         </div>
       </div>
-      <!-- AUTOMATIZACIÓN MAKE — imagen local -->
-      <div class="project-card">
-        <div class="project-media"><img src="make-fashion.jpg" alt="Agente de Moda Automatizado"/><div class="project-media-overlay"></div></div>
+      <!-- AUTOMATIZACIÓN CAMPAÑAS PUBLICITARIAS -->
+      <div class="project-card" style="flex:0 0 420px">
+        <div class="project-media" style="height:260px;background:var(--navy3);padding:0;position:relative;overflow:hidden">
+          <!-- Diagrama de flujo SVG -->
+          <svg viewBox="0 0 420 260" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;display:block">
+            <defs>
+              <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#0F1E36"/>
+                <stop offset="100%" style="stop-color:#1C2B4A"/>
+              </linearGradient>
+              <marker id="arr" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+                <path d="M0,0 L6,3 L0,6 Z" fill="rgba(255,255,255,0.4)"/>
+              </marker>
+              <marker id="arr2" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+                <path d="M0,0 L6,3 L0,6 Z" fill="#4ADE80"/>
+              </marker>
+            </defs>
+            <rect width="420" height="260" fill="url(#bgGrad)"/>
+
+            <!-- PASO 1: Gmail entrada -->
+            <g transform="translate(28,110)">
+              <circle r="26" fill="#EA4335" opacity="0.9"/>
+              <text y="1" text-anchor="middle" font-size="18" fill="white">✉</text>
+              <text y="44" text-anchor="middle" font-size="8" fill="rgba(255,255,255,0.6)" font-family="DM Sans,sans-serif">Gmail</text>
+              <text y="54" text-anchor="middle" font-size="7" fill="rgba(255,255,255,0.4)" font-family="DM Sans,sans-serif">Watch</text>
+            </g>
+
+            <!-- Flecha 1→2 -->
+            <line x1="56" y1="110" x2="82" y2="110" stroke="rgba(255,255,255,0.3)" stroke-width="1.5" marker-end="url(#arr)" stroke-dasharray="3,2"/>
+
+            <!-- PASO 2: Gmail adjuntos -->
+            <g transform="translate(100,110)">
+              <circle r="22" fill="#EA4335" opacity="0.75"/>
+              <text y="1" text-anchor="middle" font-size="15" fill="white">📎</text>
+              <text y="38" text-anchor="middle" font-size="7.5" fill="rgba(255,255,255,0.6)" font-family="DM Sans,sans-serif">Gmail</text>
+              <text y="48" text-anchor="middle" font-size="7" fill="rgba(255,255,255,0.4)" font-family="DM Sans,sans-serif">Adjuntos</text>
+            </g>
+
+            <!-- Flecha 2→Router -->
+            <line x1="122" y1="110" x2="152" y2="110" stroke="rgba(255,255,255,0.3)" stroke-width="1.5" marker-end="url(#arr)" stroke-dasharray="3,2"/>
+
+            <!-- PASO 3: Router -->
+            <g transform="translate(172,110)">
+              <circle r="24" fill="#10B981" opacity="0.9"/>
+              <text y="1" text-anchor="middle" font-size="16" fill="white">⇄</text>
+              <text y="40" text-anchor="middle" font-size="7.5" fill="rgba(255,255,255,0.7)" font-family="DM Sans,sans-serif">Router</text>
+              <text y="50" text-anchor="middle" font-size="7" fill="rgba(255,255,255,0.4)" font-family="DM Sans,sans-serif">3 rutas</text>
+            </g>
+
+            <!-- Labels rutas -->
+            <text x="215" y="52" text-anchor="middle" font-size="7" fill="#4ADE80" font-family="DM Sans,sans-serif" font-weight="600">Scania</text>
+            <text x="215" y="113" text-anchor="middle" font-size="7" fill="#4ADE80" font-family="DM Sans,sans-serif" font-weight="600">JCB</text>
+            <text x="215" y="174" text-anchor="middle" font-size="7" fill="#4ADE80" font-family="DM Sans,sans-serif" font-weight="600">Tacógrafos</text>
+
+            <!-- Flechas Router → Sheets (3 rutas) -->
+            <line x1="196" y1="92" x2="232" y2="55" stroke="#4ADE80" stroke-width="1.2" marker-end="url(#arr2)" stroke-dasharray="3,2"/>
+            <line x1="196" y1="110" x2="232" y2="110" stroke="#4ADE80" stroke-width="1.2" marker-end="url(#arr2)" stroke-dasharray="3,2"/>
+            <line x1="196" y1="128" x2="232" y2="168" stroke="#4ADE80" stroke-width="1.2" marker-end="url(#arr2)" stroke-dasharray="3,2"/>
+
+            <!-- SHEETS x3 -->
+            <!-- Ruta 1 -->
+            <g transform="translate(252,46)">
+              <rect x="-18" y="-18" width="36" height="36" rx="8" fill="#1D6F42"/>
+              <text y="5" text-anchor="middle" font-size="16" fill="white">▦</text>
+            </g>
+            <line x1="270" y1="46" x2="296" y2="46" stroke="rgba(255,255,255,0.25)" stroke-width="1.2" marker-end="url(#arr)"/>
+            <!-- Iterator 1 -->
+            <g transform="translate(310,46)">
+              <rect x="-14" y="-14" width="28" height="28" rx="6" fill="#2D5FA8" opacity="0.9"/>
+              <text y="5" text-anchor="middle" font-size="11" fill="white">→≡</text>
+            </g>
+            <line x1="324" y1="46" x2="346" y2="46" stroke="rgba(255,255,255,0.25)" stroke-width="1.2" marker-end="url(#arr)"/>
+            <!-- Gmail send 1 -->
+            <g transform="translate(362,46)">
+              <circle r="16" fill="#EA4335" opacity="0.85"/>
+              <text y="5" text-anchor="middle" font-size="13" fill="white">✉</text>
+            </g>
+
+            <!-- Ruta 2 -->
+            <g transform="translate(252,110)">
+              <rect x="-18" y="-18" width="36" height="36" rx="8" fill="#1D6F42"/>
+              <text y="5" text-anchor="middle" font-size="16" fill="white">▦</text>
+            </g>
+            <line x1="270" y1="110" x2="296" y2="110" stroke="rgba(255,255,255,0.25)" stroke-width="1.2" marker-end="url(#arr)"/>
+            <g transform="translate(310,110)">
+              <rect x="-14" y="-14" width="28" height="28" rx="6" fill="#2D5FA8" opacity="0.9"/>
+              <text y="5" text-anchor="middle" font-size="11" fill="white">→≡</text>
+            </g>
+            <line x1="324" y1="110" x2="346" y2="110" stroke="rgba(255,255,255,0.25)" stroke-width="1.2" marker-end="url(#arr)"/>
+            <g transform="translate(362,110)">
+              <circle r="16" fill="#EA4335" opacity="0.85"/>
+              <text y="5" text-anchor="middle" font-size="13" fill="white">✉</text>
+            </g>
+
+            <!-- Ruta 3 -->
+            <g transform="translate(252,174)">
+              <rect x="-18" y="-18" width="36" height="36" rx="8" fill="#1D6F42"/>
+              <text y="5" text-anchor="middle" font-size="16" fill="white">▦</text>
+            </g>
+            <line x1="270" y1="174" x2="296" y2="174" stroke="rgba(255,255,255,0.25)" stroke-width="1.2" marker-end="url(#arr)"/>
+            <g transform="translate(310,174)">
+              <rect x="-14" y="-14" width="28" height="28" rx="6" fill="#2D5FA8" opacity="0.9"/>
+              <text y="5" text-anchor="middle" font-size="11" fill="white">→≡</text>
+            </g>
+            <line x1="324" y1="174" x2="346" y2="174" stroke="rgba(255,255,255,0.25)" stroke-width="1.2" marker-end="url(#arr)"/>
+            <g transform="translate(362,174)">
+              <circle r="16" fill="#EA4335" opacity="0.85"/>
+              <text y="5" text-anchor="middle" font-size="13" fill="white">✉</text>
+            </g>
+
+            <!-- Leyenda inferior -->
+            <rect x="10" y="225" width="400" height="28" rx="6" fill="rgba(255,255,255,0.04)"/>
+            <circle cx="28" cy="239" r="5" fill="#EA4335"/>
+            <text x="38" y="243" font-size="7.5" fill="rgba(255,255,255,0.5)" font-family="DM Sans,sans-serif">Gmail</text>
+            <rect x="72" y="234" width="10" height="10" rx="2" fill="#1D6F42"/>
+            <text x="87" y="243" font-size="7.5" fill="rgba(255,255,255,0.5)" font-family="DM Sans,sans-serif">Google Sheets</text>
+            <rect x="155" y="234" width="10" height="10" rx="3" fill="#2D5FA8"/>
+            <text x="170" y="243" font-size="7.5" fill="rgba(255,255,255,0.5)" font-family="DM Sans,sans-serif">Iterator</text>
+            <circle cx="218" cy="239" r="5" fill="#10B981"/>
+            <text x="228" y="243" font-size="7.5" fill="rgba(255,255,255,0.5)" font-family="DM Sans,sans-serif">Router</text>
+            <text x="280" y="243" font-size="7.5" fill="rgba(255,255,255,0.35)" font-family="DM Sans,sans-serif">· Make · Prácticas 2026</text>
+          </svg>
+          <div class="project-media-overlay"></div>
+        </div>
         <div class="project-body">
-          <div class="project-type">Automatización · Make · IA</div>
-          <h3>Agente de Moda Automatizado</h3>
-          <p>Flujo de automatización real construido con Make: el usuario rellena un formulario inteligente en Typeform con su perfil de estilo, Make lo procesa con IA y envía automáticamente un outfit personalizado por email con prendas, precios y links de compra. Todo sin intervención manual.</p>
-          <div class="project-tags"><span class="tag">Make</span><span class="tag">Typeform</span><span class="tag">Make AI Toolkit</span><span class="tag">Gmail</span><span class="tag">Automatización</span></div>
-          <a href="personal-shopper/" class="project-link">📋 Crear mi outfit</a>
+          <div class="project-type">Automatización · Make · Email Marketing</div>
+          <h3>Campañas Publicitarias Automatizadas</h3>
+          <p>Flujo real desarrollado en prácticas: Make detecta un email entrante con la campaña, extrae los adjuntos y lo enruta automáticamente según el tipo de cliente (Scania, JCB o Tacógrafos). Cada ruta consulta Google Sheets para filtrar los contactos interesados, itera sobre ellos y envía el correo personalizado con la imagen adjunta. Sin intervención manual.</p>
+          <div class="project-tags"><span class="tag">Make</span><span class="tag">Gmail</span><span class="tag">Google Sheets</span><span class="tag">Router</span><span class="tag">Iterator</span><span class="tag">Prácticas 2026</span></div>
         </div>
       </div>
+
       <div class="project-card">
         <div class="project-media"><img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600&q=80" alt="Plan empresarial"/><div class="project-media-overlay"></div></div>
         <div class="project-body">
@@ -526,15 +647,7 @@ footer p{font-size:0.77rem;color:rgba(244,240,232,0.28)}
           <div class="project-tags"><span class="tag">IA Generativa</span><span class="tag">Avatar IA</span><span class="tag">Síntesis de voz</span><span class="tag">Marca personal</span></div>
         </div>
       </div>
-      <div class="project-card">
-        <div class="project-media"><img src="https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=600&q=80" alt="Prompts"/><div class="project-media-overlay"></div></div>
-        <div class="project-body">
-          <div class="project-type">Prompt Engineering · IA Aplicada</div>
-          <h3>Diseño de Prompts para IA</h3>
-          <p>Diseño y optimización de prompts avanzados para modelos de IA como Claude, ChatGPT y Grok. Aplicados a casos reales: personal shopper con criterio de estilista, generación de avatar con síntesis de voz, automatizaciones en Make y asistentes productivos adaptados a necesidades concretas del día a día profesional.</p>
-          <div class="project-tags"><span class="tag">Claude</span><span class="tag">ChatGPT</span><span class="tag">Grok</span><span class="tag">Prompt Engineering</span><span class="tag">Make</span></div>
-        </div>
-      </div>
+
     </div>
     <button class="netflix-next" id="nextBtn">›</button>
   </div>
@@ -590,6 +703,7 @@ footer p{font-size:0.77rem;color:rgba(244,240,232,0.28)}
       <p class="contact-desc">Estoy abierta a nuevas oportunidades en administración, finanzas y proyectos donde pueda aportar mi perfil híbrido. Incorporación inmediata.</p>
       <div class="contact-cards">
         <a href="https://www.linkedin.com/in/brenda-fern%C3%A1ndez-s%C3%A1nchez-659489241" class="contact-card" target="_blank"><div class="cc-icon" style="font-size:0.85rem;font-weight:600">in</div><div class="cc-info"><div class="cc-label">LinkedIn</div><div class="cc-value">Brenda Fernández Sánchez</div></div><div class="cc-arrow">→</div></a>
+        <a href="mailto:brendafernandezsanchez5@gmail.com?subject=Contacto%20desde%20tu%20portfolio" class="contact-card" target="_blank"><div class="cc-icon" style="background:rgba(234,67,53,0.15);border-color:rgba(234,67,53,0.3)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6z" stroke="#EA4335" stroke-width="1.5"/><path d="M22 6l-10 7L2 6" stroke="#EA4335" stroke-width="1.5" stroke-linecap="round"/></svg></div><div class="cc-info"><div class="cc-label">Email directo</div><div class="cc-value">brendafernandezsanchez5@gmail.com</div></div><div class="cc-arrow">→</div></a>
         <a href="Brenda_Fernandez_Administ.pdf" class="contact-card" target="_blank"><div class="cc-icon">📄</div><div class="cc-info"><div class="cc-label">Curriculum Vitae</div><div class="cc-value">Descargar CV en PDF</div></div><div class="cc-arrow">↓</div></a>
       </div>
     </div>
