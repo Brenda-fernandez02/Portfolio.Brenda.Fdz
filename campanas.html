@@ -30,20 +30,48 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .nav-back{font-size:0.75rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--text3);text-decoration:none;transition:color .2s}
 .nav-back:hover{color:var(--text)}
 
-.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:9rem 4rem 5rem;position:relative;overflow:hidden}
+.hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;position:relative;overflow:hidden;padding-top:5rem}
 .hero-grid{position:absolute;inset:0;opacity:.03;background-image:linear-gradient(var(--gold) 1px,transparent 1px),linear-gradient(90deg,var(--gold) 1px,transparent 1px);background-size:56px 56px}
-.hero-inner{position:relative;z-index:2;max-width:680px}
+.hero-left{display:flex;flex-direction:column;justify-content:center;padding:3rem;position:relative;z-index:2}
+.hero-right{display:flex;flex-direction:column;justify-content:center;padding:2.5rem 2.5rem 2.5rem 2rem;background:var(--bg2);border-left:1px solid var(--border);position:relative;z-index:2;gap:1.25rem}
+.hero-demo-label{font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);opacity:.7;margin-bottom:.25rem}
+.hero-flow{display:flex;align-items:center;gap:6px;flex-wrap:nowrap}
+.hf-node{display:flex;flex-direction:column;align-items:center;gap:5px;flex-shrink:0}
+.hf-icon{width:62px;height:62px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:26px;border:1px solid var(--border);transition:border-color .4s,box-shadow .4s}
+.hf-node.active .hf-icon{border-color:var(--gold);box-shadow:0 0 0 4px rgba(201,168,76,.12)}
+.hf-node.done .hf-icon{border-color:rgba(201,168,76,.35)}
+.hf-lbl{font-size:10px;color:var(--text2);text-align:center;font-weight:500}
+.hf-arr{font-size:20px;color:rgba(255,255,255,.2);flex-shrink:0;transition:color .4s}
+.hf-arr.active{color:var(--gold)}
+.hf-node{opacity:.2;transition:opacity .4s,transform .3s}
+.hf-node.active{opacity:1;transform:translateY(-3px)}
+.hf-node.done{opacity:.7}
+.hero-routes{display:flex;flex-direction:column;gap:6px;margin-top:.25rem}
+.hr-card{background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:.85rem 1rem;opacity:.2;transition:opacity .4s,border-color .4s;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.hr-card.on{opacity:1;border-color:rgba(201,168,76,.2)}
+.hr-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0}
+.hr-name{font-size:12px;font-weight:500;color:var(--text);min-width:65px}
+.hr-bar{flex:1;height:4px;background:rgba(255,255,255,.07);border-radius:2px;overflow:hidden;min-width:40px}
+.hr-fill{height:100%;border-radius:2px;width:0%;transition:width 1.4s ease}
+.hr-ok{font-size:10px;color:var(--gold);opacity:0;transition:opacity .4s;flex-shrink:0}
+.hr-ok.on{opacity:1}
+.hero-demo-footer{display:flex;align-items:center;gap:.75rem;margin-top:.25rem}
+.btn-hero-run{padding:8px 18px;background:var(--gold);color:#161616;border:none;border-radius:4px;font-size:11px;font-weight:600;font-family:"DM Sans",sans-serif;cursor:pointer;transition:background .2s}
+.btn-hero-run:hover{background:var(--gold2)}
+.btn-hero-run:disabled{background:var(--bg3);color:var(--text3);cursor:not-allowed}
+.hero-timer{font-size:10px;color:var(--text3)}
+.hero-result{display:none;font-size:11px;color:var(--gold);padding:.5rem .75rem;background:rgba(201,168,76,.08);border:1px solid rgba(201,168,76,.2);border-radius:5px;text-align:center}
 .eyebrow{display:flex;align-items:center;gap:.8rem;margin-bottom:1.5rem}
 .ey-line{width:24px;height:1px;background:var(--gold)}
 .ey-txt{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);font-weight:500}
-.hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2.8rem,5.5vw,4.5rem);font-weight:300;color:var(--text);line-height:1.05;margin-bottom:1.25rem}
+.hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(1.9rem,3.5vw,3rem);font-weight:300;color:var(--text);line-height:1.05;margin-bottom:1rem}
 .hero h1 strong{font-weight:600;display:block}
-.hero-desc{font-size:.97rem;color:var(--text2);line-height:1.9;max-width:520px;margin-bottom:3rem}
+.hero-desc{font-size:.86rem;color:var(--text2);line-height:1.8;max-width:480px;margin-bottom:2rem}
 .hero-desc strong{color:var(--text);font-weight:500}
 .hero-stats{display:flex;gap:0;border:1px solid var(--border);border-radius:6px;overflow:hidden;width:fit-content}
-.stat{padding:1.25rem 2rem;border-right:1px solid var(--border);text-align:center}
+.stat{padding:.9rem 1.5rem;border-right:1px solid var(--border);text-align:center}
 .stat:last-child{border-right:none}
-.stat .n{font-family:'Cormorant Garamond',serif;font-size:2.8rem;font-weight:600;color:var(--gold);line-height:1;display:block}
+.stat .n{font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:600;color:var(--gold);line-height:1;display:block}
 .stat .l{font-size:.63rem;text-transform:uppercase;letter-spacing:.12em;color:var(--text3);margin-top:.25rem;display:block}
 
 .sec{padding:5rem 4rem}
@@ -165,7 +193,7 @@ h2.stitle strong{font-weight:600}
 
 <section class="hero">
   <div class="hero-grid"></div>
-  <div class="hero-inner">
+  <div class="hero-left">
     <div class="eyebrow"><div class="ey-line"></div><span class="ey-txt">Automatización · Make · Prácticas 2026</span></div>
     <h1>Cuando llega el email,<strong>los clientes ya están avisados.</strong></h1>
     <p class="hero-desc">Un sistema que <strong>detecta automáticamente los emails de campaña</strong> del taller, busca en la lista qué clientes están interesados y <strong>les manda el correo con la imagen adjunta</strong> — sin que nadie tenga que hacer nada.</p>
@@ -174,6 +202,35 @@ h2.stitle strong{font-weight:600}
       <div class="stat"><span class="n">3</span><span class="l">Campañas a la vez</span></div>
       <div class="stat"><span class="n">30s</span><span class="l">De email a clientes</span></div>
     </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-demo-label">▶ Demo en vivo — pulsa para ejecutar</div>
+    <div class="hero-flow">
+      <div class="hf-node" id="hfn0"><div class="hf-icon" style="background:rgba(234,67,53,.15)">📧</div><div class="hf-lbl">Detecta email</div></div>
+      <div class="hf-arr" id="hfa0">›</div>
+      <div class="hf-node" id="hfn1"><div class="hf-icon" style="background:rgba(234,67,53,.12)">📎</div><div class="hf-lbl">Adjunto</div></div>
+      <div class="hf-arr" id="hfa1">›</div>
+      <div class="hf-node" id="hfn2"><div class="hf-icon" style="background:rgba(201,168,76,.15)">⇄</div><div class="hf-lbl">Router</div></div>
+    </div>
+    <div class="hero-flow" style="margin-top:6px">
+      <div class="hf-node" id="hfn3"><div class="hf-icon" style="background:rgba(201,168,76,.12)">▦</div><div class="hf-lbl">Sheets</div></div>
+      <div class="hf-arr" id="hfa3">›</div>
+      <div class="hf-node" id="hfn4"><div class="hf-icon" style="background:rgba(201,168,76,.12)">→≡</div><div class="hf-lbl">Iterator</div></div>
+      <div class="hf-arr" id="hfa4">›</div>
+      <div class="hf-node" id="hfn5"><div class="hf-icon" style="background:rgba(234,67,53,.15)">✉</div><div class="hf-lbl">Envía</div></div>
+      <div class="hf-arr" id="hfa5">›</div>
+      <div class="hf-node" id="hfn6"><div class="hf-icon" style="background:rgba(201,168,76,.12)">✓</div><div class="hf-lbl">Registra</div></div>
+    </div>
+    <div class="hero-routes">
+      <div class="hr-card" id="hrc0"><div class="hr-dot" style="background:#C9614A"></div><span class="hr-name">Empresa X</span><div class="hr-bar"><div class="hr-fill" id="hrf0" style="background:#C9614A"></div></div><div class="hr-ok" id="hrr0">✓ 4 enviados</div></div>
+      <div class="hr-card" id="hrc1"><div class="hr-dot" style="background:#C9A84C"></div><span class="hr-name">Empresa Y</span><div class="hr-bar"><div class="hr-fill" id="hrf1" style="background:#C9A84C"></div></div><div class="hr-ok" id="hrr1">✓ 6 enviados</div></div>
+      <div class="hr-card" id="hrc2"><div class="hr-dot" style="background:#8A8A6A"></div><span class="hr-name">Empresa Z</span><div class="hr-bar"><div class="hr-fill" id="hrf2" style="background:#8A8A6A"></div></div><div class="hr-ok" id="hrr2">✓ 3 enviados</div></div>
+    </div>
+    <div class="hero-demo-footer">
+      <button class="btn-hero-run" id="heroDemoBtn" onclick="runHeroDemo()">▶ Ejecutar flujo</button>
+      <span class="hero-timer" id="heroTimer"></span>
+    </div>
+    <div class="hero-result" id="heroResult">🎉 13 emails · 0 clics · listo en &lt;30s</div>
   </div>
 </section>
 
@@ -320,6 +377,46 @@ async function runDemo(){
   document.getElementById('res').style.display='block';
   btn.disabled=false;btn.textContent='↺ Repetir demo';
   running=false;
+}
+
+let heroRunning=false;
+async function runHeroDemo(){
+  if(heroRunning)return;heroRunning=true;
+  const btn=document.getElementById('heroDemoBtn');
+  btn.disabled=true;btn.textContent='⏳ Ejecutando...';
+  document.getElementById('heroResult').style.display='none';
+  document.getElementById('heroTimer').textContent='';
+  for(let i=0;i<=6;i++){['hfn'+i].forEach(id=>{const el=document.getElementById(id);if(el)el.classList.remove('active','done')})};
+  for(let i=0;i<=5;i++){const el=document.getElementById('hfa'+i);if(el)el.classList.remove('active')};
+  ['hrc0','hrc1','hrc2'].forEach(id=>document.getElementById(id).classList.remove('on'));
+  ['hrf0','hrf1','hrf2'].forEach(id=>{document.getElementById(id).style.width='0%'});
+  ['hrr0','hrr1','hrr2'].forEach(id=>document.getElementById(id).classList.remove('on'));
+  const t0=Date.now();
+  const hsteps=[
+    {n:'hfn0',a:'hfa0'},{n:'hfn1',a:'hfa1'},{n:'hfn2',a:null},
+    {n:'hfn3',a:'hfa3'},{n:'hfn4',a:'hfa4'},{n:'hfn5',a:'hfa5'},{n:'hfn6',a:null}
+  ];
+  for(let i=0;i<hsteps.length;i++){
+    const s=hsteps[i];
+    document.getElementById(s.n).classList.add('active');
+    if(s.a)document.getElementById(s.a).classList.add('active');
+    if(i===2){
+      await sleep(300);
+      ['hrc0','hrc1','hrc2'].forEach((id,j)=>setTimeout(()=>document.getElementById(id).classList.add('on'),j*180));
+      ['hrf0','hrf1','hrf2'].forEach((id,j)=>setTimeout(()=>{document.getElementById(id).style.width='100%'},j*250+350));
+    }
+    if(i===5){
+      await sleep(500);
+      ['hrr0','hrr1','hrr2'].forEach((id,j)=>setTimeout(()=>document.getElementById(id).classList.add('on'),j*280));
+    }
+    document.getElementById(s.n).classList.add('done');
+    await sleep(i===2?1200:700);
+  }
+  const elapsed=((Date.now()-t0)/1000).toFixed(1);
+  document.getElementById('heroTimer').textContent=`${elapsed}s`;
+  document.getElementById('heroResult').style.display='block';
+  btn.disabled=false;btn.textContent='↺ Repetir';
+  heroRunning=false;
 }
 </script>
 </body>
