@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Personal Shopper IA · Brenda Fernández</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+<style>
+:root{--cream:#F4F0E8;--cream2:#EDE8DC;--white:#FDFBF7;--navy:#1C2B4A;--navy2:#253760;--navy3:#0F1E36;--slate:#4A5568;--muted:#7A7265;--border:#D8D2C4;--accent:#2D5FA8;--accent-light:#E8EEF8;--purple:#7C3AED;--purple-light:#EDE9FE}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--cream);color:#1A1A1A;overflow-x:hidden}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1.2rem 3rem;background:rgba(244,240,232,0.95);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
+.nav-logo{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:600;color:var(--navy);text-decoration:none}
+.nav-logo span{display:inline-block;width:5px;height:5px;background:var(--accent);border-radius:50%;margin-left:2px;margin-bottom:6px;vertical-align:middle}
+.nav-back{display:inline-flex;align-items:center;gap:0.5rem;font-size:0.78rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color 0.2s}
+.nav-back:hover{color:var(--navy)}
+
+/* HERO */
+.hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;padding-top:5rem}
+.hero-left{display:flex;flex-direction:column;justify-content:center;padding:4rem 3rem 4rem 4rem;background:var(--navy3);position:relative;overflow:hidden}
+.hero-bg-grid{position:absolute;inset:0;opacity:0.05;background-image:linear-gradient(var(--cream) 1px,transparent 1px),linear-gradient(90deg,var(--cream) 1px,transparent 1px);background-size:48px 48px;pointer-events:none}
+.hero-eyebrow{display:flex;align-items:center;gap:0.75rem;margin-bottom:1.5rem}
+.eyebrow-line{width:24px;height:1px;background:var(--purple)}
+.eyebrow-text{font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--purple);font-weight:500}
+.hero-left h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2.5rem,4vw,3.8rem);font-weight:300;color:var(--cream);line-height:1.05;margin-bottom:1.5rem}
+.hero-left h1 strong{font-weight:600;display:block}
+.hero-left h1 em{font-style:italic;color:rgba(244,240,232,0.5);font-size:0.65em;display:block;margin-top:0.3rem}
+.hero-desc{font-size:0.95rem;color:rgba(244,240,232,0.6);line-height:1.9;margin-bottom:2rem;max-width:420px}
+.hero-desc strong{color:rgba(244,240,232,0.9)}
+.tag-row{display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:2.5rem}
+.tag{padding:0.3rem 0.85rem;border:1px solid rgba(124,58,237,0.4);border-radius:20px;font-size:0.72rem;color:rgba(167,139,250,0.9);background:rgba(124,58,237,0.1)}
+.scroll-hint{display:flex;align-items:center;gap:0.6rem;font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(244,240,232,0.3)}
+.scroll-hint::before{content:'';width:1px;height:32px;background:rgba(244,240,232,0.15)}
+
+/* CHATBOT PANEL */
+.hero-right{display:flex;flex-direction:column;background:linear-gradient(135deg,#0f0f1a 0%,#1a0a2e 100%);position:relative;overflow:hidden}
+.chatbot-header{padding:1.5rem 1.75rem 1rem;border-bottom:1px solid rgba(255,255,255,0.06);flex-shrink:0;background:rgba(255,255,255,0.02)}
+.chatbot-title-row{display:flex;align-items:center;gap:12px}
+.chatbot-avatar{width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,#7C3AED,#A855F7);display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0}
+.chatbot-name{font-size:15px;font-weight:600;color:#fff}
+.chatbot-status{display:flex;align-items:center;gap:5px;margin-top:3px}
+.status-dot{width:6px;height:6px;border-radius:50%;background:#4ADE80;animation:blink 2s ease-in-out infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0.4}}
+.status-text{font-size:11px;color:rgba(167,139,250,0.8)}
+.chatbot-iframe{flex:1;border:none;width:100%;background:transparent;min-height:calc(100vh - 5rem - 80px)}
+.chatbot-footer{padding:8px 16px;border-top:1px solid rgba(255,255,255,0.06);text-align:center;font-size:10px;color:rgba(255,255,255,0.2);flex-shrink:0}
+
+/* SECCIONES INFERIORES */
+.section{padding:5rem 4rem}
+.section-alt{background:var(--white)}
+.section-eyebrow{display:flex;align-items:center;gap:0.75rem;margin-bottom:1rem}
+.ey-line{width:20px;height:1px;background:var(--accent)}
+.ey-text{font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent);font-weight:500}
+h2.section-title{font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,3vw,2.8rem);font-weight:300;color:var(--navy);margin-bottom:2rem;line-height:1.1}
+h2.section-title strong{font-weight:600}
+
+/* CÓMO FUNCIONA */
+.steps-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border:1px solid var(--border);margin-top:2rem}
+.step-item{background:var(--white);padding:2rem 1.5rem;position:relative}
+.step-num{font-family:'Cormorant Garamond',serif;font-size:2.8rem;font-weight:300;color:var(--border);line-height:1;margin-bottom:1rem}
+.step-icon{font-size:1.6rem;margin-bottom:0.75rem;display:block}
+.step-item h3{font-size:0.88rem;font-weight:500;color:var(--navy);margin-bottom:0.4rem}
+.step-item p{font-size:0.82rem;color:var(--slate);line-height:1.65}
+.step-arrow{position:absolute;top:2rem;right:-1px;width:24px;height:24px;background:var(--accent);display:flex;align-items:center;justify-content:center;color:white;font-size:0.75rem;z-index:1}
+
+/* CAPACIDADES */
+.caps-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1.25rem;margin-top:2rem}
+.cap-card{padding:1.75rem;border:1px solid var(--border);border-radius:4px;background:var(--cream);transition:border-color 0.2s,transform 0.2s}
+.cap-card:hover{border-color:var(--accent);transform:translateY(-3px)}
+.cap-icon{font-size:1.75rem;margin-bottom:0.75rem;display:block}
+.cap-card h3{font-size:0.9rem;font-weight:500;color:var(--navy);margin-bottom:0.5rem}
+.cap-card p{font-size:0.82rem;color:var(--slate);line-height:1.65}
+
+/* TECH STACK */
+.tech-row{display:flex;flex-wrap:wrap;gap:0.75rem;margin-top:1.5rem}
+.tech-pill{display:flex;align-items:center;gap:0.5rem;padding:0.5rem 1.1rem;background:var(--navy);color:var(--cream);border-radius:3px;font-size:0.78rem;font-weight:500}
+.tech-dot{width:6px;height:6px;border-radius:50%;background:var(--purple)}
+
+/* CTA */
+.cta-section{background:var(--navy);padding:4rem;text-align:center}
+.cta-section h2{font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:300;color:var(--cream);margin-bottom:1rem}
+.cta-section p{color:rgba(244,240,232,0.55);max-width:480px;margin:0 auto 2rem;font-size:0.95rem}
+.cta-btn{display:inline-flex;align-items:center;gap:0.5rem;padding:0.9rem 2rem;background:var(--purple);color:white;text-decoration:none;border-radius:3px;font-size:0.8rem;letter-spacing:0.1em;text-transform:uppercase;transition:background 0.2s}
+.cta-btn:hover{background:#6D28D9}
+.cta-link{display:inline-flex;align-items:center;gap:0.5rem;margin-left:1.5rem;font-size:0.8rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(244,240,232,0.45);text-decoration:none;transition:color 0.2s}
+.cta-link:hover{color:var(--cream)}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity 0.6s ease,transform 0.6s ease}
+.reveal.visible{opacity:1;transform:none}
+
+/* RESPONSIVE */
+@media(max-width:1024px){
+  .hero{grid-template-columns:1fr;min-height:auto}
+  .hero-left{padding:3rem 1.5rem}
+  .hero-right{min-height:80vh}
+  .chatbot-iframe{min-height:60vh}
+  .steps-grid{grid-template-columns:1fr 1fr}
+  .caps-grid{grid-template-columns:1fr 1fr}
+  .section{padding:3rem 1.5rem}
+  nav{padding:1rem 1.5rem}
+}
+@media(max-width:640px){
+  .steps-grid,.caps-grid{grid-template-columns:1fr}
+  .section{padding:2.5rem 1.25rem}
+  .cta-section{padding:2.5rem 1.25rem}
+  nav{padding:0.9rem 1.25rem}
+  .nav-back span{display:none}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">BF<span></span></a>
+  <a href="index.html" class="nav-back">← <span>Volver al portfolio</span></a>
+</nav>
+
+<!-- HERO: descripción izquierda + chatbot derecha -->
+<section class="hero" style="padding-top:5rem">
+  <div class="hero-left">
+    <div class="hero-bg-grid"></div>
+    <div style="position:relative;z-index:2">
+      <div class="hero-eyebrow">
+        <div class="eyebrow-line"></div>
+        <span class="eyebrow-text">IA Aplicada · Moda</span>
+      </div>
+      <h1><strong>Personal Shopper</strong>con Inteligencia Artificial<em>Asistente de moda · tiempo real</em></h1>
+      <p class="hero-desc">
+        Un chatbot entrenado con <strong>prompts avanzados y criterio de estilista</strong> que recomienda outfits completos adaptados a tu estilo, tipo de cuerpo, presupuesto y ocasión — con links directos a tiendas reales españolas.
+      </p>
+      <div class="tag-row">
+        <span class="tag">Botpress</span>
+        <span class="tag">Prompt Engineering</span>
+        <span class="tag">IA Generativa</span>
+        <span class="tag">Moda</span>
+      </div>
+      <div class="scroll-hint">Pruébalo ahora →</div>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="chatbot-header">
+      <div class="chatbot-title-row">
+        <div class="chatbot-avatar">👗</div>
+        <div>
+          <div class="chatbot-name">Élise · Personal Shopper IA</div>
+          <div class="chatbot-status">
+            <div class="status-dot"></div>
+            <span class="status-text">En línea · respuesta inmediata</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <iframe
+      class="chatbot-iframe"
+      src="https://cdn.botpress.cloud/webchat/v3.6/shareable.html?configUrl=https://files.bpcontent.cloud/2026/04/30/06/20260430062051-HOX3BWME.json"
+      allow="microphone"
+      loading="lazy"
+      title="Chatbot Personal Shopper IA"></iframe>
+    <div class="chatbot-footer">Proyecto de Brenda Fernández · IA aplicada · 2026</div>
+  </div>
+</section>
+
+<!-- CÓMO FUNCIONA -->
+<section class="section section-alt reveal">
+  <div class="section-eyebrow"><div class="ey-line"></div><span class="ey-text">Cómo funciona</span></div>
+  <h2 class="section-title">Del estilo al <strong>outfit en segundos</strong></h2>
+  <div class="steps-grid">
+    <div class="step-item">
+      <div class="step-num">01</div>
+      <span class="step-icon">💬</span>
+      <h3>El usuario describe su estilo</h3>
+      <p>Ocasión, presupuesto, tipo de cuerpo, colores preferidos. El chatbot hace preguntas concretas para afinar la recomendación.</p>
+      <div class="step-arrow">→</div>
+    </div>
+    <div class="step-item">
+      <div class="step-num">02</div>
+      <span class="step-icon">🧠</span>
+      <h3>La IA analiza y procesa</h3>
+      <p>Un prompt avanzado actúa como estilista profesional: combina criterios de moda, estilo personal y disponibilidad real en tiendas.</p>
+      <div class="step-arrow">→</div>
+    </div>
+    <div class="step-item">
+      <div class="step-num">03</div>
+      <span class="step-icon">👗</span>
+      <h3>Recomienda un outfit completo</h3>
+      <p>De cabeza a pies: top, pantalón, zapatos, accesorios. Con descripción de cada prenda, precio aproximado y enlace directo a la tienda.</p>
+      <div class="step-arrow">→</div>
+    </div>
+    <div class="step-item">
+      <div class="step-num">04</div>
+      <span class="step-icon">🔄</span>
+      <h3>Ajusta si es necesario</h3>
+      <p>El usuario puede pedir cambios: "más informal", "sin tacones", "menos de 50€". El chatbot adapta la propuesta al instante.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CAPACIDADES -->
+<section class="section reveal">
+  <div class="section-eyebrow"><div class="ey-line"></div><span class="ey-text">Qué puede hacer</span></div>
+  <h2 class="section-title">Un estilista <strong>disponible 24/7</strong></h2>
+  <div class="caps-grid">
+    <div class="cap-card">
+      <span class="cap-icon">🎯</span>
+      <h3>Recomendaciones personalizadas</h3>
+      <p>Tiene en cuenta estilo, talla, tipo de cuerpo, colores favorecedores y presupuesto real del usuario.</p>
+    </div>
+    <div class="cap-card">
+      <span class="cap-icon">🛍️</span>
+      <h3>Links a tiendas reales</h3>
+      <p>Las recomendaciones incluyen prendas reales de Zara, Mango, H&M, Stradivarius y otras tiendas españolas con precios actualizados.</p>
+    </div>
+    <div class="cap-card">
+      <span class="cap-icon">🌍</span>
+      <h3>Cualquier ocasión</h3>
+      <p>Trabajo, boda, cita, fiesta, casual, deporte. El chatbot adapta el estilo según la situación sin que el usuario tenga que explicarlo todo.</p>
+    </div>
+    <div class="cap-card">
+      <span class="cap-icon">⚡</span>
+      <h3>Respuesta inmediata</h3>
+      <p>Sin esperas. El usuario describe lo que necesita y en segundos tiene una propuesta completa lista para comprar.</p>
+    </div>
+    <div class="cap-card">
+      <span class="cap-icon">🔁</span>
+      <h3>Conversación natural</h3>
+      <p>No es un formulario. Es una conversación real donde el chatbot pregunta, entiende y propone como lo haría una amiga con buen gusto.</p>
+    </div>
+    <div class="cap-card">
+      <span class="cap-icon">📐</span>
+      <h3>Prompt engineering avanzado</h3>
+      <p>Detrás del chatbot hay un sistema de prompts diseñado para que la IA razone como estilista, no como buscador de palabras clave.</p>
+    </div>
+  </div>
+</section>
+
+<!-- TECH STACK -->
+<section class="section section-alt reveal">
+  <div class="section-eyebrow"><div class="ey-line"></div><span class="ey-text">Tecnología</span></div>
+  <h2 class="section-title">Construido <strong>desde cero</strong></h2>
+  <p style="color:var(--slate);max-width:560px;line-height:1.9;font-size:0.95rem">Cada parte del chatbot fue diseñada, entrenada y probada manualmente. Desde la arquitectura de la conversación hasta el criterio de moda que aplica el modelo.</p>
+  <div class="tech-row">
+    <div class="tech-pill"><span class="tech-dot"></span>Botpress</div>
+    <div class="tech-pill"><span class="tech-dot"></span>Prompt Engineering</div>
+    <div class="tech-pill"><span class="tech-dot"></span>LLM (Claude / GPT)</div>
+    <div class="tech-pill"><span class="tech-dot"></span>Diseño conversacional</div>
+    <div class="tech-pill"><span class="tech-dot"></span>Curación manual de outfits</div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <h2>¿Tienes un proyecto <em style="font-style:italic">similar</em>?</h2>
+  <p>Si tu negocio necesita un asistente inteligente que atienda, recomiende o filtre — esto es lo que puedo construir para ti.</p>
+  <a href="mailto:brendafernandezsanchez5@gmail.com?subject=Proyecto%20chatbot%20IA" class="cta-btn">✉ Contáctame</a>
+  <a href="index.html" class="cta-link">← Ver más proyectos</a>
+</section>
+
+<script>
+const obs = new IntersectionObserver(e => e.forEach(r => {
+  if(r.isIntersecting){r.target.classList.add('visible');obs.unobserve(r.target)}
+}),{threshold:0.08});
+document.querySelectorAll('.reveal').forEach(r => obs.observe(r));
+</script>
+
+</body>
+</html>
