@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Automatización de Campañas · Brenda Fernández</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+<style>
+:root{--cream:#F4F0E8;--cream2:#EDE8DC;--white:#FDFBF7;--navy:#1C2B4A;--navy2:#253760;--navy3:#0F1E36;--slate:#4A5568;--muted:#7A7265;--border:#D8D2C4;--accent:#2D5FA8;--accent-light:#E8EEF8;--green:#1D9E75;--green-light:#E1F5EE}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--cream);color:#1A1A1A;overflow-x:hidden}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1.2rem 3rem;background:rgba(244,240,232,0.95);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
+.nav-logo{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:600;color:var(--navy);text-decoration:none}
+.nav-logo span{display:inline-block;width:5px;height:5px;background:var(--accent);border-radius:50%;margin-left:2px;margin-bottom:6px;vertical-align:middle}
+.nav-back{display:inline-flex;align-items:center;gap:0.5rem;font-size:0.78rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color 0.2s}
+.nav-back:hover{color:var(--navy)}
+
+/* HERO */
+.hero{padding:9rem 4rem 5rem;background:var(--navy3);position:relative;overflow:hidden;min-height:80vh;display:flex;flex-direction:column;justify-content:center}
+.hero-bg{position:absolute;inset:0;opacity:0.05;background-image:linear-gradient(var(--cream) 1px,transparent 1px),linear-gradient(90deg,var(--cream) 1px,transparent 1px);background-size:56px 56px}
+.hero-circle{position:absolute;border-radius:50%;border:1px solid rgba(255,255,255,0.04)}
+.hero-content{position:relative;z-index:2;max-width:760px}
+.hero-eyebrow{display:flex;align-items:center;gap:0.75rem;margin-bottom:1.5rem}
+.eyebrow-line{width:24px;height:1px;background:var(--green)}
+.eyebrow-text{font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--green);font-weight:500}
+.hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2.8rem,5vw,4.5rem);font-weight:300;color:var(--cream);line-height:1.0;margin-bottom:1.5rem}
+.hero h1 strong{font-weight:600;display:block}
+.hero h1 em{font-style:italic;color:rgba(244,240,232,0.45);font-size:0.6em;display:block;margin-top:0.3rem}
+.hero-desc{font-size:1rem;color:rgba(244,240,232,0.6);line-height:1.9;max-width:560px;margin-bottom:2.5rem}
+.hero-desc strong{color:rgba(244,240,232,0.9)}
+.hero-tags{display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:3rem}
+.hero-tag{padding:0.3rem 0.9rem;border:1px solid rgba(29,158,117,0.4);border-radius:20px;font-size:0.72rem;color:rgba(29,158,117,0.9);background:rgba(29,158,117,0.08)}
+.hero-stats{display:grid;grid-template-columns:repeat(3,auto);gap:3rem;padding-top:2.5rem;border-top:1px solid rgba(255,255,255,0.08);width:fit-content}
+.stat .num{font-family:'Cormorant Garamond',serif;font-size:2.8rem;font-weight:600;color:var(--cream);line-height:1;display:block}
+.stat .lbl{font-size:0.68rem;text-transform:uppercase;letter-spacing:0.12em;color:rgba(244,240,232,0.35);margin-top:0.2rem;display:block}
+
+/* SECCIONES */
+.section{padding:5rem 4rem}
+.section-alt{background:var(--white)}
+.section-eyebrow{display:flex;align-items:center;gap:0.75rem;margin-bottom:1rem}
+.ey-line{width:20px;height:1px;background:var(--accent)}
+.ey-text{font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent);font-weight:500}
+h2.section-title{font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,3vw,2.8rem);font-weight:300;color:var(--navy);margin-bottom:1.5rem;line-height:1.1}
+h2.section-title strong{font-weight:600}
+
+/* DEMO SECTION */
+.demo-section{background:var(--navy3);padding:5rem 4rem}
+.demo-section h2{color:var(--cream)}
+.demo-wrapper{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:2.5rem;margin-top:2rem}
+
+/* FLUJO VISUAL */
+.flow-visual{display:flex;align-items:center;gap:0;margin-bottom:2.5rem;overflow-x:auto;padding-bottom:8px}
+.flow-node{display:flex;flex-direction:column;align-items:center;gap:8px;min-width:90px;opacity:0.35;transition:opacity 0.4s,transform 0.3s}
+.flow-node.active{opacity:1;transform:translateY(-4px)}
+.flow-node.done{opacity:1}
+.flow-icon{width:56px;height:56px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:24px;border:1.5px solid rgba(255,255,255,0.1);transition:border-color 0.4s,box-shadow 0.4s}
+.flow-node.active .flow-icon{border-color:var(--green);box-shadow:0 0 0 4px rgba(29,158,117,0.15)}
+.flow-label{font-size:10px;color:rgba(244,240,232,0.6);text-align:center;line-height:1.3;font-weight:500}
+.flow-sublabel{font-size:9px;color:rgba(244,240,232,0.3);text-align:center}
+.flow-arrow{color:rgba(255,255,255,0.2);font-size:18px;margin:0 4px;flex-shrink:0;padding-bottom:24px;transition:color 0.4s}
+.flow-arrow.active{color:var(--green)}
+
+/* ESTADO DE LA DEMO */
+.demo-status{min-height:40px;display:flex;align-items:center;gap:10px;margin-bottom:1.5rem}
+.status-badge{display:inline-flex;align-items:center;gap:6px;padding:6px 14px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:20px;font-size:12px;color:rgba(244,240,232,0.6);transition:all 0.3s}
+.status-badge.running{border-color:rgba(29,158,117,0.4);color:rgba(29,158,117,0.9);background:rgba(29,158,117,0.08)}
+.status-pulse{width:6px;height:6px;border-radius:50%;background:currentColor;animation:blink 1.2s ease-in-out infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0.3}}
+
+/* RUTAS */
+.routes-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:1.5rem}
+.route-card{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.07);border-radius:10px;padding:1.25rem;opacity:0.3;transition:opacity 0.5s,border-color 0.5s}
+.route-card.active{opacity:1;border-color:rgba(255,255,255,0.15)}
+.route-header{display:flex;align-items:center;gap:8px;margin-bottom:8px}
+.route-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.route-name{font-size:13px;font-weight:500;color:rgba(244,240,232,0.9)}
+.route-desc{font-size:11px;color:rgba(244,240,232,0.4);margin-bottom:10px;line-height:1.4}
+.progress-bar{height:3px;background:rgba(255,255,255,0.07);border-radius:2px;overflow:hidden;margin-bottom:8px}
+.progress-fill{height:100%;border-radius:2px;width:0%;transition:width 1.4s ease}
+.route-result{display:flex;align-items:center;gap:6px;font-size:11px;color:rgba(244,240,232,0.4);opacity:0;transition:opacity 0.4s}
+.route-result.visible{opacity:1;color:rgba(29,158,117,0.9)}
+.check{width:16px;height:16px;border-radius:50%;background:var(--green);display:flex;align-items:center;justify-content:center;font-size:10px;color:white;flex-shrink:0}
+
+/* RESULTADO FINAL */
+.demo-result{display:none;padding:1.25rem 1.5rem;background:rgba(29,158,117,0.08);border:1px solid rgba(29,158,117,0.25);border-radius:8px;margin-top:0.5rem}
+.demo-result-row{display:flex;align-items:center;gap:10px;margin-bottom:6px}
+.demo-result-icon{font-size:20px}
+.demo-result-title{font-size:13px;font-weight:500;color:rgba(29,158,117,0.95)}
+.demo-result p{font-size:12px;color:rgba(244,240,232,0.5);line-height:1.6;margin-left:30px}
+
+/* BTN */
+.btn-demo{display:inline-flex;align-items:center;gap:8px;padding:11px 24px;background:var(--green);color:white;border:none;border-radius:6px;font-size:13px;font-weight:500;font-family:'DM Sans',sans-serif;cursor:pointer;transition:background 0.2s,transform 0.15s}
+.btn-demo:hover{background:#0F6E56}
+.btn-demo:active{transform:scale(0.97)}
+.btn-demo:disabled{background:rgba(255,255,255,0.1);cursor:not-allowed}
+
+/* CÓMO FUNCIONA */
+.steps-list{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:2rem}
+.step-card{display:flex;gap:1rem;padding:1.5rem;background:var(--cream2);border-radius:4px;border:1px solid var(--border)}
+.step-num-badge{width:36px;height:36px;border-radius:50%;background:var(--navy);color:var(--cream);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:1rem;font-weight:600;flex-shrink:0}
+.step-card h3{font-size:0.88rem;font-weight:500;color:var(--navy);margin-bottom:0.35rem}
+.step-card p{font-size:0.82rem;color:var(--slate);line-height:1.65}
+
+/* IMPACTO */
+.impact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-top:2rem}
+.impact-card{padding:2rem 1.5rem;border-radius:4px;text-align:center}
+.impact-card.green-bg{background:var(--green-light);border:1px solid rgba(29,158,117,0.2)}
+.impact-card.navy-bg{background:var(--navy);border:1px solid var(--navy)}
+.impact-num{font-family:'Cormorant Garamond',serif;font-size:3rem;font-weight:600;line-height:1;display:block;margin-bottom:0.5rem}
+.impact-card.green-bg .impact-num{color:var(--green)}
+.impact-card.navy-bg .impact-num{color:var(--cream)}
+.impact-lbl{font-size:0.82rem;font-weight:500}
+.impact-card.green-bg .impact-lbl{color:#085041}
+.impact-card.navy-bg .impact-lbl{color:rgba(244,240,232,0.7)}
+.impact-desc{font-size:0.75rem;margin-top:0.4rem;line-height:1.5}
+.impact-card.green-bg .impact-desc{color:#0F6E56}
+.impact-card.navy-bg .impact-desc{color:rgba(244,240,232,0.4)}
+
+/* TECH */
+.tech-row{display:flex;flex-wrap:wrap;gap:0.75rem;margin-top:1.5rem}
+.tech-pill{display:flex;align-items:center;gap:0.5rem;padding:0.5rem 1.1rem;background:var(--navy);color:var(--cream);border-radius:3px;font-size:0.78rem;font-weight:500}
+.tech-dot{width:6px;height:6px;border-radius:50%;background:var(--green)}
+
+/* CTA */
+.cta-section{background:var(--navy);padding:4rem;text-align:center}
+.cta-section h2{font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:300;color:var(--cream);margin-bottom:1rem}
+.cta-section p{color:rgba(244,240,232,0.55);max-width:480px;margin:0 auto 2rem;font-size:0.95rem}
+.cta-btn{display:inline-flex;align-items:center;gap:0.5rem;padding:0.9rem 2rem;background:var(--green);color:white;text-decoration:none;border-radius:3px;font-size:0.8rem;letter-spacing:0.1em;text-transform:uppercase;transition:background 0.2s}
+.cta-btn:hover{background:#0F6E56}
+.cta-link{display:inline-flex;align-items:center;gap:0.5rem;margin-left:1.5rem;font-size:0.8rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(244,240,232,0.4);text-decoration:none;transition:color 0.2s}
+.cta-link:hover{color:var(--cream)}
+
+.reveal{opacity:0;transform:translateY(24px);transition:opacity 0.6s ease,transform 0.6s ease}
+.reveal.visible{opacity:1;transform:none}
+
+@media(max-width:1024px){
+  .hero{padding:7rem 1.5rem 4rem}
+  .hero-stats{gap:2rem}
+  .section{padding:3rem 1.5rem}
+  .demo-section{padding:3rem 1.5rem}
+  .steps-list{grid-template-columns:1fr}
+  .impact-grid{grid-template-columns:1fr}
+  .routes-grid{grid-template-columns:1fr}
+  nav{padding:1rem 1.5rem}
+}
+@media(max-width:640px){
+  .hero-stats{grid-template-columns:repeat(2,auto);gap:1.5rem}
+  .flow-visual{gap:0}
+  .flow-icon{width:44px;height:44px;font-size:18px}
+  .cta-section{padding:2.5rem 1.25rem}
+  nav{padding:0.9rem 1.25rem}
+  .nav-back span{display:none}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">BF<span></span></a>
+  <a href="index.html" class="nav-back">← <span>Volver al portfolio</span></a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-circle" style="width:600px;height:600px;top:-200px;right:-200px"></div>
+  <div class="hero-circle" style="width:300px;height:300px;bottom:-100px;left:-100px"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">
+      <div class="eyebrow-line"></div>
+      <span class="eyebrow-text">Automatización · Make · Email Marketing</span>
+    </div>
+    <h1><strong>Campañas publicitarias</strong>automatizadas con IA<em>De email entrante a clientes notificados · sin intervención manual</em></h1>
+    <p class="hero-desc">
+      Un flujo real construido en prácticas: <strong>Make detecta el email de campaña</strong>, filtra los contactos interesados en Google Sheets según el tipo de producto y <strong>envía automáticamente el correo personalizado con imagen adjunta</strong> a cada cliente.
+    </p>
+    <div class="hero-tags">
+      <span class="hero-tag">Make</span>
+      <span class="hero-tag">Gmail</span>
+      <span class="hero-tag">Google Sheets</span>
+      <span class="hero-tag">Router</span>
+      <span class="hero-tag">Iterator</span>
+      <span class="hero-tag">Automatización no-code</span>
+      <span class="hero-tag">Prácticas 2026</span>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><span class="num">0</span><span class="lbl">Min. de trabajo manual</span></div>
+      <div class="stat"><span class="num">3</span><span class="lbl">Campañas paralelas</span></div>
+      <div class="stat"><span class="num">100%</span><span class="lbl">Envíos automatizados</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- DEMO INTERACTIVA -->
+<section class="demo-section">
+  <div class="section-eyebrow" style="--accent:var(--green)">
+    <div class="ey-line" style="background:var(--green)"></div>
+    <span class="ey-text" style="color:var(--green)">Demo interactiva</span>
+  </div>
+  <h2 class="section-title" style="color:var(--cream)">Así funciona el <strong>flujo en tiempo real</strong></h2>
+  <p style="color:rgba(244,240,232,0.5);font-size:0.92rem;margin-bottom:0;max-width:500px">Pulsa el botón y observa cómo Make procesa el email y distribuye los envíos por campaña automáticamente.</p>
+
+  <div class="demo-wrapper">
+
+    <!-- FLUJO VISUAL -->
+    <div class="flow-visual" id="flowVisual">
+      <div class="flow-node" id="fn0">
+        <div class="flow-icon" style="background:rgba(234,67,53,0.15)">📧</div>
+        <div class="flow-label">Gmail Watch</div>
+        <div class="flow-sublabel">Detecta email</div>
+      </div>
+      <div class="flow-arrow" id="fa0">›</div>
+      <div class="flow-node" id="fn1">
+        <div class="flow-icon" style="background:rgba(234,67,53,0.12)">📎</div>
+        <div class="flow-label">Gmail</div>
+        <div class="flow-sublabel">Adjuntos</div>
+      </div>
+      <div class="flow-arrow" id="fa1">›</div>
+      <div class="flow-node" id="fn2">
+        <div class="flow-icon" style="background:rgba(16,185,129,0.15)">⇄</div>
+        <div class="flow-label">Router</div>
+        <div class="flow-sublabel">3 rutas</div>
+      </div>
+      <div class="flow-arrow" id="fa2">›</div>
+      <div class="flow-node" id="fn3">
+        <div class="flow-icon" style="background:rgba(29,111,66,0.2)">▦</div>
+        <div class="flow-label">Google Sheets</div>
+        <div class="flow-sublabel">Filtra clientes</div>
+      </div>
+      <div class="flow-arrow" id="fa3">›</div>
+      <div class="flow-node" id="fn4">
+        <div class="flow-icon" style="background:rgba(29,111,66,0.2)">→≡</div>
+        <div class="flow-label">Iterator</div>
+        <div class="flow-sublabel">Recorre filas</div>
+      </div>
+      <div class="flow-arrow" id="fa4">›</div>
+      <div class="flow-node" id="fn5">
+        <div class="flow-icon" style="background:rgba(234,67,53,0.15)">✉</div>
+        <div class="flow-label">Gmail Send</div>
+        <div class="flow-sublabel">Envía + adjunto</div>
+      </div>
+      <div class="flow-arrow" id="fa5">›</div>
+      <div class="flow-node" id="fn6">
+        <div class="flow-icon" style="background:rgba(29,111,66,0.2)">✓▦</div>
+        <div class="flow-label">Sheets Update</div>
+        <div class="flow-sublabel">Marca enviado</div>
+      </div>
+    </div>
+
+    <!-- STATUS -->
+    <div class="demo-status">
+      <div class="status-badge" id="statusBadge">
+        <span>Listo para ejecutar</span>
+      </div>
+    </div>
+
+    <!-- RUTAS -->
+    <div class="routes-grid">
+      <div class="route-card" id="rc0">
+        <div class="route-header">
+          <div class="route-dot" style="background:#E24B4A"></div>
+          <span class="route-name">Scania</span>
+        </div>
+        <div class="route-desc">Clientes con interés en vehículos Scania</div>
+        <div class="progress-bar"><div class="progress-fill" id="rp0" style="background:#E24B4A"></div></div>
+        <div class="route-result" id="rr0"><div class="check">✓</div><span>4 emails enviados con adjunto</span></div>
+      </div>
+      <div class="route-card" id="rc1">
+        <div class="route-header">
+          <div class="route-dot" style="background:#185FA5"></div>
+          <span class="route-name">JCB</span>
+        </div>
+        <div class="route-desc">Clientes con interés en maquinaria JCB</div>
+        <div class="progress-bar"><div class="progress-fill" id="rp1" style="background:#185FA5"></div></div>
+        <div class="route-result" id="rr1"><div class="check">✓</div><span>6 emails enviados con adjunto</span></div>
+      </div>
+      <div class="route-card" id="rc2">
+        <div class="route-header">
+          <div class="route-dot" style="background:#3B6D11"></div>
+          <span class="route-name">Tacógrafos</span>
+        </div>
+        <div class="route-desc">Clientes con interés en tacógrafos</div>
+        <div class="progress-bar"><div class="progress-fill" id="rp2" style="background:#3B6D11"></div></div>
+        <div class="route-result" id="rr2"><div class="check">✓</div><span>3 emails enviados con adjunto</span></div>
+      </div>
+    </div>
+
+    <div style="display:flex;align-items:center;gap:1rem;flex-wrap:wrap">
+      <button class="btn-demo" id="demoBtn" onclick="runDemo()">▶ Ejecutar flujo</button>
+      <span id="timerTxt" style="font-size:12px;color:rgba(244,240,232,0.3)"></span>
+    </div>
+
+    <div class="demo-result" id="demoResult">
+      <div class="demo-result-row">
+        <span class="demo-result-icon">🎉</span>
+        <span class="demo-result-title">13 emails enviados · 0 clics manuales · Google Sheets actualizado</span>
+      </div>
+      <p>El flujo completo tardó menos de 30 segundos. Desde que llega el email de campaña hasta que el último cliente recibe su correo con la imagen adjunta, Make lo gestiona todo de forma autónoma.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CÓMO FUNCIONA -->
+<section class="section section-alt reveal">
+  <div class="section-eyebrow"><div class="ey-line"></div><span class="ey-text">El flujo paso a paso</span></div>
+  <h2 class="section-title">Cada paso, <strong>automatizado</strong></h2>
+  <div class="steps-list">
+    <div class="step-card">
+      <div class="step-num-badge">1</div>
+      <div>
+        <h3>Gmail Watch detecta el email entrante</h3>
+        <p>El taller recibe un email con la campaña publicitaria. Make lo detecta automáticamente gracias al módulo Gmail Watch, sin necesidad de hacer nada.</p>
+      </div>
+    </div>
+    <div class="step-card">
+      <div class="step-num-badge">2</div>
+      <div>
+        <h3>Se extraen los adjuntos de la campaña</h3>
+        <p>Make lista y guarda la imagen del correo original. Esa imagen se reutilizará en los correos que se envíen a los clientes finales.</p>
+      </div>
+    </div>
+    <div class="step-card">
+      <div class="step-num-badge">3</div>
+      <div>
+        <h3>El Router divide en 3 rutas paralelas</h3>
+        <p>Según la campaña detectada (Scania, JCB o Tacógrafos), el Router abre la ruta correspondiente y activa el flujo de esa campaña específica.</p>
+      </div>
+    </div>
+    <div class="step-card">
+      <div class="step-num-badge">4</div>
+      <div>
+        <h3>Google Sheets filtra los clientes interesados</h3>
+        <p>Cada ruta consulta la hoja de cálculo del taller y filtra solo los contactos que tienen marcado ese producto como de su interés.</p>
+      </div>
+    </div>
+    <div class="step-card">
+      <div class="step-num-badge">5</div>
+      <div>
+        <h3>Iterator recorre cada contacto uno a uno</h3>
+        <p>Para cada fila encontrada, Make itera y prepara un envío individual. Cada cliente recibe su propio email, no un envío masivo.</p>
+      </div>
+    </div>
+    <div class="step-card">
+      <div class="step-num-badge">6</div>
+      <div>
+        <h3>Gmail envía el email con la imagen adjunta</h3>
+        <p>Cada cliente recibe el correo con la imagen de la campaña adjunta. Google Sheets se actualiza automáticamente para registrar el envío.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- IMPACTO -->
+<section class="section reveal">
+  <div class="section-eyebrow"><div class="ey-line"></div><span class="ey-text">Impacto y rentabilidad</span></div>
+  <h2 class="section-title">¿Qué ahorra <strong>este flujo</strong>?</h2>
+  <div class="impact-grid">
+    <div class="impact-card green-bg">
+      <span class="impact-num">0 min</span>
+      <span class="impact-lbl">Tiempo manual por campaña</span>
+      <p class="impact-desc">Lo que antes era revisar, copiar, pegar y enviar uno a uno, ahora es automático desde el momento en que llega el email.</p>
+    </div>
+    <div class="impact-card navy-bg">
+      <span class="impact-num">3×</span>
+      <span class="impact-lbl">Campañas paralelas en un solo flujo</span>
+      <p class="impact-desc">El Router permite gestionar Scania, JCB y Tacógrafos simultáneamente sin flujos separados ni trabajo extra.</p>
+    </div>
+    <div class="impact-card green-bg">
+      <span class="impact-num">0</span>
+      <span class="impact-lbl">Errores de envío o contacto incorrecto</span>
+      <p class="impact-desc">Google Sheets actúa como fuente de verdad. Solo reciben el correo los clientes que tienen ese interés marcado explícitamente.</p>
+    </div>
+  </div>
+  <div style="margin-top:2rem;padding:1.75rem 2rem;background:var(--white);border:1px solid var(--border);border-radius:4px;border-left:3px solid var(--green)">
+    <p style="font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-style:italic;font-weight:300;color:var(--navy);line-height:1.6">
+      "Este tipo de automatización no requiere programación. Cualquier empresa con clientes segmentados en una hoja de Excel puede tenerlo funcionando en horas."
+    </p>
+    <p style="font-size:0.8rem;color:var(--muted);margin-top:0.75rem">— Brenda Fernández · Agente Digitalizadora · Prácticas 2026</p>
+  </div>
+</section>
+
+<!-- TECH STACK -->
+<section class="section section-alt reveal">
+  <div class="section-eyebrow"><div class="ey-line"></div><span class="ey-text">Tecnología</span></div>
+  <h2 class="section-title">Construido con <strong>herramientas reales</strong></h2>
+  <p style="color:var(--slate);max-width:520px;line-height:1.9;font-size:0.95rem;margin-bottom:0">Sin código. Sin APIs complejas. Solo Make, Gmail y Google Sheets — herramientas que cualquier empresa ya tiene o puede tener en minutos.</p>
+  <div class="tech-row">
+    <div class="tech-pill"><span class="tech-dot"></span>Make (ex Integromat)</div>
+    <div class="tech-pill"><span class="tech-dot"></span>Gmail API</div>
+    <div class="tech-pill"><span class="tech-dot"></span>Google Sheets</div>
+    <div class="tech-pill"><span class="tech-dot"></span>Router module</div>
+    <div class="tech-pill"><span class="tech-dot"></span>Iterator module</div>
+    <div class="tech-pill"><span class="tech-dot"></span>Automatización no-code</div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <h2>¿Tu empresa envía emails<br><em style="font-style:italic">manualmente?</em></h2>
+  <p>Esto mismo se puede replicar para cualquier negocio con clientes segmentados. Sin programación, sin grandes inversiones.</p>
+  <a href="mailto:brendafernandezsanchez5@gmail.com?subject=Automatización%20campañas" class="cta-btn">✉ Hablemos</a>
+  <a href="index.html" class="cta-link">← Ver más proyectos</a>
+</section>
+
+<script>
+const obs = new IntersectionObserver(e => e.forEach(r => {
+  if(r.isIntersecting){r.target.classList.add('visible');obs.unobserve(r.target)}
+}),{threshold:0.08});
+document.querySelectorAll('.reveal').forEach(r => obs.observe(r));
+
+const flowSteps = [
+  {node:'fn0',arrow:'fa0',msg:'📧 Email entrante detectado en el buzón...'},
+  {node:'fn1',arrow:'fa1',msg:'📎 Extrayendo imagen adjunta de la campaña...'},
+  {node:'fn2',arrow:'fa2',msg:'⇄ Router analizando campaña y abriendo rutas...'},
+  {node:'fn3',arrow:'fa3',msg:'▦ Consultando Google Sheets por campaña...'},
+  {node:'fn4',arrow:'fa4',msg:'→≡ Iterator recorriendo contactos interesados...'},
+  {node:'fn5',arrow:'fa5',msg:'✉ Enviando emails con imagen adjunta...'},
+  {node:'fn6',arrow:null, msg:'✓ Actualizando Google Sheets — envíos registrados'}
+];
+
+let running = false;
+function sleep(ms){return new Promise(r=>setTimeout(r,ms))}
+
+async function runDemo(){
+  if(running) return;
+  running = true;
+  const btn = document.getElementById('demoBtn');
+  btn.disabled = true;
+  btn.textContent = '⏳ Ejecutando...';
+
+  // Reset
+  document.getElementById('demoResult').style.display = 'none';
+  document.getElementById('timerTxt').textContent = '';
+  ['rc0','rc1','rc2'].forEach(id => document.getElementById(id).classList.remove('active'));
+  ['rp0','rp1','rp2'].forEach(id => {document.getElementById(id).style.width='0%'});
+  ['rr0','rr1','rr2'].forEach(id => document.getElementById(id).classList.remove('visible'));
+  flowSteps.forEach(s => {
+    document.getElementById(s.node).classList.remove('active','done');
+    if(s.arrow) document.getElementById(s.arrow).classList.remove('active');
+  });
+
+  const badge = document.getElementById('statusBadge');
+  const start = Date.now();
+
+  for(let i=0; i<flowSteps.length; i++){
+    const s = flowSteps[i];
+    badge.className = 'status-badge running';
+    badge.innerHTML = `<span class="status-pulse"></span><span>${s.msg}</span>`;
+    document.getElementById(s.node).classList.add('active');
+    if(s.arrow) document.getElementById(s.arrow).classList.add('active');
+
+    if(i===2){
+      await sleep(600);
+      ['rc0','rc1','rc2'].forEach((id,j) => {
+        setTimeout(()=>document.getElementById(id).classList.add('active'), j*200);
+      });
+      ['rp0','rp1','rp2'].forEach((id,j) => {
+        setTimeout(()=>{document.getElementById(id).style.width='100%'}, j*300+400);
+      });
+    }
+    if(i===5){
+      await sleep(800);
+      ['rr0','rr1','rr2'].forEach((id,j) => {
+        setTimeout(()=>document.getElementById(id).classList.add('visible'), j*400);
+      });
+    }
+
+    document.getElementById(s.node).classList.add('done');
+    await sleep(i===2?1600:900);
+  }
+
+  const elapsed = ((Date.now()-start)/1000).toFixed(1);
+  document.getElementById('timerTxt').textContent = `Flujo completado en ${elapsed}s`;
+  badge.className = 'status-badge running';
+  badge.innerHTML = '<span class="status-pulse"></span><span>✅ Completado — 0 intervenciones manuales</span>';
+  document.getElementById('demoResult').style.display = 'block';
+
+  btn.disabled = false;
+  btn.textContent = '↺ Repetir demo';
+  running = false;
+}
+</script>
+</body>
+</html>
